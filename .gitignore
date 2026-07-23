@@ -1,0 +1,31 @@
+node_modules/
+.next/
+out/
+__pycache__/
+*.pyc
+.codex-tmp/
+.env
+.env.*
+public/images/CYUT/CBR150R.jpg
+public/images/CYUT/CBR150R.jfif
+public/images/COMPUTER/IMG_3991.HEIC
+
+# 影片原始檔（已轉成 mp4 供網站使用，原始 MOV 不進版）
+*.MOV
+*.mov
+
+# junk / temp / to-delete
+/_to_delete
+/.agents
+*.zip
+tsconfig.tsbuildinfo
+/build
+.DS_Store
+*.pem
+npm-debug.log*
+next-env.d.ts
+
+# 本機私人背景與原始素材
+LFX_PERSONAL_CONTEXT.md
+LFX_PRIVATE_CONTEXT.md
+source-media/

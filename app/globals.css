@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+
+    /*
+     * 字型設定 — 使用系統字型堆疊，無需在建置時下載外部字型。
+     * 若日後想改用 Inter / JetBrains Mono 等 Google 字型，
+     * 可在 app/layout.tsx 以 next/font/google 載入後，改寫下列變數。
+     */
+    --font-sans: "Inter", "Segoe UI", system-ui, -apple-system,
+      "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    --font-mono: "JetBrains Mono", "SFMono-Regular", ui-monospace, "Menlo",
+      "Consolas", monospace;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink-950 text-steel-200 antialiased;
+    /*
+     * 微水泥牆質感（多層堆疊，模擬真實抹面）：
+     * 1) 上緣一道溫暖間接光暈（呼應照片的暖金 LED 光）
+     * 2) 抹刀雲染：低頻 turbulence 的深／淺斑塊，做出深淺不均的手抹感
+     * 3) 表面細顆粒：高頻 turbulence 噪點
+     */
+    background-image:
+      radial-gradient(80% 55% at 50% -6%, rgba(214, 180, 120, 0.20) 0%, transparent 58%),
+      url("/images/texture/microcement.png");
+    background-size: auto, 600px 600px;
+    background-repeat: no-repeat, repeat;
+    background-attachment: fixed, scroll;
+  }
+
+  /* 尊重使用者的減少動態設定 */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  ::selection {
+    background: rgba(196, 154, 87, 0.32);
+    color: #2a2013;
+  }
+}
+
+@layer components {
+  /* 工程風格的區塊小標籤 */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 font-mono text-xs uppercase tracking-label text-merlot-500;
+  }
+
+  /* 金色發光標題：金字 + 白色光暈（呼應照片的暖光白暈） */
+  .text-gold-glow {
+    color: #d9b87b;
+    text-shadow:
+      0 0 1px rgba(255, 255, 255, 0.5),
+      0 0 20px rgba(255, 244, 214, 0.28),
+      0 0 42px rgba(217, 184, 123, 0.22);
+  }
+
+  /* 車庫車名：玫瑰金字面搭配克制的暖白光暈 */
+  .garage-model-name,
+  .garage-vehicle-name {
+    color: #e0ad99;
+    background-image: linear-gradient(110deg, #f2d5c8 0%, #d99b83 48%, #f0c8b6 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+      0 0 1px rgba(255, 255, 255, 0.72),
+      0 0 12px rgba(255, 248, 242, 0.24),
+      0 0 28px rgba(224, 173, 153, 0.18);
+  }
+
+  .garage-model-name {
+    @apply text-3xl font-semibold tracking-tight sm:text-4xl;
+  }
+
+  .garage-vehicle-name {
+    @apply font-mono text-sm tracking-label sm:text-base;
+  }
+
+  /* 內容容器 */
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-6 sm:px-8;
+  }
+
+  /* 佔位圖用的極淡接縫網格 */
+  .blueprint-grid {
+    background-image: theme("backgroundImage.blueprint");
+    background-size: 40px 40px;
+  }
+
+  /* 暖金 LED 燈帶 — 呼應照片牆上那道間接光 */
+  .led-line {
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(196, 154, 87, 0.15) 12%,
+      rgba(216, 184, 121, 0.9) 50%,
+      rgba(196, 154, 87, 0.15) 88%,
+      transparent 100%
+    );
+    box-shadow: 0 0 18px 1px rgba(216, 184, 121, 0.45);
+  }
+
+  /* 深炭灰量體（電視櫃 / 深門片色塊）— 深底配淺字，帶微水泥抹面質感 */
+  .surface-coal {
+    @apply bg-coal-900 text-chalk-300;
+    background-image:
+      radial-gradient(60% 60% at 50% 0%, rgba(216, 184, 121, 0.06) 0%, transparent 60%),
+      url("/images/texture/microcement.png");
+    background-size: auto, 600px 600px;
+    background-repeat: no-repeat, repeat;
+  }
+
+  @keyframes about-drawer-backdrop-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes about-drawer-panel-in {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .about-drawer-backdrop {
+    animation: about-drawer-backdrop-in 240ms ease-out both;
+  }
+
+  .about-drawer-panel {
+    animation: about-drawer-panel-in 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
