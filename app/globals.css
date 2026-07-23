@@ -127,6 +127,175 @@
     background-repeat: no-repeat, repeat;
   }
 
+  /* 座右銘題字：毛筆楷意搭配淡墨雲霧，文字本身維持清楚對比。 */
+  .motto-calligraphy {
+    isolation: isolate;
+    font-family: "AdobeKaitiStd-Regular", "Adobe Kaiti Std", "KaiTi",
+      "STKaiti", "DFKai-SB", "BiauKai", "Noto Serif TC", serif;
+    font-weight: 600;
+    letter-spacing: 0.065em;
+    text-wrap: nowrap;
+  }
+
+  .motto-calligraphy::before,
+  .motto-calligraphy::after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    pointer-events: none;
+    mix-blend-mode: screen;
+  }
+
+  .motto-calligraphy::before {
+    inset: -1.25rem -1.5rem 0.25rem -2rem;
+    background:
+      radial-gradient(
+        ellipse 58% 34% at 10% 58%,
+        rgba(238, 240, 235, 0.17) 0%,
+        rgba(207, 213, 210, 0.07) 38%,
+        transparent 72%
+      ),
+      radial-gradient(
+        ellipse 64% 38% at 49% 64%,
+        rgba(231, 234, 230, 0.15) 0%,
+        rgba(198, 205, 202, 0.06) 40%,
+        transparent 74%
+      ),
+      radial-gradient(
+        ellipse 54% 31% at 91% 70%,
+        rgba(239, 241, 236, 0.14) 0%,
+        rgba(197, 204, 201, 0.05) 42%,
+        transparent 76%
+      );
+    filter: blur(18px);
+    opacity: 0.68;
+    animation: motto-cloud-drift 14s ease-in-out infinite alternate;
+  }
+
+  .motto-calligraphy::after {
+    inset: 3.4rem -1.75rem 0.5rem 7%;
+    border-radius: 52% 48% 47% 53%;
+    background:
+      linear-gradient(
+        98deg,
+        transparent 2%,
+        rgba(230, 233, 228, 0.03) 12%,
+        rgba(235, 237, 232, 0.14) 34%,
+        rgba(193, 201, 198, 0.05) 61%,
+        transparent 92%
+      ),
+      url("/images/texture/microcement.png");
+    background-blend-mode: screen;
+    background-size: auto, 260px 260px;
+    filter: grayscale(1) contrast(1.18) brightness(1.2) blur(8px);
+    opacity: 0.24;
+    animation: motto-cloud-drift 18s ease-in-out infinite alternate-reverse;
+  }
+
+  @keyframes motto-cloud-drift {
+    from {
+      transform: translate3d(-0.35rem, 0.12rem, 0) scale(1);
+    }
+    to {
+      transform: translate3d(0.45rem, -0.12rem, 0) scale(1.025);
+    }
+  }
+
+  .motto-line {
+    position: relative;
+    z-index: 1;
+    width: max-content;
+    color: #f3efe4;
+    background:
+      linear-gradient(
+        104deg,
+        #fffaf0 0%,
+        #d8d3c7 28%,
+        #fffdf5 49%,
+        #cbc7bd 72%,
+        #f7f0e3 100%
+      ),
+      url("/images/texture/microcement.png");
+    background-clip: text;
+    background-size: 100% 100%, 170px 170px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.32px rgba(255, 252, 241, 0.82);
+    text-shadow:
+      0 0 0.8px rgba(255, 252, 241, 0.98),
+      0 2px 2px rgba(5, 6, 6, 0.78),
+      0 3px 16px rgba(236, 230, 214, 0.26);
+  }
+
+  .motto-line-first {
+    transform: rotate(-0.7deg);
+  }
+
+  .motto-line-second {
+    transform: rotate(0.8deg);
+  }
+
+  .motto-seal {
+    position: absolute;
+    right: 0.25rem;
+    bottom: 0.15rem;
+    z-index: 2;
+    display: grid;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    border: 1px solid rgba(157, 52, 46, 0.88);
+    color: rgba(196, 72, 62, 0.92);
+    font-family: var(--font-mono);
+    font-size: 0.56rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    text-indent: 0.1em;
+    text-shadow: 0 0 9px rgba(143, 38, 34, 0.22);
+    transform: rotate(-6deg);
+  }
+
+  .journey-period-gold {
+    position: relative;
+    isolation: isolate;
+    color: #d9b879;
+    background-image: linear-gradient(
+      108deg,
+      #f5e5bb 0%,
+      #c99b50 38%,
+      #ead097 68%,
+      #b78339 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow:
+      0 0 1px rgba(255, 248, 224, 0.72),
+      0 0 18px rgba(211, 169, 92, 0.18),
+      0 0 42px rgba(181, 127, 48, 0.1);
+    transition: filter 300ms ease;
+  }
+
+  .journey-period-gold::before {
+    position: absolute;
+    z-index: -1;
+    inset: 18% -10% 0;
+    content: "";
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(218, 178, 104, 0.18) 0%,
+      rgba(180, 126, 48, 0.07) 44%,
+      transparent 74%
+    );
+    filter: blur(13px);
+  }
+
+  .group:hover .journey-period-gold {
+    filter: brightness(1.07);
+  }
+
   @keyframes about-drawer-backdrop-in {
     from {
       opacity: 0;

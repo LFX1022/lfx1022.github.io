@@ -183,7 +183,7 @@ export function MyJourney() {
             description="從求學、第一次接觸 BIM，到現在逐漸形成的工作方法。"
           />
 
-          <ol className="mt-14 max-w-4xl sm:mt-16">
+          <ol className="mt-14 max-w-6xl sm:mt-16">
             {journey.map((item, i) => {
               const isSelected = selectedJourney?.id === item.id;
 
@@ -217,56 +217,71 @@ export function MyJourney() {
                       onClick={(event) => openStory(item, event.currentTarget)}
                       className="group -mt-1 min-w-0 border-b border-ink-600/70 pb-9 text-left transition-colors last:border-b-0 hover:border-merlot-500/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-merlot-400 focus-visible:ring-offset-4 focus-visible:ring-offset-ink-950 sm:pb-10"
                     >
-                      <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                        <span className="font-mono text-[11px] uppercase tracking-label text-merlot-300">
-                          {item.period}
-                        </span>
-                        <span className="rounded-sm border border-ink-600 px-1.5 py-0.5 font-mono text-[10px] tracking-wide text-steel-500 transition-colors group-hover:border-steel-500 group-hover:text-steel-400">
-                          {item.category}
-                        </span>
-                      </span>
-
-                      <span className="mt-2 block text-xl font-semibold text-steel-100 transition-colors group-hover:text-gold-300 sm:text-2xl">
-                        {item.title}
-                      </span>
-
                       <span
-                        className={`mt-3 block max-w-2xl text-sm leading-7 sm:text-base ${
-                          item.placeholder
-                            ? "italic text-steel-500"
-                            : "text-steel-400"
+                        className={`grid min-w-0 gap-x-10 ${
+                          item.previewImage
+                            ? "lg:grid-cols-[minmax(0,1fr)_15rem]"
+                            : ""
                         }`}
                       >
-                        {item.summary}
-                      </span>
-
-                      {item.previewImage ? (
-                        <span className="mt-5 block w-48 sm:w-52">
-                          <span className="block overflow-hidden border border-steel-500/30">
-                            <Image
-                              src={item.previewImage.src}
-                              alt={item.previewImage.alt}
-                              width={item.previewImage.width}
-                              height={item.previewImage.height}
-                              sizes="13rem"
-                              className="block h-auto w-full"
-                            />
+                        <span className="min-w-0">
+                          <span className="inline-flex rounded-sm border border-ink-600 px-1.5 py-0.5 font-mono text-[10px] tracking-wide text-steel-500 transition-colors group-hover:border-steel-500 group-hover:text-steel-400">
+                            {item.category}
                           </span>
-                          {item.previewImage.caption ? (
-                            <span className="mt-2 block font-mono text-[10px] tracking-wide text-steel-500">
-                              {item.previewImage.caption}
-                            </span>
-                          ) : null}
-                        </span>
-                      ) : null}
 
-                      <span className="mt-4 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-label text-steel-500 transition-colors group-hover:text-merlot-300">
-                        閱讀這段經歷
-                        <ArrowUpRight
-                          size={14}
-                          aria-hidden
-                          className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                        />
+                          <span className="journey-period-gold mt-4 block w-fit text-3xl font-semibold leading-none tracking-[-0.03em] sm:text-4xl lg:text-[2.85rem]">
+                            {item.period}
+                          </span>
+
+                          <span className="mt-4 block text-xl font-semibold text-steel-100 sm:text-2xl">
+                            {item.title}
+                          </span>
+
+                          <span
+                            className={`mt-3 block max-w-2xl text-sm leading-7 sm:text-base ${
+                              item.placeholder
+                                ? "italic text-steel-500"
+                                : "text-steel-400"
+                            }`}
+                          >
+                            {item.summary}
+                          </span>
+                        </span>
+
+                        {item.previewImage ? (
+                          <span className="mt-6 block w-full max-w-[15rem] lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-0 lg:justify-self-end">
+                            <span className="flex w-full justify-center">
+                              <Image
+                                src={item.previewImage.src}
+                                alt={item.previewImage.alt}
+                                width={item.previewImage.width}
+                                height={item.previewImage.height}
+                                sizes="(min-width: 1024px) 15rem, 13rem"
+                                className="block h-auto max-h-[20rem] w-auto max-w-full border border-steel-500/30 object-contain shadow-[0_18px_50px_rgba(0,0,0,0.24)] transition duration-500 group-hover:scale-[1.015]"
+                              />
+                            </span>
+                            {item.previewImage.caption ? (
+                              <span className="mt-2 block text-center font-mono text-[10px] tracking-wide text-steel-500">
+                                {item.previewImage.caption}
+                              </span>
+                            ) : null}
+                          </span>
+                        ) : null}
+
+                        <span
+                          className={`mt-5 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-label text-steel-500 transition-colors group-hover:text-merlot-300 ${
+                            item.previewImage
+                              ? "lg:col-start-1 lg:row-start-2"
+                              : ""
+                          }`}
+                        >
+                          閱讀這段經歷
+                          <ArrowUpRight
+                            size={14}
+                            aria-hidden
+                            className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                          />
+                        </span>
                       </span>
                     </button>
                   </li>

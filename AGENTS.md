@@ -4,15 +4,16 @@
 
 在分析、修改、撰寫或重構本專案之前，先閱讀：
 
-- `LFX_PERSONAL_CONTEXT.md`
 - `CONTENT_PLAN.md`
-- 如果本機存在 `LFX_PRIVATE_CONTEXT.md`，再讀取該私人完整版。
+- 如果本機存在 `LFX_PERSONAL_CONTEXT.md`，再讀取該公開安全基準；不存在時直接繼續。
+- 如果本機存在 `LFX_PRIVATE_CONTEXT.md`，再讀取該私人完整版；不存在時直接繼續。
 
-`LFX_PERSONAL_CONTEXT.md` 是可留在公開 repository 的安全基準；`CONTENT_PLAN.md` 是首頁資訊層級、內容展示與互動方式的長期設計基準；`LFX_PRIVATE_CONTEXT.md` 是只保留在本機的完整私人背景資料。
+`CONTENT_PLAN.md` 是首頁資訊層級、內容展示與互動方式的長期設計基準。兩份 context 文件皆為選用資料，不得僅為滿足本指示而自行建立或恢復。
 
 ## 公開與私人資料分離
 
 - `LFX_PRIVATE_CONTEXT.md` 不得被 Git 追蹤、commit 或 push。
+- `LFX_PRIVATE_CONTEXT.md` 不存在時不得自行建立、追蹤或公開。
 - 私人完整版只供理解本人背景，不代表其中內容已授權公開。
 - 不得把私人完整版的內容直接寫入網站、`data/`、元件、README 或其他公開文件。
 - 只有本人明確授權公開的具體內容，才能從私人完整版整理到公開網站資料。

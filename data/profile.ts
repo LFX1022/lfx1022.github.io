@@ -86,7 +86,7 @@ export const profile: Profile = {
     {
       label: "05 / 為什麼建立 LFX 辭海",
       content:
-        "我想把一路累積的工作、興趣、作品、選擇與想法留下一個清楚的位置。",
+        "我想把一路累積的工作、興趣、作品、選擇與想法留下一個清楚的位置。LFX 辭海不是成就展覽，而是一座由我親手慢慢建立、關於我自己的博物館。",
       placeholder: false,
     },
   ],
@@ -94,19 +94,25 @@ export const profile: Profile = {
 
 export const aboutSection = {
   eyebrow: "ABOUT LFX",
-  title: ["我用自己的方式，", "理解世界，也建立生活。"],
+  title: [
+    "這裡不是成就展覽，",
+    "而是一座由我親手慢慢建立、",
+    "關於我自己的博物館。",
+  ],
   intro: [
     "我是 LFX，一名從事 BIM 工程應用的工作者。",
     "工作之外，我透過重機、電腦與影像創作，記錄自己如何思考、選擇與持續前進。",
   ],
   keywords: [
-    { index: "01", label: "Freedom", note: "為自己的方向做選擇" },
-    { index: "02", label: "Efficiency", note: "把複雜變成可執行" },
-    { index: "03", label: "Structure", note: "先理解結構與真正原因" },
-    { index: "04", label: "Challenge", note: "重新檢視既有方法" },
+    { index: "01", label: "Leader", note: "主導自己的方向，為選擇負責" },
+    { index: "02", label: "Freedom", note: "獨立思考，不被單一框架定義" },
+    { index: "03", label: "X", note: "探索尚未被定義的可能" },
+    { index: "04", label: "Archive", note: "累積經歷，建立自己的辭海" },
   ],
-  quote: "源於初心之助人，即為至善之正義。",
-  storyClosing: "這裡不是成就的陳列，而是一座由我親手建立、收藏人生軌跡的博物館。",
+  museum: [
+    "源於初心之助人，",
+    "即為至善之正義。",
+  ],
   image: {
     src: "/images/motorcycles/daytona660/66008093.jpeg",
     alt: "LFX 的重機生活影像",

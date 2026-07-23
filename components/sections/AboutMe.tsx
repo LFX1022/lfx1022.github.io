@@ -171,8 +171,22 @@ export function AboutMe() {
                   </figcaption>
                 </div>
 
-                <blockquote className="relative mt-7 max-w-[22rem] border-l border-gold-400/70 pl-5 text-pretty text-lg font-medium leading-8 text-steel-100 sm:pl-6 sm:text-2xl sm:leading-9">
-                  {aboutSection.quote}
+                <blockquote className="motto-calligraphy relative mt-7 min-h-[10rem] px-2 text-[1.8rem] leading-[1.5] text-chalk-100 sm:min-h-[11rem] sm:px-5 sm:text-[2.1rem]">
+                  {aboutSection.museum.map((line, index) => (
+                    <span
+                      key={line}
+                      className={
+                        index === 0
+                          ? "motto-line motto-line-first block w-fit"
+                          : "motto-line motto-line-second ml-auto mt-8 block w-fit"
+                      }
+                    >
+                      {line}
+                    </span>
+                  ))}
+                  <span className="motto-seal" aria-hidden>
+                    LFX
+                  </span>
                 </blockquote>
               </figure>
             </Reveal>
@@ -241,8 +255,8 @@ export function AboutMe() {
                 ))}
               </div>
 
-              <blockquote className="mt-14 border-l-2 border-gold-400/80 pl-5 text-pretty text-lg font-medium leading-8 text-steel-100 sm:mt-16 sm:pl-7 sm:text-xl sm:leading-9">
-                「{aboutSection.storyClosing}」
+              <blockquote className="mt-12 border-l-2 border-gold-400 pl-6 text-xl font-medium leading-9 text-steel-100 sm:text-2xl">
+                「{aboutSection.museum.join("")}」
               </blockquote>
             </div>
           </aside>
