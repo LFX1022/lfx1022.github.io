@@ -26,7 +26,7 @@ export default function RootLayout({
         {/* GoatCounter 瀏覽統計（無 cookie、注重隱私） */}
         <Script
           data-goatcounter="https://lfx1022.goatcounter.com/count"
-          src="https://gc.zencdn.net/count.js"
+          src="https://gc.zgo.at/count.js"
           strategy="afterInteractive"
         />
       </body>
