@@ -7,7 +7,7 @@ import { Icon } from "@/components/Icon";
 export interface JournalItem {
   src: string;
   caption: string;
-  date: string;
+  date?: string;
   /** 顯示比例，例如 "3 / 4"（照片）、"9 / 16"（直式影片） */
   aspect: string;
 }
@@ -131,7 +131,9 @@ export function JournalCarousel({ items }: { items: JournalItem[] }) {
 
       {/* 目前這則的日期 + 說明 */}
       <div className="mt-6 text-center">
-        <span className="font-mono text-xs tracking-wide text-merlot-300">{active.date}</span>
+        {active.date ? (
+          <span className="font-mono text-xs tracking-wide text-merlot-300">{active.date}</span>
+        ) : null}
         <p className="mt-1 text-sm leading-relaxed text-steel-300">{active.caption}</p>
       </div>
 
@@ -142,7 +144,7 @@ export function JournalCarousel({ items }: { items: JournalItem[] }) {
               key={entry.src}
               type="button"
               onClick={() => setIndex(dot)}
-              aria-label={`${entry.date}｜${entry.caption}`}
+              aria-label={[entry.date, entry.caption].filter(Boolean).join("｜")}
               aria-current={dot === index}
               className={
                 dot === index

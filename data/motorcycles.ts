@@ -19,6 +19,18 @@ export const merlotJournal = [
     aspect: "9 / 16",
   },
   {
+    src: "/images/motorcycles/daytona660/IMG_2251.JPG",
+    caption: "冬天在路邊取暖",
+    date: "2025/02/03",
+    aspect: "3 / 4",
+  },
+  {
+    src: "/images/motorcycles/daytona660/IMG_2404.MOV",
+    caption: "第一次參加台中凱旋車聚",
+    date: "2025/02/14",
+    aspect: "9 / 16",
+  },
+  {
     src: "/images/motorcycles/daytona660/2596.mp4",
     caption: "Daytona 660 車評・感謝超激人借車拍攝",
     date: "2025/04/27",
@@ -28,6 +40,41 @@ export const merlotJournal = [
     src: "/images/motorcycles/daytona660/2593.mp4",
     caption: "超激人把我的車騎出去跑了",
     date: "2025/04/27",
+    aspect: "9 / 16",
+  },
+  {
+    src: "/images/motorcycles/daytona660/IMG_3942.JPG",
+    caption: "帶 Merlot 去熱成宮淨車",
+    date: "2025/06/21",
+    aspect: "3 / 4",
+  },
+  {
+    src: "/images/motorcycles/daytona660/IMG_3612.JPG",
+    caption: "西子灣追焦，從上往下拍蠻特別的",
+    date: "2025/12/06",
+    aspect: "3 / 2",
+  },
+  {
+    src: "/images/motorcycles/daytona660/IMG_3908.JPG",
+    caption: "過年騎回高雄，全身紅透透；放大的近身追焦也意外很不錯",
+    date: "2026/02/21",
+    aspect: "3 / 2",
+  },
+  {
+    src: "/images/motorcycles/daytona660/IMG_4290.JPG",
+    caption: "Merlot 跟 V2 夢想車合照，V2 真的很帥",
+    date: "2026/05/01",
+    aspect: "4 / 3",
+  },
+  {
+    src: "/images/motorcycles/daytona660/IMG_4628.JPG",
+    caption: "跟兩位叔叔出發東港",
+    date: "2026/07/04",
+    aspect: "3 / 4",
+  },
+  {
+    src: "/images/motorcycles/daytona660/625B6996-9EBB-4B5B-B1F0-5DA943C41D01.jpg",
+    caption: "很喜歡的一張 AI 風格圖，真的很帥",
     aspect: "9 / 16",
   },
 ];
@@ -55,14 +102,67 @@ export const tofuJournal = [
     date: "2024/05/30",
     aspect: "3 / 4",
   },
+  {
+    src: "/images/motorcycles/gsxr150/IMG_2771.JPG",
+    caption: "搬到太平新家的照片",
+    date: "2025/06/16",
+    aspect: "3 / 4",
+  },
+  {
+    src: "/images/motorcycles/gsxr150/IMG_3867.jpg",
+    caption: "騎小阿魯到苗栗通霄參加沙灘騎士節",
+    date: "2025/11/15",
+    aspect: "4 / 3",
+  },
+  {
+    src: "/images/motorcycles/gsxr150/IMG_3539-redacted.jpg",
+    caption: "沙灘騎士節抽到大獎",
+    date: "2025/11/15",
+    aspect: "3 / 4",
+  },
+  {
+    src: "/images/motorcycles/gsxr150/IMG_3940.jpg",
+    caption: "蠻喜歡的一張照片",
+    date: "2025/11/16",
+    aspect: "4 / 3",
+  },
 ];
 
 export const gsxr150Gallery = [
   {
+    src: "/images/motorcycles/gsxr150/IMG_4724-daytona-grade.png",
+    alt: "Suzuki GSX-R150 小阿魯（豆腐）停車場調色照",
+    width: 1448,
+    height: 1086,
+  },
+  {
+    src: "/images/motorcycles/gsxr150/IMG_4725-natural-grade.png",
+    alt: "Suzuki GSX-R150 小阿魯（豆腐）停車場自然調色照",
+    width: 1448,
+    height: 1086,
+  },
+  {
     src: "/images/motorcycles/gsxr150/GSXR150.JPG",
-    alt: "Suzuki GSX-R150 小阿魯（豆腐）",
+    alt: "Suzuki GSX-R150 小阿魯（豆腐）戶外照",
     width: 1225,
     height: 919,
+  },
+  {
+    src: "/images/motorcycles/gsxr150/IMG_1704.JPG",
+    alt: "Suzuki GSX-R150 小阿魯（豆腐）生活紀錄照",
+    width: 719,
+    height: 959,
+  },
+];
+
+// RyuGa の生活手帖：YZF-R3 的影像日誌（改裝、騎乘、道別…）
+export const r3Journal = [
+  {
+    src: "/images/motorcycles/R3/IMG_1469.JPG",
+    caption:
+      "跟 R3 道別。謝謝你這兩年順順利利、健健康康地帶我去好多地方；改裝你的時候很開心，也像上了一堂沒有學分但很硬派的機械課，讓我學到很多。最後兩年的大學時光，因為有你，過得很充實。",
+    date: "2024/12/21",
+    aspect: "3 / 4",
   },
 ];
 
@@ -109,6 +209,12 @@ export const r3Gallery = [
     src: "/images/motorcycles/R3/IMG_7075.JPG",
     alt: "Yamaha YZF-R3 RyuGa — 道路動態追焦",
     width: 1442,
+    height: 919,
+  },
+  {
+    src: "/images/motorcycles/R3/IMG_1469.JPG",
+    alt: "Yamaha YZF-R3 RyuGa — 道別紀念照",
+    width: 690,
     height: 919,
   },
 ];
@@ -199,5 +305,6 @@ export const dreamGarage = [
     imageAlt: undefined,
     viewerBackground: undefined,
     gallery: panigaleV2Gallery,
+    initialIndex: 1,
   },
 ];

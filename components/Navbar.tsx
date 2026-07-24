@@ -17,15 +17,61 @@ const navLinks = [
   { label: "Contact", zh: "聯絡", href: "#contact" },
 ];
 
+const navSectionIds = navLinks.map((link) => link.href.slice(1));
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [activeHref, setActiveHref] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    let frame = 0;
+
+    const updateActiveHref = () => {
+      frame = 0;
+      const marker = window.scrollY + Math.min(window.innerHeight * 0.35, 220);
+      let currentHref: string | null = null;
+
+      for (const id of navSectionIds) {
+        const section = document.getElementById(id);
+        if (!section) continue;
+
+        if (marker >= section.offsetTop) {
+          currentHref = `#${id}`;
+        }
+      }
+
+      const nearBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4;
+
+      if (nearBottom) {
+        currentHref = navLinks[navLinks.length - 1]?.href ?? currentHref;
+      }
+
+      setActiveHref(currentHref);
+    };
+
+    const requestUpdate = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(updateActiveHref);
+    };
+
+    updateActiveHref();
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+
+    return () => {
+      if (frame) window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", requestUpdate);
+      window.removeEventListener("resize", requestUpdate);
+    };
   }, []);
 
   return (
@@ -48,21 +94,27 @@ export function Navbar() {
 
         {/* 桌面版導覽（中英雙語） */}
         <ul className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
+          {navLinks.map((link) => {
+            const active = activeHref === link.href;
+
+            return (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="group flex flex-col items-center leading-none"
+                aria-current={active ? "location" : undefined}
+                onClick={() => setActiveHref(link.href)}
+                className={`nav-link group ${active ? "nav-link-active" : ""}`}
               >
-                <span className="font-mono text-[13px] uppercase tracking-label text-steel-300 transition-colors group-hover:text-steel-100">
+                <span className="nav-link-label font-mono text-[13px] uppercase tracking-label text-steel-300 transition-colors group-hover:text-steel-100">
                   {link.label}
                 </span>
-                <span className="mt-1.5 text-[11px] tracking-[0.25em] text-steel-500 transition-colors group-hover:text-merlot-300">
+                <span className="nav-link-zh mt-1.5 text-[11px] tracking-[0.25em] text-steel-500 transition-colors group-hover:text-merlot-300">
                   {link.zh}
                 </span>
               </a>
             </li>
-          ))}
+            );
+          })}
         </ul>
 
         {/* 手機版選單按鈕 */}
@@ -81,12 +133,21 @@ export function Navbar() {
       {open ? (
         <div className="border-t border-ink-600 bg-ink-950/95 backdrop-blur-md md:hidden">
           <ul className="container-x flex flex-col py-4">
-            {navLinks.map((link) => (
+            {navLinks.map((link) => {
+              const active = activeHref === link.href;
+
+              return (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="group flex items-baseline gap-3 py-3"
+                  aria-current={active ? "location" : undefined}
+                  onClick={() => {
+                    setActiveHref(link.href);
+                    setOpen(false);
+                  }}
+                  className={`mobile-nav-link group flex items-baseline gap-3 py-3 ${
+                    active ? "mobile-nav-link-active" : ""
+                  }`}
                 >
                   <span className="font-mono text-base uppercase tracking-label text-steel-300 transition-colors group-hover:text-steel-100">
                     {link.label}
@@ -96,7 +157,8 @@ export function Navbar() {
                   </span>
                 </a>
               </li>
-            ))}
+              );
+            })}
           </ul>
         </div>
       ) : null}

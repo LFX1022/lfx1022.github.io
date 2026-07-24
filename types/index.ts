@@ -66,6 +66,7 @@ interface JourneyImageBase {
   height: number;
   caption?: string;
   layout?: "inline" | "grid" | "standalone";
+  mediaType?: "image" | "video";
 }
 
 /** 個人經歷故事中可公開顯示的照片 */

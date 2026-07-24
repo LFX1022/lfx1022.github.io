@@ -14,10 +14,14 @@ interface DreamGarageSlide {
 
 export function DreamGarageGallery({
   slides,
+  initialIndex = 0,
 }: {
   slides: DreamGarageSlide[];
+  initialIndex?: number;
 }) {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(() =>
+    Math.min(Math.max(initialIndex, 0), slides.length - 1)
+  );
   const startX = useRef<number | null>(null);
 
   const go = (step: number) => {

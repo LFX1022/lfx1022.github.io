@@ -9,11 +9,28 @@ import { journey } from "@/data/journey";
 import type { JourneyImage, JourneyItem } from "@/types";
 
 function JourneyMedia({ image, sizes }: { image: JourneyImage; sizes: string }) {
+  const mediaSrc = image.src;
+  const isVideo =
+    typeof mediaSrc === "string" &&
+    (image.mediaType === "video" || /\.(mp4|webm|mov)$/i.test(mediaSrc));
+
   return (
     <div className="overflow-hidden border border-steel-500/30">
-      {image.src ? (
+      {isVideo ? (
+        <video
+          className="block h-auto w-full"
+          src={mediaSrc}
+          aria-label={image.alt}
+          autoPlay
+          controls
+          loop
+          muted
+          playsInline
+          preload="metadata"
+        />
+      ) : mediaSrc ? (
         <Image
-          src={image.src}
+          src={mediaSrc}
           alt={image.alt}
           width={image.width}
           height={image.height}

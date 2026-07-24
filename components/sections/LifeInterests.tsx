@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
 import { Icon } from "@/components/Icon";
@@ -5,7 +6,7 @@ import { JournalCarousel } from "@/components/JournalCarousel";
 import { Carousel } from "@/components/Carousel";
 import { Motorcycle360 } from "@/components/Motorcycle360";
 import { DreamGarageGallery } from "@/components/DreamGarageGallery";
-import { interests } from "@/data/interests";
+import { interestMemories, interests } from "@/data/interests";
 import {
   daytonaGallery,
   dreamGarage,
@@ -13,6 +14,7 @@ import {
   merlotJournal,
   poolGallery,
   r3Gallery,
+  r3Journal,
   tofuJournal,
 } from "@/data/motorcycles";
 
@@ -55,6 +57,47 @@ export function LifeInterests() {
                 <p className="mt-2 text-sm leading-relaxed text-steel-400">
                   {interest.description}
                 </p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+
+        <div className="mt-14 border-t border-ink-600/60 pt-12">
+          {interestMemories.map((memory) => (
+            <Reveal key={memory.src}>
+              <article className="grid items-center gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(18rem,0.8fr)]">
+                <figure className="relative overflow-hidden border border-steel-500/30 bg-ink-900 shadow-[0_26px_70px_rgba(0,0,0,0.28)]">
+                  <Image
+                    src={memory.src}
+                    alt={memory.alt}
+                    width={memory.width}
+                    height={memory.height}
+                    sizes="(min-width: 1024px) 58rem, calc(100vw - 48px)"
+                    className="block h-auto w-full object-cover saturate-[0.94]"
+                  />
+                  <figcaption className="sr-only">{memory.alt}</figcaption>
+                </figure>
+
+                <div>
+                  <p className="eyebrow">
+                    <span className="h-px w-6 bg-merlot-500" aria-hidden />
+                    {memory.eyebrow}
+                  </p>
+                  {"date" in memory && memory.date ? (
+                    <time
+                      dateTime={memory.date.replaceAll("/", "-")}
+                      className="mt-3 block font-mono text-[10px] tracking-label text-merlot-300"
+                    >
+                      {memory.date}
+                    </time>
+                  ) : null}
+                  <h3 className="text-gold-glow mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
+                    {memory.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-relaxed text-steel-400 sm:text-base">
+                    {memory.description}
+                  </p>
+                </div>
               </article>
             </Reveal>
           ))}
@@ -196,6 +239,28 @@ export function LifeInterests() {
           <Carousel slides={r3Gallery} />
         </Reveal>
 
+        {/* RyuGa の生活手帖：換頁瀏覽 */}
+        <div className="container-x mt-16">
+          <Reveal>
+            <p className="eyebrow">
+              <span className="h-px w-6 bg-merlot-500" aria-hidden />
+              RyuGa · Life Journal
+            </p>
+            <h3 className="garage-model-name mt-4">
+              RyuGa の生活手帖
+            </h3>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-steel-400">
+              改裝、騎乘與最後道別的記錄。
+            </p>
+          </Reveal>
+        </div>
+
+        <div className="container-x mt-8">
+          <Reveal>
+            <JournalCarousel items={r3Journal} />
+          </Reveal>
+        </div>
+
         <div className="container-x mt-24 border-t border-ink-600/60 pt-14">
           <Reveal>
             <p className="eyebrow">
@@ -217,7 +282,10 @@ export function LifeInterests() {
                         backgroundImage={motorcycle.viewerBackground}
                       />
                     ) : motorcycle.gallery ? (
-                      <DreamGarageGallery slides={motorcycle.gallery} />
+                      <DreamGarageGallery
+                        slides={motorcycle.gallery}
+                        initialIndex={motorcycle.initialIndex}
+                      />
                     ) : (
                       <div className="blueprint-grid flex aspect-[4/3] items-center justify-center border border-ink-600/30 bg-ink-900/35 [mask-image:radial-gradient(ellipse_96%_92%_at_center,black_64%,transparent_100%)] sm:aspect-[16/11]">
                         <p className="font-mono text-xs uppercase tracking-label text-steel-500">

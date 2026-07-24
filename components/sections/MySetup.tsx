@@ -79,8 +79,16 @@ export function MySetup() {
                       {String(index + 1).padStart(2, "0")}
                     </span>
                   </div>
-                  <figcaption className="flex min-h-14 flex-1 items-center border-t border-ink-600/70 p-4 text-sm leading-6 text-steel-300">
-                    {entry.caption}
+                  <figcaption className="flex min-h-14 flex-1 flex-col justify-center gap-1 border-t border-ink-600/70 p-4 text-sm leading-6 text-steel-300">
+                    {"date" in entry && entry.date ? (
+                      <time
+                        dateTime={entry.date.replaceAll("/", "-")}
+                        className="font-mono text-[10px] tracking-label text-merlot-300"
+                      >
+                        {entry.date}
+                      </time>
+                    ) : null}
+                    <span>{entry.caption}</span>
                   </figcaption>
                 </figure>
               ))}

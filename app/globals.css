@@ -97,6 +97,119 @@
     @apply mx-auto w-full max-w-6xl px-6 sm:px-8;
   }
 
+  .nav-link {
+    @apply relative isolate flex flex-col items-center px-1 py-1 leading-none outline-none transition-colors;
+  }
+
+  .nav-link::before {
+    position: absolute;
+    z-index: -1;
+    inset: -0.95rem -1.05rem -0.75rem;
+    content: "";
+    background:
+      radial-gradient(ellipse 72% 64% at 50% 100%, rgba(255, 238, 186, 0.34) 0%, rgba(216, 184, 121, 0.16) 42%, transparent 76%),
+      linear-gradient(0deg, rgba(216, 184, 121, 0.24) 0%, rgba(216, 184, 121, 0.08) 34%, transparent 72%);
+    border-bottom: 1px solid rgba(245, 218, 156, 0.36);
+    opacity: 0;
+    transform: translateY(0.42rem) scaleX(0.72);
+    transition:
+      opacity 260ms ease,
+      transform 260ms ease;
+    -webkit-mask-image: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0.9) 48%, transparent 100%);
+    mask-image: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0.9) 48%, transparent 100%);
+  }
+
+  .nav-link::after {
+    position: absolute;
+    left: 50%;
+    bottom: -0.55rem;
+    width: 1.8rem;
+    height: 2px;
+    content: "";
+    background: linear-gradient(90deg, transparent, #e7c277 18%, #fff2bd 50%, #c89443 82%, transparent);
+    box-shadow:
+      0 -4px 10px rgba(255, 238, 186, 0.66),
+      0 -14px 26px rgba(232, 198, 117, 0.32),
+      0 -28px 44px rgba(201, 148, 67, 0.18);
+    opacity: 0;
+    transform: translateX(-50%) scaleX(0.15);
+    transition:
+      opacity 260ms ease,
+      transform 260ms ease;
+  }
+
+  .nav-link-active::before {
+    opacity: 1;
+    transform: translateY(0) scaleX(1);
+    animation: nav-gold-pulse 2.8s ease-in-out infinite;
+  }
+
+  .nav-link-active::after {
+    opacity: 1;
+    transform: translateX(-50%) scaleX(1);
+  }
+
+  .nav-link-active .nav-link-label {
+    color: #f4e4b6;
+    text-shadow:
+      0 0 1px rgba(255, 250, 231, 0.8),
+      0 5px 12px rgba(238, 203, 125, 0.42),
+      0 12px 28px rgba(196, 154, 87, 0.26);
+  }
+
+  .nav-link-active .nav-link-zh {
+    color: #d9b879;
+    text-shadow:
+      0 4px 10px rgba(216, 184, 121, 0.34),
+      0 10px 22px rgba(201, 148, 67, 0.2);
+  }
+
+  .mobile-nav-link {
+    @apply relative pl-4 transition-colors;
+  }
+
+  .mobile-nav-link::before {
+    position: absolute;
+    left: 0;
+    top: 0.85rem;
+    bottom: 0.85rem;
+    width: 2px;
+    content: "";
+    background: linear-gradient(#fff0b8, #c89443);
+    box-shadow: 0 0 14px rgba(216, 184, 121, 0.55);
+    opacity: 0;
+    transition: opacity 220ms ease;
+  }
+
+  .mobile-nav-link-active {
+    color: #f4e4b6;
+  }
+
+  .mobile-nav-link-active::before {
+    opacity: 1;
+  }
+
+  .mobile-nav-link-active span:first-child {
+    color: #f4e4b6;
+    text-shadow: 0 0 16px rgba(216, 184, 121, 0.36);
+  }
+
+  .mobile-nav-link-active span:last-child {
+    color: #d9b879;
+  }
+
+  @keyframes nav-gold-pulse {
+    0%,
+    100% {
+      opacity: 0.72;
+      filter: brightness(1);
+    }
+    50% {
+      opacity: 1;
+      filter: brightness(1.28);
+    }
+  }
+
   /* 佔位圖用的極淡接縫網格 */
   .blueprint-grid {
     background-image: theme("backgroundImage.blueprint");

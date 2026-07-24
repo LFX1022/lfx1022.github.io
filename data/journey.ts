@@ -262,12 +262,49 @@ export const journey: JourneyItem[] = [
           "畢業後，經由屏科 BIM 老師介紹，我以工讀身分進入桃園福清營造，參與十多棟社會住宅專案。主要工作是到現場對照 BIM 模型查驗，並製作查驗紀錄。",
           "這份工作在 BIM 建模與技術上的成長有限，卻讓我真正貼近大型工地現場，理解模型與現場之間的距離。",
         ],
+        images: [
+          {
+            src: "/images/BIM/IMG_0593.jpg",
+            alt: "福清營造工地查驗紀錄",
+            width: 719,
+            height: 959,
+            caption: "2024/10/22｜每天都在工地查驗",
+            layout: "standalone",
+          },
+        ],
       },
       {
         heading: "把陌生空間整理成自己的小窩",
         paragraphs: [
           "公司提供住宿與午、晚餐。剛入住時，住宿空間原本有些雜亂，我慢慢把它整理成自己的小窩。",
           "那不只是整理房間，也是第一次在新的工作環境裡，替自己建立一個能夠生活的空間。",
+        ],
+        images: [
+          {
+            src: "/images/BIM/IMG_0405.MOV",
+            alt: "福清營造剛入住的宿舍空間影片紀錄",
+            width: 719,
+            height: 959,
+            caption: "2024/09/23｜宿舍生存模式開啟",
+            layout: "standalone",
+            mediaType: "video",
+          },
+          {
+            src: "/images/BIM/IMG_0616.jpg",
+            alt: "福清營造宿舍房間裡自己買桌子",
+            width: 719,
+            height: 959,
+            caption: "2024/10/23｜房間空到桌子都要自己去 IKEA 召喚",
+            layout: "standalone",
+          },
+          {
+            src: "/images/BIM/IMG_0617.jpg",
+            alt: "福清營造宿舍房間裡架設桌機",
+            width: 719,
+            height: 959,
+            caption: "2024/10/24｜還是在房間架了桌機",
+            layout: "standalone",
+          },
         ],
       },
       {
@@ -294,6 +331,15 @@ export const journey: JourneyItem[] = [
           "進入義力營造後，第一個接觸的是規模約 160 億元的國一甲大型備標案。我開始接觸圖面識讀、備標流程、輪廓建置、PG Line 描繪與 Dynamo 架設。",
           "透過 Dynamo 生成橋梁模型，再使用 Fuzor 將自己建立的模型製作成施工動畫。我開始理解，模型不只是靜態成果，也能呈現施工過程並溝通工程邏輯。",
           "「第一次真正把圖面、程式與模型串在一起，讓一座橋從線條中長出來。」",
+        ],
+        images: [
+          {
+            src: "/images/BIM/IMG_0132.jpg",
+            alt: "國一甲大型備標案工作紀錄",
+            width: 1381,
+            height: 959,
+            caption: "2025/09/12｜國一甲工作紀錄",
+          },
         ],
       },
       {
@@ -333,6 +379,16 @@ export const journey: JourneyItem[] = [
         paragraphs: [
           "我會先規劃整體架構，再拆解複雜問題，判斷每件事的輕重緩急。",
           "我追求的不是單純做得更多，而是在最短時間內，把能力集中在真正重要的事情上，產出最大效益與最有價值的成果。",
+        ],
+        images: [
+          {
+            src: "/images/BIM/IMG_3873.jpg",
+            alt: "多螢幕工作中的 BIM 工程師日常紀錄",
+            width: 719,
+            height: 959,
+            caption: "2026/02/13｜一心多用的 BIM 工程師",
+            layout: "standalone",
+          },
         ],
       },
       {
