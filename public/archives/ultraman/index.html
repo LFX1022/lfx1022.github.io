@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>超人力霸王 53 位官方英雄年代圖鑑</title>
+<style>
+:root{--bg:#07101d;--panel:#101c2d;--panel2:#15243a;--txt:#eef5ff;--muted:#a9b8ce;--red:#ef3340;--blue:#3ca7ff;--gold:#ffd166;--line:#243752}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% -10%,#203a62 0,#0a1525 35%,var(--bg) 72%);color:var(--txt);font-family:Inter,"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif}
+a{color:inherit}header{min-height:52vh;display:grid;place-items:center;text-align:center;padding:70px 22px 45px;position:relative;overflow:hidden}header:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(60,167,255,.22),transparent 65%);top:-250px;left:50%;transform:translateX(-50%)}.eyebrow{letter-spacing:.22em;color:#80c7ff;font-weight:800;font-size:.8rem}h1{font-size:clamp(2.4rem,7vw,6rem);line-height:.92;margin:18px 0 16px;letter-spacing:-.055em}.lead{max-width:850px;color:#c8d4e5;font-size:clamp(1rem,2vw,1.18rem);line-height:1.8;margin:auto}.count{display:inline-flex;align-items:center;gap:10px;margin-top:26px;padding:10px 18px;border:1px solid #36547d;border-radius:999px;background:rgba(10,24,43,.72);backdrop-filter:blur(12px)}.count b{font-size:1.5rem;color:var(--gold)}
+.controls{position:sticky;top:0;z-index:20;background:rgba(7,16,29,.88);backdrop-filter:blur(14px);border-block:1px solid var(--line);padding:12px 18px}.control-inner{max-width:1400px;margin:auto;display:flex;gap:10px;align-items:center;flex-wrap:wrap}input{flex:1;min-width:210px;background:#0d1b2d;border:1px solid #2d4565;color:white;border-radius:12px;padding:12px 14px;font-size:1rem;outline:none}input:focus{border-color:var(--blue)}button{border:1px solid #2d4565;background:#0d1b2d;color:#dbe8f8;padding:10px 14px;border-radius:999px;cursor:pointer}button.active,button:hover{background:#23466d;border-color:#4daeff}
+main{max-width:1400px;margin:0 auto;padding:42px 18px 80px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}.card{position:relative;min-height:540px;background:linear-gradient(165deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 15px 40px rgba(0,0,0,.18);transition:.25s transform,.25s border-color}.card:hover{transform:translateY(-4px);border-color:#4c76a9}.num{position:absolute;z-index:2;right:14px;top:10px;font-size:2rem;font-weight:900;color:rgba(255,255,255,.13)}.image-wrap{height:300px;display:grid;place-items:end center;background:radial-gradient(circle at 50% 65%,rgba(65,139,222,.30),transparent 60%),linear-gradient(#0c1b2e,#091321);overflow:hidden;padding:14px 12px 0}.image-wrap img{max-height:100%;max-width:95%;object-fit:contain;filter:drop-shadow(0 14px 14px rgba(0,0,0,.38))}.fallback{display:none;color:#8fa3bd;text-align:center;align-self:center}.broken .fallback{display:block}.content{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1}.meta{display:flex;justify-content:space-between;align-items:center}.year{font-size:1.35rem;font-weight:900;color:var(--gold)}.era{font-size:.78rem;color:#c2d7ef;border:1px solid #34567f;border-radius:999px;padding:4px 9px}h2{font-size:1.27rem;margin:10px 0 3px}.en{font-size:.83rem;letter-spacing:.08em;color:#77bcf4;text-transform:uppercase}p{color:var(--muted);line-height:1.65;font-size:.94rem;margin:13px 0 18px}.official{margin-top:auto;text-decoration:none;color:#d9ecff;font-weight:700;font-size:.88rem}.official:hover{color:#69bdff}.hidden{display:none!important}
+.note{margin:50px auto 0;max-width:950px;border:1px solid #2a4363;border-radius:18px;padding:22px;background:#0d1929;color:#b8c6d8;line-height:1.8}.note b{color:white}footer{padding:28px;text-align:center;color:#8192a8;border-top:1px solid var(--line)}
+@media(max-width:600px){header{min-height:44vh;padding-top:55px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.card{min-height:440px;border-radius:15px}.image-wrap{height:220px;padding-inline:4px}.content{padding:13px}h2{font-size:1rem}.en{font-size:.65rem}p{font-size:.8rem;line-height:1.5}.num{font-size:1.3rem}.year{font-size:1.05rem}.era{display:none}}
+</style>
+</head>
+<body>
+<header><div><div class="eyebrow">ULTRA HEROES · 1966—2026</div><h1>超人力霸王<br>年代圖鑑</h1><p class="lead">依角色首次登場年代排序，收錄圓谷官方全球網站「HERO ENCYCLOPEDIA」目前列出的 53 位獨立 Ultra Heroes。每張卡片均附官方角色圖與一句重點介紹。</p><div class="count"><b>53</b><span>位英雄 · 60 年歷史</span></div></div></header>
+<nav class="controls"><div class="control-inner"><input id="q" placeholder="搜尋名稱、年代或關鍵字…" aria-label="搜尋"><button class="active" data-filter="all">全部</button><button data-filter="昭和">昭和</button><button data-filter="海外">海外</button><button data-filter="平成">平成</button><button data-filter="新生代">新生代</button><button data-filter="令和">令和</button></div></nav>
+<main><section class="grid" id="grid"><article class="card" data-era="昭和" data-search="初代超人力霸王 Ultraman 1966 系列原點；與科學特搜隊的早田進合體，以斯佩修姆光線守護地球。">
+      <div class="num">01</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/05/ULM_Hero_c01.png" alt="初代超人力霸王" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman</span></div>
+      <div class="content"><div class="meta"><span class="year">1966</span><span class="era">昭和</span></div>
+      <h2>初代超人力霸王</h2><div class="en">Ultraman</div><p>系列原點；與科學特搜隊的早田進合體，以斯佩修姆光線守護地球。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="昭和" data-search="佐菲 Zoffy 1967 超人兄弟的領袖級戰士，代表必殺技是威力極高的 M87 光線。">
+      <div class="num">02</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2021/12/UT_Hero_Zof04.png" alt="佐菲" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Zoffy</span></div>
+      <div class="content"><div class="meta"><span class="year">1967</span><span class="era">昭和</span></div>
+      <h2>佐菲</h2><div class="en">Zoffy</div><p>超人兄弟的領袖級戰士，代表必殺技是威力極高的 M87 光線。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/zoffy" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="昭和" data-search="超人七號 Ultraseven 1967 原為觀察地球的恆星觀測員，後選擇保護人類；招牌武器是頭鏢 Eye Slugger。">
+      <div class="num">03</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/05/SEVEN_Hero01.png" alt="超人七號" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraseven</span></div>
+      <div class="content"><div class="meta"><span class="year">1967</span><span class="era">昭和</span></div>
+      <h2>超人七號</h2><div class="en">Ultraseven</div><p>原為觀察地球的恆星觀測員，後選擇保護人類；招牌武器是頭鏢 Eye Slugger。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraseven" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="昭和" data-search="超人力霸王傑克 Ultraman Jack 1971 與鄉秀樹一體化，支援 MAT 對抗怪獸；後期以超人手鐲展現多變戰法。">
+      <div class="num">04</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/06/RU_Hero_jack01.png" alt="超人力霸王傑克" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Jack</span></div>
+      <div class="content"><div class="meta"><span class="year">1971</span><span class="era">昭和</span></div>
+      <h2>超人力霸王傑克</h2><div class="en">Ultraman Jack</div><p>與鄉秀樹一體化，支援 MAT 對抗怪獸；後期以超人手鐲展現多變戰法。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-jack" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="昭和" data-search="超人力霸王艾斯（衛司） Ultraman Ace 1972 擅長大量切割技與光線技，代表招式為梅塔利姆光線。">
+      <div class="num">05</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/06/UA_Hero_a01.png" alt="超人力霸王艾斯（衛司）" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Ace</span></div>
+      <div class="content"><div class="meta"><span class="year">1972</span><span class="era">昭和</span></div>
+      <h2>超人力霸王艾斯（衛司）</h2><div class="en">Ultraman Ace</div><p>擅長大量切割技與光線技，代表招式為梅塔利姆光線。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-ace" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="昭和" data-search="超人之父 Father of Ultra 1972 本名 Ultraman Ken，光之國宇宙警備隊的重要領導者，也是泰羅之父。">
+      <div class="num">06</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/05/FatherOfUltra_04.png" alt="超人之父" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Father of Ultra</span></div>
+      <div class="content"><div class="meta"><span class="year">1972</span><span class="era">昭和</span></div>
+      <h2>超人之父</h2><div class="en">Father of Ultra</div><p>本名 Ultraman Ken，光之國宇宙警備隊的重要領導者，也是泰羅之父。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/father-of-ultra" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="昭和" data-search="超人力霸王泰羅 Ultraman Taro 1973 超人之父與超人之母的兒子，兼具高火力、恢復力與爆發力。">
+      <div class="num">07</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/06/UT_Hero_taro01.png" alt="超人力霸王泰羅" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Taro</span></div>
+      <div class="content"><div class="meta"><span class="year">1973</span><span class="era">昭和</span></div>
+      <h2>超人力霸王泰羅</h2><div class="en">Ultraman Taro</div><p>超人之父與超人之母的兒子，兼具高火力、恢復力與爆發力。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-taro" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="昭和" data-search="超人之母 Mother of Ultra 1973 本名 Ultrawoman Marie，銀十字軍領導者，擅長治療與救援。">
+      <div class="num">08</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/05/UT_Hero_mother02.png" alt="超人之母" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Mother of Ultra</span></div>
+      <div class="content"><div class="meta"><span class="year">1973</span><span class="era">昭和</span></div>
+      <h2>超人之母</h2><div class="en">Mother of Ultra</div><p>本名 Ultrawoman Marie，銀十字軍領導者，擅長治療與救援。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/mother-of-ultra" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="昭和" data-search="超人力霸王雷歐 Ultraman Leo 1974 來自 L77 星的格鬥型戰士，靠嚴苛修行成長，招牌技是雷歐飛踢。">
+      <div class="num">09</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/06/UL_Hero_leo01.png" alt="超人力霸王雷歐" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Leo</span></div>
+      <div class="content"><div class="meta"><span class="year">1974</span><span class="era">昭和</span></div>
+      <h2>超人力霸王雷歐</h2><div class="en">Ultraman Leo</div><p>來自 L77 星的格鬥型戰士，靠嚴苛修行成長，招牌技是雷歐飛踢。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-leo" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="昭和" data-search="阿斯特拉 Astra 1974 雷歐的弟弟，同為 L77 星戰士，常與雷歐施展兄弟聯手技。">
+      <div class="num">10</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/05/UL_Hero_at05.png" alt="阿斯特拉" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Astra</span></div>
+      <div class="content"><div class="meta"><span class="year">1974</span><span class="era">昭和</span></div>
+      <h2>阿斯特拉</h2><div class="en">Astra</div><p>雷歐的弟弟，同為 L77 星戰士，常與雷歐施展兄弟聯手技。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/astra" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="昭和" data-search="超人王 Ultraman King 1974 傳說級的古老超人，力量與地位近乎神話，常在宇宙危機時出手。">
+      <div class="num">11</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/05/UL_Hero_uk01.png" alt="超人王" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman King</span></div>
+      <div class="content"><div class="meta"><span class="year">1974</span><span class="era">昭和</span></div>
+      <h2>超人王</h2><div class="en">Ultraman King</div><p>傳說級的古老超人，力量與地位近乎神話，常在宇宙危機時出手。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-king" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="昭和" data-search="超人力霸王喬尼亞斯 Ultraman Joneus 1979 首位擔任電視動畫主角的超人，來自 U40 星。">
+      <div class="num">12</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/05/UltramanJoneus_01.png" alt="超人力霸王喬尼亞斯" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Joneus</span></div>
+      <div class="content"><div class="meta"><span class="year">1979</span><span class="era">昭和</span></div>
+      <h2>超人力霸王喬尼亞斯</h2><div class="en">Ultraman Joneus</div><p>首位擔任電視動畫主角的超人，來自 U40 星。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-joneus" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="昭和" data-search="超人力霸王80 Ultraman 80 1980 人間體矢的猛同時是教師，故事強調人類負面情緒與怪獸災害的關聯。">
+      <div class="num">13</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/06/U80_Hero_80_01.png" alt="超人力霸王80" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman 80</span></div>
+      <div class="content"><div class="meta"><span class="year">1980</span><span class="era">昭和</span></div>
+      <h2>超人力霸王80</h2><div class="en">Ultraman 80</div><p>人間體矢的猛同時是教師，故事強調人類負面情緒與怪獸災害的關聯。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-80" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="昭和" data-search="尤莉安 Yullian 1981 光之國公主，也是 80 的戰友，具有優秀的戰鬥與支援能力。">
+      <div class="num">14</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/05/Yullian_02.png" alt="尤莉安" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Yullian</span></div>
+      <div class="content"><div class="meta"><span class="year">1981</span><span class="era">昭和</span></div>
+      <h2>尤莉安</h2><div class="en">Yullian</div><p>光之國公主，也是 80 的戰友，具有優秀的戰鬥與支援能力。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/yullian" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="海外" data-search="史考特 Ultraman Scott 1987 美國動畫《The Adventure Begins》的 Ultra Force 隊長型戰士。">
+      <div class="num">15</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/05/UltramanScott_08_for_confirmation-1-e1696581241932.png" alt="史考特" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Scott</span></div>
+      <div class="content"><div class="meta"><span class="year">1987</span><span class="era">海外</span></div>
+      <h2>史考特</h2><div class="en">Ultraman Scott</div><p>美國動畫《The Adventure Begins》的 Ultra Force 隊長型戰士。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-scott" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="海外" data-search="貝絲 Ultrawoman Beth 1987 Ultra Force 三人組中的女性戰士，靈活且冷靜。">
+      <div class="num">16</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/05/UltrawomanBeth_08_for_confirmation-1-e1696581307349.png" alt="貝絲" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultrawoman Beth</span></div>
+      <div class="content"><div class="meta"><span class="year">1987</span><span class="era">海外</span></div>
+      <h2>貝絲</h2><div class="en">Ultrawoman Beth</div><p>Ultra Force 三人組中的女性戰士，靈活且冷靜。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultrawoman-beth" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="海外" data-search="查克 Ultraman Chuck 1987 Ultra Force 三人組中體格強壯、穩重可靠的成員。">
+      <div class="num">17</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/05/UltramanChuck_08_for_confirmation-1-e1696581350318.png" alt="查克" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Chuck</span></div>
+      <div class="content"><div class="meta"><span class="year">1987</span><span class="era">海外</span></div>
+      <h2>查克</h2><div class="en">Ultraman Chuck</div><p>Ultra Force 三人組中體格強壯、穩重可靠的成員。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-chuck" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="海外" data-search="超人力霸王葛雷 Ultraman Great 1990 澳洲製作的海外作品主角，與傑克・辛道融合，對抗戈迪斯細胞。">
+      <div class="num">18</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/05/UltramanGreat_01.png" alt="超人力霸王葛雷" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Great</span></div>
+      <div class="content"><div class="meta"><span class="year">1990</span><span class="era">海外</span></div>
+      <h2>超人力霸王葛雷</h2><div class="en">Ultraman Great</div><p>澳洲製作的海外作品主角，與傑克・辛道融合，對抗戈迪斯細胞。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-great" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="海外" data-search="超人力霸王帕瓦德 Ultraman Powered 1993 美國製作《The Ultimate Hero》的主角，以重新設計的經典怪獸為特色。">
+      <div class="num">19</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/05/UltramanPowered_01.png" alt="超人力霸王帕瓦德" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Powered</span></div>
+      <div class="content"><div class="meta"><span class="year">1993</span><span class="era">海外</span></div>
+      <h2>超人力霸王帕瓦德</h2><div class="en">Ultraman Powered</div><p>美國製作《The Ultimate Hero》的主角，以重新設計的經典怪獸為特色。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-powered" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="海外" data-search="超人力霸王涅歐斯 Ultraman Neos 1995 光之國精銳勇士；1995 年先在宣傳短片登場，2000 年推出完整 OVA。">
+      <div class="num">20</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/05/UltramanNeos_01.png" alt="超人力霸王涅歐斯" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Neos</span></div>
+      <div class="content"><div class="meta"><span class="year">1995</span><span class="era">海外</span></div>
+      <h2>超人力霸王涅歐斯</h2><div class="en">Ultraman Neos</div><p>光之國精銳勇士；1995 年先在宣傳短片登場，2000 年推出完整 OVA。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-neos" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="海外" data-search="超人七號21 Ultraseven 21 1995 宇宙保安廳的老練戰士，與涅歐斯並肩作戰；2000 年 OVA 正式展開故事。">
+      <div class="num">21</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/05/Ultraseven21_01.png" alt="超人七號21" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraseven 21</span></div>
+      <div class="content"><div class="meta"><span class="year">1995</span><span class="era">海外</span></div>
+      <h2>超人七號21</h2><div class="en">Ultraseven 21</div><p>宇宙保安廳的老練戰士，與涅歐斯並肩作戰；2000 年 OVA 正式展開故事。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraseven-21" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="平成" data-search="超人力霸王迪卡 Ultraman Tiga 1996 平成三部曲開端；遠古光之巨人，可切換複合、強力與空中型。">
+      <div class="num">22</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/05/UltramanTiga_Multi_05_for_confirmation-1.png" alt="超人力霸王迪卡" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Tiga</span></div>
+      <div class="content"><div class="meta"><span class="year">1996</span><span class="era">平成</span></div>
+      <h2>超人力霸王迪卡</h2><div class="en">Ultraman Tiga</div><p>平成三部曲開端；遠古光之巨人，可切換複合、強力與空中型。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-tiga" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="平成" data-search="超人力霸王帝納 Ultraman Dyna 1997 飛鳥真的光之戰士，可切換閃亮、強壯與奇蹟型，風格更熱血冒險。">
+      <div class="num">23</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2018/02/hero_dyna-1.png" alt="超人力霸王帝納" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Dyna</span></div>
+      <div class="content"><div class="meta"><span class="year">1997</span><span class="era">平成</span></div>
+      <h2>超人力霸王帝納</h2><div class="en">Ultraman Dyna</div><p>飛鳥真的光之戰士，可切換閃亮、強壯與奇蹟型，風格更熱血冒險。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-dyna" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="平成" data-search="超人力霸王蓋亞 Ultraman Gaia 1998 由地球的大地之光誕生，與高山我夢一體化，核心主題是人類與地球共存。">
+      <div class="num">24</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2018/02/hero_gaia-1.png" alt="超人力霸王蓋亞" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Gaia</span></div>
+      <div class="content"><div class="meta"><span class="year">1998</span><span class="era">平成</span></div>
+      <h2>超人力霸王蓋亞</h2><div class="en">Ultraman Gaia</div><p>由地球的大地之光誕生，與高山我夢一體化，核心主題是人類與地球共存。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-gaia" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="平成" data-search="超人力霸王阿古茹 Ultraman Agul 1998 由海洋之光誕生，與藤宮博也一體化；起初與蓋亞理念對立，後成為戰友。">
+      <div class="num">25</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/05/D1280012.png" alt="超人力霸王阿古茹" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Agul</span></div>
+      <div class="content"><div class="meta"><span class="year">1998</span><span class="era">平成</span></div>
+      <h2>超人力霸王阿古茹</h2><div class="en">Ultraman Agul</div><p>由海洋之光誕生，與藤宮博也一體化；起初與蓋亞理念對立，後成為戰友。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-agul" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="平成" data-search="超人力霸王高斯 Ultraman Cosmos 2001 以溫柔、淨化與保護怪獸聞名，是系列中最具和平主義色彩的主角之一。">
+      <div class="num">26</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2018/02/hero_cosmos-1.png" alt="超人力霸王高斯" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Cosmos</span></div>
+      <div class="content"><div class="meta"><span class="year">2001</span><span class="era">平成</span></div>
+      <h2>超人力霸王高斯</h2><div class="en">Ultraman Cosmos</div><p>以溫柔、淨化與保護怪獸聞名，是系列中最具和平主義色彩的主角之一。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-cosmos" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="平成" data-search="超人力霸王正義 Ultraman Justice 2002 代表宇宙秩序與裁決，曾判定人類必須消滅，後理解人性的可能性。">
+      <div class="num">27</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/05/UltramanJustice_StandardMode_01.png" alt="超人力霸王正義" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Justice</span></div>
+      <div class="content"><div class="meta"><span class="year">2002</span><span class="era">平成</span></div>
+      <h2>超人力霸王正義</h2><div class="en">Ultraman Justice</div><p>代表宇宙秩序與裁決，曾判定人類必須消滅，後理解人性的可能性。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-justice" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="平成" data-search="超人力霸王納克斯 Ultraman Nexus 2004 光會在不同「適能者」間傳承，作品氣氛較黑暗成熟，最終可進化為諾亞。">
+      <div class="num">28</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2018/02/hero_nexus-1.png" alt="超人力霸王納克斯" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Nexus</span></div>
+      <div class="content"><div class="meta"><span class="year">2004</span><span class="era">平成</span></div>
+      <h2>超人力霸王納克斯</h2><div class="en">Ultraman Nexus</div><p>光會在不同「適能者」間傳承，作品氣氛較黑暗成熟，最終可進化為諾亞。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-nexus" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="平成" data-search="超人力霸王馬克斯 Ultraman Max 2005 以「最快、最強」概念登場，風格融合昭和怪獸回歸與單元劇想像力。">
+      <div class="num">29</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2018/02/hero_max-1.png" alt="超人力霸王馬克斯" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Max</span></div>
+      <div class="content"><div class="meta"><span class="year">2005</span><span class="era">平成</span></div>
+      <h2>超人力霸王馬克斯</h2><div class="en">Ultraman Max</div><p>以「最快、最強」概念登場，風格融合昭和怪獸回歸與單元劇想像力。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-max" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="平成" data-search="超人力霸王傑諾 Ultraman Xenon 2005 馬克斯陷入危機時現身的同伴，戰鬥能力被認為與馬克斯相當。">
+      <div class="num">30</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/05/UltramanXenon_01.png" alt="超人力霸王傑諾" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Xenon</span></div>
+      <div class="content"><div class="meta"><span class="year">2005</span><span class="era">平成</span></div>
+      <h2>超人力霸王傑諾</h2><div class="en">Ultraman Xenon</div><p>馬克斯陷入危機時現身的同伴，戰鬥能力被認為與馬克斯相當。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-xenon" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="平成" data-search="超人力霸王梅比斯 Ultraman Mebius 2006 初到地球的年輕戰士，與 CREW GUYS 共同成長，串連昭和超人兄弟世界觀。">
+      <div class="num">31</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2018/02/hero_mebius-1.png" alt="超人力霸王梅比斯" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Mebius</span></div>
+      <div class="content"><div class="meta"><span class="year">2006</span><span class="era">平成</span></div>
+      <h2>超人力霸王梅比斯</h2><div class="en">Ultraman Mebius</div><p>初到地球的年輕戰士，與 CREW GUYS 共同成長，串連昭和超人兄弟世界觀。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-mebius" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="平成" data-search="超人力霸王希卡利 Ultraman Hikari 2006 藍色科學家型戰士，曾以獵手騎士劍之名復仇，後正式加入宇宙警備隊。">
+      <div class="num">32</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/05/UltramanHikari_01-1.png" alt="超人力霸王希卡利" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Hikari</span></div>
+      <div class="content"><div class="meta"><span class="year">2006</span><span class="era">平成</span></div>
+      <h2>超人力霸王希卡利</h2><div class="en">Ultraman Hikari</div><p>藍色科學家型戰士，曾以獵手騎士劍之名復仇，後正式加入宇宙警備隊。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-hikari" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="平成" data-search="超人力霸王傑洛 Ultraman Zero 2009 超人七號之子，師從雷歐；個性張揚、戰力頂尖，也是跨次元作品核心人物。">
+      <div class="num">33</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2018/02/hero_zero-1.png" alt="超人力霸王傑洛" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Zero</span></div>
+      <div class="content"><div class="meta"><span class="year">2009</span><span class="era">平成</span></div>
+      <h2>超人力霸王傑洛</h2><div class="en">Ultraman Zero</div><p>超人七號之子，師從雷歐；個性張揚、戰力頂尖，也是跨次元作品核心人物。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-zero" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="新生代" data-search="超人力霸王銀河 Ultraman Ginga 2013 來自未來的神秘戰士，與禮堂光合體，帶動「新生代英雄」時期。">
+      <div class="num">34</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2018/02/hero_ginga-1.png" alt="超人力霸王銀河" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Ginga</span></div>
+      <div class="content"><div class="meta"><span class="year">2013</span><span class="era">新生代</span></div>
+      <h2>超人力霸王銀河</h2><div class="en">Ultraman Ginga</div><p>來自未來的神秘戰士，與禮堂光合體，帶動「新生代英雄」時期。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-ginga" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="新生代" data-search="超人力霸王勝利 Ultraman Victory 2014 地下世界維克特利安的守護者，可將怪獸能力武裝到右臂。">
+      <div class="num">35</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2020/05/UltramanVictory_01.png" alt="超人力霸王勝利" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Victory</span></div>
+      <div class="content"><div class="meta"><span class="year">2014</span><span class="era">新生代</span></div>
+      <h2>超人力霸王勝利</h2><div class="en">Ultraman Victory</div><p>地下世界維克特利安的守護者，可將怪獸能力武裝到右臂。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-victory" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="新生代" data-search="超人力霸王利布特 Ultraman Ribut 2014 銀河救援隊成員，以武術與利布特盾戰鬥；2014 動畫首登場、2019 真人特攝登場。">
+      <div class="num">36</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2020/02/UltramanRibut_01.png" alt="超人力霸王利布特" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Ribut</span></div>
+      <div class="content"><div class="meta"><span class="year">2014</span><span class="era">新生代</span></div>
+      <h2>超人力霸王利布特</h2><div class="en">Ultraman Ribut</div><p>銀河救援隊成員，以武術與利布特盾戰鬥；2014 動畫首登場、2019 真人特攝登場。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-ribut" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="新生代" data-search="超人力霸王X Ultraman X 2015 化為資料寄宿於 X Devizer，與大空大地合體，能使用電子裝甲。">
+      <div class="num">37</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2018/02/hero_x-1.png" alt="超人力霸王X" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman X</span></div>
+      <div class="content"><div class="meta"><span class="year">2015</span><span class="era">新生代</span></div>
+      <h2>超人力霸王X</h2><div class="en">Ultraman X</div><p>化為資料寄宿於 X Devizer，與大空大地合體，能使用電子裝甲。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-x" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="新生代" data-search="超人力霸王歐布 Ultraman Orb 2016 浪客紅凱以歷代超人卡片融合升級，主題是借用前輩力量並找回自我。">
+      <div class="num">38</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2018/02/hero_orb-1.png" alt="超人力霸王歐布" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Orb</span></div>
+      <div class="content"><div class="meta"><span class="year">2016</span><span class="era">新生代</span></div>
+      <h2>超人力霸王歐布</h2><div class="en">Ultraman Orb</div><p>浪客紅凱以歷代超人卡片融合升級，主題是借用前輩力量並找回自我。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-orb" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="新生代" data-search="超人力霸王捷德 Ultraman Geed 2017 繼承貝利亞基因的少年朝倉陸，拒絕宿命並選擇成為正義英雄。">
+      <div class="num">39</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2018/02/hero_geed.png" alt="超人力霸王捷德" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Geed</span></div>
+      <div class="content"><div class="meta"><span class="year">2017</span><span class="era">新生代</span></div>
+      <h2>超人力霸王捷德</h2><div class="en">Ultraman Geed</div><p>繼承貝利亞基因的少年朝倉陸，拒絕宿命並選擇成為正義英雄。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-geed" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="新生代" data-search="超人力霸王羅索 Ultraman Rosso 2018 湊家哥哥勝巳變身的火焰系戰士，戰鬥風格偏力量與穩定判斷。">
+      <div class="num">40</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/05/URF_06-1.png" alt="超人力霸王羅索" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Rosso</span></div>
+      <div class="content"><div class="meta"><span class="year">2018</span><span class="era">新生代</span></div>
+      <h2>超人力霸王羅索</h2><div class="en">Ultraman Rosso</div><p>湊家哥哥勝巳變身的火焰系戰士，戰鬥風格偏力量與穩定判斷。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-rosso" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="新生代" data-search="超人力霸王布魯 Ultraman Blu 2018 湊家弟弟勇海變身的水系戰士，擅長速度、機動與找出弱點。">
+      <div class="num">41</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/05/UBA_06-1.png" alt="超人力霸王布魯" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Blu</span></div>
+      <div class="content"><div class="meta"><span class="year">2018</span><span class="era">新生代</span></div>
+      <h2>超人力霸王布魯</h2><div class="en">Ultraman Blu</div><p>湊家弟弟勇海變身的水系戰士，擅長速度、機動與找出弱點。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-blu" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="新生代" data-search="超人女戰士格麗喬 Ultrawoman Grigio 2019 湊家妹妹朝陽變身，防禦、治療與鼓舞能力突出。">
+      <div class="num">42</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/05/UltrawomanGrigio_02.png" alt="超人女戰士格麗喬" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultrawoman Grigio</span></div>
+      <div class="content"><div class="meta"><span class="year">2019</span><span class="era">新生代</span></div>
+      <h2>超人女戰士格麗喬</h2><div class="en">Ultrawoman Grigio</div><p>湊家妹妹朝陽變身，防禦、治療與鼓舞能力突出。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultrawoman-grigio" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="新生代" data-search="超人力霸王大河 Ultraman Taiga 2019 泰羅之子、Tri-Squad 核心，從渴望父親認可的年輕戰士逐步成熟。">
+      <div class="num">43</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/08/UTAIGA_Hero_taiga01.png" alt="超人力霸王大河" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Taiga</span></div>
+      <div class="content"><div class="meta"><span class="year">2019</span><span class="era">新生代</span></div>
+      <h2>超人力霸王大河</h2><div class="en">Ultraman Taiga</div><p>泰羅之子、Tri-Squad 核心，從渴望父親認可的年輕戰士逐步成熟。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-taiga" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="新生代" data-search="超人力霸王泰塔斯 Ultraman Titas 2019 來自 U40 的力量型賢者，以強健肉體與沉著心智作戰。">
+      <div class="num">44</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/11/UTAIGA_Hero_titas01_1.png" alt="超人力霸王泰塔斯" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Titas</span></div>
+      <div class="content"><div class="meta"><span class="year">2019</span><span class="era">新生代</span></div>
+      <h2>超人力霸王泰塔斯</h2><div class="en">Ultraman Titas</div><p>來自 U40 的力量型賢者，以強健肉體與沉著心智作戰。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-titas" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="新生代" data-search="超人力霸王風馬 Ultraman Fuma 2019 來自 O-50 的高速戰士，戰法如忍者般敏捷，擅長手裏劍型光技。">
+      <div class="num">45</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2019/11/UTAIGA_Hero_fuma01_1.png" alt="超人力霸王風馬" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Fuma</span></div>
+      <div class="content"><div class="meta"><span class="year">2019</span><span class="era">新生代</span></div>
+      <h2>超人力霸王風馬</h2><div class="en">Ultraman Fuma</div><p>來自 O-50 的高速戰士，戰法如忍者般敏捷，擅長手裏劍型光技。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-fuma" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="新生代" data-search="超人力霸王傑特 Ultraman Z 2020 崇拜傑洛並自稱其弟子的熱血新人，可利用勳章借用歷代超人力量。">
+      <div class="num">46</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2020/09/UltramanZ_Original_01_front_for_confirmation.png" alt="超人力霸王傑特" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Z</span></div>
+      <div class="content"><div class="meta"><span class="year">2020</span><span class="era">新生代</span></div>
+      <h2>超人力霸王傑特</h2><div class="en">Ultraman Z</div><p>崇拜傑洛並自稱其弟子的熱血新人，可利用勳章借用歷代超人力量。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-z" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="令和" data-search="超人力霸王特利卡 Ultraman Trigger 2021 「New Generation Tiga」主角，遠古光之巨人，可切換力量型與天空型。">
+      <div class="num">47</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2021/12/UltramanTrigger_MultiType_01_front-1.png" alt="超人力霸王特利卡" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Trigger</span></div>
+      <div class="content"><div class="meta"><span class="year">2021</span><span class="era">令和</span></div>
+      <h2>超人力霸王特利卡</h2><div class="en">Ultraman Trigger</div><p>「New Generation Tiga」主角，遠古光之巨人，可切換力量型與天空型。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-trigger" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="令和" data-search="超人力霸王雷格羅斯 Ultraman Regulos 2022 在 D60 星修習宇宙幻獸拳，雙臂分別寄宿白虎拳與赤龍拳之力。">
+      <div class="num">48</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2022/02/IMG_0353.png" alt="超人力霸王雷格羅斯" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Regulos</span></div>
+      <div class="content"><div class="meta"><span class="year">2022</span><span class="era">令和</span></div>
+      <h2>超人力霸王雷格羅斯</h2><div class="en">Ultraman Regulos</div><p>在 D60 星修習宇宙幻獸拳，雙臂分別寄宿白虎拳與赤龍拳之力。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-regulos" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="令和" data-search="超人力霸王德卡 Ultraman Decker 2022 明日見奏大變身的光之巨人，可切換閃亮、強壯與奇蹟型對抗斯菲亞。">
+      <div class="num">49</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2022/03/d_50-1.png" alt="超人力霸王德卡" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Decker</span></div>
+      <div class="content"><div class="meta"><span class="year">2022</span><span class="era">令和</span></div>
+      <h2>超人力霸王德卡</h2><div class="en">Ultraman Decker</div><p>明日見奏大變身的光之巨人，可切換閃亮、強壯與奇蹟型對抗斯菲亞。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-decker" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="令和" data-search="超人力霸王布雷薩 Ultraman Blazar 2023 來自遙遠 M421 的原始感光之巨人，與 SKaRD 隊長弦人共存。">
+      <div class="num">50</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2023/04/UltramanBlazar-front-1-e1696581390936.png" alt="超人力霸王布雷薩" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Blazar</span></div>
+      <div class="content"><div class="meta"><span class="year">2023</span><span class="era">令和</span></div>
+      <h2>超人力霸王布雷薩</h2><div class="en">Ultraman Blazar</div><p>來自遙遠 M421 的原始感光之巨人，與 SKaRD 隊長弦人共存。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-blazar" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="令和" data-search="超人力霸王雅克 Ultraman Arc 2024 由優馬的想像力與光之存在 Rution 結合而成，能把想像轉化為戰術與裝甲。">
+      <div class="num">51</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2024/04/UltramanArc_01_front_for_confirmation.png" alt="超人力霸王雅克" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Arc</span></div>
+      <div class="content"><div class="meta"><span class="year">2024</span><span class="era">令和</span></div>
+      <h2>超人力霸王雅克</h2><div class="en">Ultraman Arc</div><p>由優馬的想像力與光之存在 Rution 結合而成，能把想像轉化為戰術與裝甲。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-arc" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="令和" data-search="超人力霸王奧米加 Ultraman Omega 2025 失去記憶降落地球的神秘戰士，以紅色 Omega Slugger 作戰。">
+      <div class="num">52</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2025/04/UltramanOmega_10_re_%E8%83%8C%E6%99%AF%E9%80%8F%E9%81%8E.png" alt="超人力霸王奧米加" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Omega</span></div>
+      <div class="content"><div class="meta"><span class="year">2025</span><span class="era">令和</span></div>
+      <h2>超人力霸王奧米加</h2><div class="en">Ultraman Omega</div><p>失去記憶降落地球的神秘戰士，以紅色 Omega Slugger 作戰。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-omega" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article><article class="card" data-era="令和" data-search="超人力霸王提歐 Ultraman Teo 2026 來自 H12 星的藍色光之巨人，由三石伊吹變身，必殺技為 Teocium Beam。">
+      <div class="num">53</div>
+      <div class="image-wrap"><img loading="lazy" referrerpolicy="no-referrer" src="https://tsuburaya-prod.com/wp-content/uploads/2026/04/TRA6_%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%AC%E3%82%BF%E3%83%83%E3%83%81%E6%B8%88%E3%81%BF.jpg" alt="超人力霸王提歐" onerror="this.closest('.image-wrap').classList.add('broken');this.style.display='none'"><span class="fallback">圖片載入失敗<br>Ultraman Teo</span></div>
+      <div class="content"><div class="meta"><span class="year">2026</span><span class="era">令和</span></div>
+      <h2>超人力霸王提歐</h2><div class="en">Ultraman Teo</div><p>來自 H12 星的藍色光之巨人，由三石伊吹變身，必殺技為 Teocium Beam。</p>
+      <a class="official" href="https://tsuburaya-prod.com/heroes/ultraman-teo" target="_blank" rel="noopener">圓谷官方角色頁 ↗</a></div>
+    </article></section>
+<div class="note"><b>收錄範圍：</b>這份「所有」以圓谷官方 HERO ENCYCLOPEDIA 的 53 位獨立英雄為準，不把同一角色的型態變化、究極型態、合體戰士、黑暗／仿冒戰士、動畫裝甲版與廣告限定角色重複計入。涅歐斯與賽文21以 1995 宣傳登場計年；利布特以 2014 動畫首次登場計年；雷格羅斯以 2022 劇情首次正式登場計年（個人作品為 2023）。中文譯名採台灣常見叫法，英文官方名可避免不同地區翻譯差異。</div></main>
+<footer>角色圖片與角色設定版權屬 © TSUBURAYA PRODUCTIONS。此頁為非商業整理索引。</footer>
+<script>
+const q=document.querySelector('#q'), cards=[...document.querySelectorAll('.card')], buttons=[...document.querySelectorAll('button[data-filter]')];let filter='all';
+function apply(){const term=q.value.trim().toLowerCase();cards.forEach(c=>{const okEra=filter==='all'||c.dataset.era===filter;const okText=!term||c.dataset.search.toLowerCase().includes(term);c.classList.toggle('hidden',!(okEra&&okText));})}
+q.addEventListener('input',apply);buttons.forEach(b=>b.addEventListener('click',()=>{buttons.forEach(x=>x.classList.remove('active'));b.classList.add('active');filter=b.dataset.filter;apply();}));
+</script></body></html>

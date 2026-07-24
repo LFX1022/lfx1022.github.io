@@ -140,64 +140,40 @@
   .motto-calligraphy::before,
   .motto-calligraphy::after {
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     content: "";
     pointer-events: none;
     mix-blend-mode: screen;
   }
 
   .motto-calligraphy::before {
-    inset: -1.25rem -1.5rem 0.25rem -2rem;
-    background:
-      radial-gradient(
-        ellipse 58% 34% at 10% 58%,
-        rgba(238, 240, 235, 0.17) 0%,
-        rgba(207, 213, 210, 0.07) 38%,
-        transparent 72%
-      ),
-      radial-gradient(
-        ellipse 64% 38% at 49% 64%,
-        rgba(231, 234, 230, 0.15) 0%,
-        rgba(198, 205, 202, 0.06) 40%,
-        transparent 74%
-      ),
-      radial-gradient(
-        ellipse 54% 31% at 91% 70%,
-        rgba(239, 241, 236, 0.14) 0%,
-        rgba(197, 204, 201, 0.05) 42%,
-        transparent 76%
-      );
-    filter: blur(18px);
-    opacity: 0.68;
-    animation: motto-cloud-drift 14s ease-in-out infinite alternate;
+    inset: -2rem -2.75rem -1rem -2.75rem;
+    background: url("/images/texture/motto-smoke-transparent.png") center 62% / 122% auto
+      no-repeat;
+    filter: grayscale(1) contrast(1.12) brightness(0.88);
+    opacity: 0.42;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%);
+    animation: motto-cloud-drift 12s ease-in-out infinite alternate;
   }
 
   .motto-calligraphy::after {
-    inset: 3.4rem -1.75rem 0.5rem 7%;
-    border-radius: 52% 48% 47% 53%;
-    background:
-      linear-gradient(
-        98deg,
-        transparent 2%,
-        rgba(230, 233, 228, 0.03) 12%,
-        rgba(235, 237, 232, 0.14) 34%,
-        rgba(193, 201, 198, 0.05) 61%,
-        transparent 92%
-      ),
-      url("/images/texture/microcement.png");
-    background-blend-mode: screen;
-    background-size: auto, 260px 260px;
-    filter: grayscale(1) contrast(1.18) brightness(1.2) blur(8px);
-    opacity: 0.24;
-    animation: motto-cloud-drift 18s ease-in-out infinite alternate-reverse;
+    inset: -1rem -2.25rem -1.25rem -2rem;
+    background: url("/images/texture/motto-smoke-transparent.png") center 66% / 142% auto
+      no-repeat;
+    filter: grayscale(1) contrast(1.2) brightness(0.72) blur(5px);
+    opacity: 0.14;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%);
+    animation: motto-cloud-drift 16s ease-in-out infinite alternate-reverse;
   }
 
   @keyframes motto-cloud-drift {
     from {
-      transform: translate3d(-0.35rem, 0.12rem, 0) scale(1);
+      transform: translate3d(-0.75rem, 0.3rem, 0) scale(1.02);
     }
     to {
-      transform: translate3d(0.45rem, -0.12rem, 0) scale(1.025);
+      transform: translate3d(0.7rem, -0.25rem, 0) scale(1.065);
     }
   }
 

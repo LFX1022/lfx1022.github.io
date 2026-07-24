@@ -219,6 +219,23 @@ export interface StoryMedia {
   caption?: string;
 }
 
+/** 作品與紀錄卡片可展開的獨立圖鑑內容 */
+export interface StoryArchive {
+  /** 公開靜態 HTML 路徑，展開後才載入 */
+  src: string;
+  /** 卡片按鈕文字 */
+  label: string;
+  /** 展開面板上方的英文分類 */
+  eyebrow: string;
+  /** iframe 的可存取標題 */
+  frameTitle: string;
+  /** 主站入口使用的縮圖 */
+  previewImage?: {
+    src: string;
+    alt: string;
+  };
+}
+
 /** 作品與紀錄卡片（Selected Works & Stories 使用） */
 export interface Story {
   index: string;
@@ -231,7 +248,8 @@ export interface Story {
     | "hardware"
     | "video"
     | "creation"
-    | "life";
+    | "life"
+    | "archive";
   /** 分類顯示文字 */
   category: string;
   description: string;
@@ -241,6 +259,8 @@ export interface Story {
   /** 影片路徑，放在 public/images/ 下（可選；單一媒體用） */
   video?: string;
   /** 圖片路徑，放在 public/images/ 下（可選；單一媒體用） */
+  /** 可選的第二層圖鑑；主站只顯示入口，展開後才載入完整內容 */
+  archive?: StoryArchive;
   image?: string;
 }
 

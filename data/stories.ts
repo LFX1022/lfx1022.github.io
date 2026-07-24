@@ -48,4 +48,22 @@ export const stories: Story[] = [
     tags: ["硬體", "創作"],
     image: "",
   },
+  {
+    index: "05",
+    title: "Ultraman 整合圖鑑",
+    type: "archive",
+    category: "興趣圖鑑 · Ultraman",
+    description: "依年代整理 53 位 Ultraman 角色的個人興趣圖鑑。主站只保留入口，完整內容在展開後閱讀。",
+    tags: ["Ultraman", "53 Heroes", "興趣紀錄"],
+    archive: {
+      src: "/archives/ultraman/index.html",
+      label: "展開更多",
+      eyebrow: "INTEREST ARCHIVE · ULTRAMAN",
+      frameTitle: "Ultraman 53 位英雄年代圖鑑",
+      previewImage: {
+        src: "/images/archives/ultraman-first-pattern.png",
+        alt: "初代超人力霸王胸前紅銀紋路與彩色計時器",
+      },
+    },
+  },
 ];

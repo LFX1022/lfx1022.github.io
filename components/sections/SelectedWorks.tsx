@@ -3,6 +3,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
 import { Icon } from "@/components/Icon";
 import { MediaCarousel } from "@/components/MediaCarousel";
+import { RecordArchivePreview } from "@/components/RecordArchivePreview";
 import { stories } from "@/data/stories";
 import type { IconName, Story, StoryMedia } from "@/types";
 
@@ -15,6 +16,7 @@ const typeIcon: Record<Story["type"], IconName> = {
   video: "Video",
   creation: "PenTool",
   life: "Coffee",
+  archive: "Sparkles",
 };
 
 export function SelectedWorks() {
@@ -52,7 +54,13 @@ function StoryCard({ story }: { story: Story }) {
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-md border border-ink-600 bg-ink-800/40 transition-colors hover:border-steel-600 md:flex-row">
       <div className="relative md:w-2/3 md:shrink-0">
-        {media.length > 1 ? (
+        {story.archive ? (
+          <RecordArchivePreview
+            archive={story.archive}
+            index={story.index}
+            title={story.title}
+          />
+        ) : media.length > 1 ? (
           <MediaCarousel items={media} title={story.title} />
         ) : media.length === 1 ? (
           <div className="relative aspect-[16/10] overflow-hidden bg-ink-900">

@@ -166,6 +166,20 @@ export const computerJournal = {
   title: "電腦の手帖",
   entries: [
     {
+      image: "/images/COMPUTER/GTX750TI.jpg",
+      alt: "電腦の手帖：我的第一張顯示卡 GTX 750 Ti",
+      caption: "我的第一張顯示卡。從 GTX 750 Ti 開始，也就這樣一路固定選用 ROG 的卡。",
+      aspect: "16 / 9",
+      wide: true,
+    },
+    {
+      image: "/images/COMPUTER/DESK1.jpg",
+      alt: "電腦の手帖：我的第一台自組桌機",
+      caption: "我的第一台自己組好的桌機。",
+      aspect: "16 / 9",
+      wide: true,
+    },
+    {
       image: "/images/COMPUTER/IMG_4462.JPG",
       alt: "電腦の手帖：桌面上的 ROG 顯示卡紀錄",
       caption: "兩位新夥伴的合照，請多指教嚕",
