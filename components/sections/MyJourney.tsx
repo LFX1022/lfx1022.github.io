@@ -286,18 +286,21 @@ export function MyJourney() {
                         ) : null}
 
                         <span
-                          className={`mt-5 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-label text-steel-500 transition-colors group-hover:text-merlot-300 ${
+                          className={`journey-read-link mt-6 ${
                             item.previewImage
                               ? "lg:col-start-1 lg:row-start-2"
                               : ""
                           }`}
                         >
-                          閱讀這段經歷
-                          <ArrowUpRight
-                            size={14}
-                            aria-hidden
-                            className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                          />
+                          <span className="journey-read-link-dot" aria-hidden />
+                          <span className="journey-read-link-label">閱讀這段經歷</span>
+                          <span className="journey-read-link-icon">
+                            <ArrowUpRight
+                              size={13}
+                              aria-hidden
+                              className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                            />
+                          </span>
                         </span>
                       </span>
                     </button>

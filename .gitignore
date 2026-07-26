@@ -16,7 +16,10 @@ public/images/COMPUTER/IMG_3991.HEIC
 
 # junk / temp / to-delete
 /_to_delete
+/tmp/
+/tools/
 /.agents
+*.log
 *.zip
 tsconfig.tsbuildinfo
 /build

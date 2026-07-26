@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Ducati 仿賽與道路跑車年代圖鑑"><title>Ducati 仿賽與道路跑車年代圖鑑</title><style>
+:root{--bg:#090909;--panel:#141414;--panel2:#1b1b1b;--txt:#f5f5f5;--muted:#b8b8b8;--red:#d71920;--red2:#ff3038;--line:#303030;--gold:#e5b865;--gold2:#ffd78d}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% -15%,#4c080b 0,#130708 28%,var(--bg) 62%);color:var(--txt);font-family:Inter,"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif}a{color:inherit}
+.hero{min-height:58vh;display:grid;place-items:center;text-align:center;padding:76px 22px 52px;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;inset:-30% -10% auto;height:520px;background:radial-gradient(ellipse,rgba(215,25,32,.38),transparent 64%);pointer-events:none}.hero-inner{position:relative;max-width:1050px}.eyebrow{font-size:.78rem;letter-spacing:.24em;font-weight:900;color:#ff7277}.hero h1{margin:16px 0 14px;font-size:clamp(2.7rem,7vw,6.8rem);line-height:.9;letter-spacing:-.06em;text-transform:uppercase}.hero h1 span{color:var(--red2)}.lead{max-width:920px;margin:auto;color:#d0c7c7;line-height:1.85;font-size:clamp(1rem,1.7vw,1.18rem)}.stats{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}.stat{border:1px solid #5d2629;background:rgba(20,8,9,.78);backdrop-filter:blur(10px);border-radius:999px;padding:10px 18px;color:#d6c6c6}.stat b{font-size:1.35rem;color:white;margin-right:6px}
+.family-map{max-width:1500px;margin:0 auto;padding:50px 18px 10px}.family-map h2,.section-head h2{font-size:clamp(1.8rem,4vw,3.1rem);margin:0 0 8px}.family-map p,.section-head p{color:#b8b8b8;margin:0 0 22px;line-height:1.75}.lineage{display:grid;grid-template-columns:repeat(7,minmax(115px,1fr));gap:8px}.gen{background:#151515;border:1px solid #333;border-radius:14px;padding:13px}.gen b{display:block;color:#ff6469}.gen span{font-size:.82rem;color:#aaa;line-height:1.5}
+.note{max-width:1500px;margin:24px auto 0;padding:0 18px}.note-box{border:1px solid #604448;background:linear-gradient(135deg,rgba(84,20,24,.42),rgba(18,18,18,.92));border-radius:16px;padding:17px 18px;color:#d5c8c9;line-height:1.75}.note-box b{color:white}
+.route-map{max-width:1500px;margin:24px auto 0;padding:0 18px 14px}.route-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.route-card{border:1px solid rgba(229,184,101,.36);background:linear-gradient(145deg,rgba(31,24,15,.88),rgba(13,13,13,.95));border-radius:18px;padding:16px;min-height:148px}.route-card.is-branch{border-color:rgba(180,180,180,.28);background:linear-gradient(145deg,rgba(25,25,25,.9),rgba(12,12,12,.96))}.route-card b{display:block;color:var(--gold2);font-size:.95rem;margin-bottom:8px}.route-card span{display:block;color:#f2dfbb;font-weight:950;line-height:1.35;margin-bottom:8px}.route-card p{font-size:.9rem;color:#bab0a7;line-height:1.65;margin:0}
+.controls{position:sticky;top:0;z-index:50;border-block:1px solid var(--line);background:rgba(9,9,9,.9);backdrop-filter:blur(16px);padding:12px 16px}.control-inner{max-width:1500px;margin:auto;display:flex;gap:9px;align-items:center;flex-wrap:wrap}.search{flex:1;min-width:240px;background:#161616;color:white;border:1px solid #393939;border-radius:12px;padding:12px 14px;font-size:1rem;outline:none}.search:focus{border-color:var(--red)}button{border:1px solid #393939;background:#171717;color:#ddd;padding:10px 13px;border-radius:999px;cursor:pointer;white-space:nowrap}button:hover,button.active{background:var(--red);border-color:var(--red);color:white}.subbar{max-width:1500px;margin:0 auto;padding:18px 18px 0;color:#a9a9a9;font-size:.9rem;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.subbar strong{color:white}
+.catalog-section{max-width:1500px;margin:0 auto}.section-head{padding:42px 18px 0}.section-head .kicker{font-size:.78rem;letter-spacing:.18em;color:#ff777c;font-weight:900;margin-bottom:8px}.special-section .section-head .kicker{color:var(--gold2)}.section-count{font-size:.84rem;color:#999}
+.grid{padding:22px 18px 80px;display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:18px}.catalog-groups{padding:8px 18px 78px;display:grid;gap:38px}.catalog-group{border-top:1px solid rgba(229,184,101,.25);padding-top:26px}.catalog-group .grid{padding:0;grid-template-columns:repeat(auto-fill,minmax(285px,1fr))}.group-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:16px}.group-kicker{font-size:.72rem;letter-spacing:.18em;color:#ff777c;font-weight:900;margin-bottom:6px}.group-head h3{margin:0;color:#f5dfb3;font-size:clamp(1.35rem,2.8vw,2.2rem)}.group-head p{max-width:760px;margin:8px 0 0;color:#bdbdbd;line-height:1.65}.group-route{border:1px solid rgba(229,184,101,.32);border-radius:999px;padding:8px 12px;color:#e8c786;background:rgba(229,184,101,.08);font-size:.82rem;font-weight:850;white-space:nowrap}.special-grid{padding-bottom:70px}.card{position:relative;background:linear-gradient(155deg,#1d1d1d,#111);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;min-height:570px;box-shadow:0 20px 45px rgba(0,0,0,.28);transition:.24s transform,.24s border-color}.card:hover{transform:translateY(-5px);border-color:#8b3034}.card.special{border-color:#67512d;background:linear-gradient(155deg,#211d15,#111)}.card.special:hover{border-color:var(--gold)}.special-ribbon{position:absolute;left:14px;top:14px;z-index:3;padding:6px 9px;border-radius:999px;background:rgba(8,8,8,.82);border:1px solid #8b6f3d;color:var(--gold2);font-size:.7rem;font-weight:900;letter-spacing:.08em}.num{position:absolute;right:14px;top:10px;z-index:2;font-size:2.15rem;font-weight:950;color:rgba(255,255,255,.14)}.photo{height:300px;background:radial-gradient(circle at 55% 65%,#4d181a 0,#1c0d0e 38%,#0c0c0c 78%);display:grid;place-items:center;overflow:hidden}.special .photo{background:radial-gradient(circle at 55% 65%,#51401e 0,#211a0f 38%,#0c0c0c 78%)}.photo img{width:100%;height:100%;object-fit:cover;transition:.35s transform;filter:saturate(.92) contrast(1.05)}.card:hover .photo img{transform:scale(1.035)}.photo.broken img{display:none}.fallback{display:none;text-align:center;color:#c9a7a9;font-size:1rem;padding:30px}.photo.broken .fallback{display:block}.body{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1}.topline{display:flex;justify-content:space-between;gap:10px;align-items:center}.year{font-size:1.45rem;color:var(--gold);font-weight:950}.badge{font-size:.74rem;border:1px solid #553033;border-radius:999px;padding:4px 9px;color:#e6c6c8}.special .badge{border-color:#67512d;color:var(--gold2)}.body h2{font-size:1.28rem;margin:10px 0 2px}.zh{color:#ff6b70;font-size:.86rem;letter-spacing:.04em}.special .zh{color:var(--gold2)}.specs{display:flex;gap:7px;flex-wrap:wrap;margin:13px 0 2px}.spec{font-size:.75rem;background:#202020;border:1px solid #343434;color:#d5d5d5;border-radius:8px;padding:5px 8px}.desc{color:var(--muted);font-size:.93rem;line-height:1.65;margin:13px 0 18px}.source{margin-top:auto;text-decoration:none;font-size:.88rem;font-weight:800;color:#f0d3d4}.source:hover{color:#ff5b61}.special .source{color:var(--gold2)}.hidden{display:none!important}.section-hidden{display:none!important}
+.scope{max-width:1050px;margin:0 auto 70px;padding:0 18px}.scope-box{background:#121212;border:1px solid var(--line);border-radius:20px;padding:24px;color:#bdbdbd;line-height:1.8}.scope-box b{color:white}.scope-box a{color:#ff7378}footer{text-align:center;color:#777;border-top:1px solid #282828;padding:28px 18px 40px}.backtop{position:fixed;right:18px;bottom:18px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--red);text-decoration:none;box-shadow:0 8px 25px rgba(0,0,0,.35)}
+@media(max-width:900px){.lineage,.route-grid{grid-template-columns:repeat(2,1fr)}.hero{min-height:48vh}.grid,.catalog-group .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.group-head{align-items:flex-start;flex-direction:column}.group-route{white-space:normal}.card{min-height:510px;border-radius:15px}.photo{height:230px}.body{padding:13px}.body h2{font-size:1.03rem}.desc{font-size:.8rem;line-height:1.5}.spec{font-size:.66rem}.num{font-size:1.35rem}.year{font-size:1.1rem}.badge{display:none}}
+@media(max-width:520px){.hero h1{font-size:2.65rem}.grid{padding-inline:9px}.catalog-groups{padding-inline:9px}.control-inner{overflow-x:auto;flex-wrap:nowrap}.search{min-width:180px}.lineage,.route-grid{grid-template-columns:1fr}.photo{height:205px}}
+</style></head>
+<body id="top">
+<header class="hero"><div class="hero-inner"><div class="eyebrow">DUCATI SPORTBIKES · 1973—2026</div><h1>DUCATI<br><span>仿賽與道路跑車圖鑑</span></h1><p class="lead">從 750 Super Sport Desmo、851、916、999、1098，到 Panigale V2 與 Panigale V4。主圖鑑依仿賽主線、V2／V4 架構與公路運動支線分開閱讀；以塗裝、賽事紀念或車手致敬為主的版本，集中放在「紀念與特殊塗裝」區，不把它們誤算成新世代。</p><div class="stats"><span class="stat"><b>49</b>款主圖鑑</span><span class="stat"><b>3</b>款紀念特仕</span><span class="stat"><b>7</b>代核心 Superbike</span></div></div></header>
+<section class="family-map"><h2>核心 Superbike 七代演進</h2><p>Ducati 官方將 2025 Panigale V4 稱為第七代 Superbike；下列前六代依旗艦平台與技術架構整理。SuperSport、F1／Paso、中量級 Panigale 等則是平行支線。</p><div class="lineage"><div class="gen"><b>第 1 代</b><span>851／888<br>Desmoquattro</span></div><div class="gen"><b>第 2 代</b><span>916／996／998<br>Tamburini 經典</span></div><div class="gen"><b>第 3 代</b><span>749／999<br>Terblanche 世代</span></div><div class="gen"><b>第 4 代</b><span>1098／1198<br>傳統回歸</span></div><div class="gen"><b>第 5 代</b><span>1199／1299<br>雙缸 Panigale</span></div><div class="gen"><b>第 6 代</b><span>2018–2024 Panigale V4<br>Desmosedici Stradale</span></div><div class="gen"><b>第 7 代</b><span>2025 起 Panigale V4<br>新車架與雙搖臂</span></div></div></section>
+<section class="note"><div class="note-box"><b>圖鑑判定原則：</b>V4 R、SP／SP2、Superleggera、全新世代 V4 等具有引擎、底盤、材料或賽事認證差異，保留在主圖鑑；Anniversario、Tricolore、車手致敬版等以收藏與紀念為主，另列特別篇。Ducati SuperSport 937／950 則是公路運動支線，不排進 899、959、Panigale V2 的接班順序。</div></section>
+<section class="route-map" aria-label="車系分流"><div class="route-grid"><div class="route-card"><b>V2 仿賽線</b><span>2014 899 → 2016 959 → 2020 Panigale V2</span><p>水冷 Superquadro 雙缸為核心，偏純種仿賽設定；2025 之後另進入 890 cc 新世代 V2。</p></div><div class="route-card"><b>V4 仿賽線</b><span>2018 Panigale V4 → V4 R / SP2 → 第七世代 V4</span><p>Desmosedici Stradale 平台，主線承接 Ducati 量產 Superbike 的四缸世代。</p></div><div class="route-card is-branch"><b>公路運動支線</b><span>2017 Ducati SuperSport 937 → 2021 SuperSport 950</span><p>同樣全整流罩，但騎姿、扭力與配備更偏道路長時間使用，不是 Panigale 接班車。</p></div></div></section>
+<nav class="controls"><div class="control-inner"><input class="search" id="q" placeholder="搜尋 959、V2、V4 R、SuperSport、排氣量…"><button class="active" data-filter="all">全部</button><button data-filter="panigale-v2-line">V2 仿賽線</button><button data-filter="panigale-v4-line">V4 仿賽線</button><button data-filter="road-sport">公路運動支線</button><button data-filter="superbike-main">正統 Superbike</button><button data-filter="認證車">認證車</button><button data-filter="Superleggera">Superleggera</button><button data-filter="special">紀念／特仕</button></div></nav>
+<div class="subbar"><span>目前顯示 <strong id="shown">52</strong> 款（主圖鑑 <strong id="shown-main">49</strong>／特仕 <strong id="shown-special">3</strong>）</span><span>SuperSport 以支線呈現；特仕卡不列入車系世代數</span></div>
+<section class="catalog-section" id="main-section"><div class="section-head"><div class="kicker">ROUTE CATALOG</div><h2>主圖鑑分區</h2><p>先分車系路線，再看首次登場年份；SuperSport 獨立成公路運動支線，避免和 899、959、Panigale V2 形成錯誤接班關係。</p><span class="section-count">49 款</span></div><main class="grid" id="main-grid"><article class="card" data-section="main" data-family="經典 SS" data-kind="量產道路" data-search="1973 750 Super Sport Desmo 750 SS Desmo 748 cc 氣冷 90° L 型雙缸・Desmo 經典 SS 量產道路 Ducati Supersport 血統的起點，把 Imola 賽車技術轉化為可上路的高性能跑車。">
+<div class="num">01</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse2.mm.bing.net/th?q=1973+Ducati+750+Super+Sport+Desmo+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="750 Super Sport Desmo" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>750 Super Sport Desmo</div></div>
+<div class="body"><div class="topline"><span class="year">1973</span><span class="badge">量產道路</span></div><h2>750 Super Sport Desmo</h2><div class="zh">750 SS Desmo</div>
+<div class="specs"><span class="spec">748 cc</span><span class="spec">經典 SS</span><span class="spec">氣冷 90° L 型雙缸・Desmo</span></div>
+<p class="desc">Ducati Supersport 血統的起點，把 Imola 賽車技術轉化為可上路的高性能跑車。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes/750-supersport-desmo" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="經典 SS" data-kind="量產道路" data-search="1975 900 Super Sport 900 SS 864 cc 氣冷 90° L 型雙缸・Desmo 經典 SS 量產道路 方形曲軸箱大排量雙缸代表，建立早期 Ducati 大型仿賽的低轉扭力與長油箱姿態。">
+<div class="num">02</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse3.mm.bing.net/th?q=1975+Ducati+900+Super+Sport+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="900 Super Sport" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>900 Super Sport</div></div>
+<div class="body"><div class="topline"><span class="year">1975</span><span class="badge">量產道路</span></div><h2>900 Super Sport</h2><div class="zh">900 SS</div>
+<div class="specs"><span class="spec">864 cc</span><span class="spec">經典 SS</span><span class="spec">氣冷 90° L 型雙缸・Desmo</span></div>
+<p class="desc">方形曲軸箱大排量雙缸代表，建立早期 Ducati 大型仿賽的低轉扭力與長油箱姿態。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes/900-twin-cylinder" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="經典 SS" data-kind="紀念特仕" data-search="1979 900 Mike Hailwood Replica 900 MHR 864 cc 氣冷 90° L 型雙缸・Desmo 經典 SS 紀念特仕 向 Mike Hailwood 1978 年曼島 TT 勝利致敬，紅綠白塗裝成為 Ducati 最經典的復古賽車符號之一。">
+<div class="num">03</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse4.mm.bing.net/th?q=Ducati+900+Mike+Hailwood+Replica+MHR+motorcycle&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="900 Mike Hailwood Replica" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>900 Mike Hailwood Replica</div></div>
+<div class="body"><div class="topline"><span class="year">1979</span><span class="badge">紀念特仕</span></div><h2>900 Mike Hailwood Replica</h2><div class="zh">900 MHR</div>
+<div class="specs"><span class="spec">864 cc</span><span class="spec">經典 SS</span><span class="spec">氣冷 90° L 型雙缸・Desmo</span></div>
+<p class="desc">向 Mike Hailwood 1978 年曼島 TT 勝利致敬，紅綠白塗裝成為 Ducati 最經典的復古賽車符號之一。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes/900-replica" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="F1／Paso" data-kind="量產道路" data-search="1985 750 F1 750 F1 748 cc 氣冷 L 型雙缸・Pantah 皮帶驅動 F1／Paso 量產道路 以 TT1 賽車概念打造的輕量仿賽，格柵車架與 Pantah 引擎成為後續 Ducati 的核心語彙。">
+<div class="num">04</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse1.mm.bing.net/th?q=1985+Ducati+750+F1+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="750 F1" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>750 F1</div></div>
+<div class="body"><div class="topline"><span class="year">1985</span><span class="badge">量產道路</span></div><h2>750 F1</h2><div class="zh">750 F1</div>
+<div class="specs"><span class="spec">748 cc</span><span class="spec">F1／Paso</span><span class="spec">氣冷 L 型雙缸・Pantah 皮帶驅動</span></div>
+<p class="desc">以 TT1 賽車概念打造的輕量仿賽，格柵車架與 Pantah 引擎成為後續 Ducati 的核心語彙。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes/750-f1" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="F1／Paso" data-kind="量產道路" data-search="1986 Paso 750 750 Paso 748 cc 氣冷 L 型雙缸・Pantah F1／Paso 量產道路 Massimo Tamburini 主導的全包覆整流罩設計，外觀極具八○年代未來感，定位偏公路運動旅行。">
+<div class="num">05</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse2.mm.bing.net/th?q=1986+Ducati+Paso+750+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="Paso 750" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>Paso 750</div></div>
+<div class="body"><div class="topline"><span class="year">1986</span><span class="badge">量產道路</span></div><h2>Paso 750</h2><div class="zh">750 Paso</div>
+<div class="specs"><span class="spec">748 cc</span><span class="spec">F1／Paso</span><span class="spec">氣冷 L 型雙缸・Pantah</span></div>
+<p class="desc">Massimo Tamburini 主導的全包覆整流罩設計，外觀極具八○年代未來感，定位偏公路運動旅行。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes/750-paso" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="851／888" data-kind="量產道路" data-search="1988 851 Tricolore 851 Tricolore 851 cc 水冷 L 型雙缸・Desmoquattro 851／888 量產道路 首款把水冷、每缸四汽門、Desmo 與電子噴射整合在一起的 Ducati 量產 Superbike。">
+<div class="num">06</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse3.mm.bing.net/th?q=1988+Ducati+851+Tricolore+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="851 Tricolore" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>851 Tricolore</div></div>
+<div class="body"><div class="topline"><span class="year">1988</span><span class="badge">量產道路</span></div><h2>851 Tricolore</h2><div class="zh">851 Tricolore</div>
+<div class="specs"><span class="spec">851 cc</span><span class="spec">851／888</span><span class="spec">水冷 L 型雙缸・Desmoquattro</span></div>
+<p class="desc">首款把水冷、每缸四汽門、Desmo 與電子噴射整合在一起的 Ducati 量產 Superbike。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes/851-tricolore" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="851／888" data-kind="認證車" data-search="1989 851 SP 851 SP 851 cc 水冷 L 型雙缸・Desmoquattro 851／888 認證車 為 WorldSBK 而生的限量 SP 認證版，開啟 Ducati 以道路合法車支援廠隊競賽的傳統。">
+<div class="num">07</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse4.mm.bing.net/th?q=1989+Ducati+851+SP+motorcycle&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="851 SP" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>851 SP</div></div>
+<div class="body"><div class="topline"><span class="year">1989</span><span class="badge">認證車</span></div><h2>851 SP</h2><div class="zh">851 SP</div>
+<div class="specs"><span class="spec">851 cc</span><span class="spec">851／888</span><span class="spec">水冷 L 型雙缸・Desmoquattro</span></div>
+<p class="desc">為 WorldSBK 而生的限量 SP 認證版，開啟 Ducati 以道路合法車支援廠隊競賽的傳統。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="851／888" data-kind="量產道路" data-search="1991 888 888 888 cc 水冷 L 型雙缸・Desmoquattro 851／888 量產道路 851 的成熟進化版，排氣量與賽事競爭力同步提升，是 916 世代前最重要的技術橋梁。">
+<div class="num">08</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse1.mm.bing.net/th?q=1991+Ducati+888+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="888" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>888</div></div>
+<div class="body"><div class="topline"><span class="year">1991</span><span class="badge">量產道路</span></div><h2>888</h2><div class="zh">888</div>
+<div class="specs"><span class="spec">888 cc</span><span class="spec">851／888</span><span class="spec">水冷 L 型雙缸・Desmoquattro</span></div>
+<p class="desc">851 的成熟進化版，排氣量與賽事競爭力同步提升，是 916 世代前最重要的技術橋梁。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="經典 SS" data-kind="量產道路" data-search="1991 900 SuperSport 900 SS 904 cc 氣冷 L 型雙缸・二汽門 Desmodue 經典 SS 量產道路 比 Superbike 溫和、比一般街車更純粹；半整流罩與全整流罩版本都成為九○年代入門 Ducati 跑車代表。">
+<div class="num">09</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse2.mm.bing.net/th?q=1991+Ducati+900+SuperSport+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="900 SuperSport" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>900 SuperSport</div></div>
+<div class="body"><div class="topline"><span class="year">1991</span><span class="badge">量產道路</span></div><h2>900 SuperSport</h2><div class="zh">900 SS</div>
+<div class="specs"><span class="spec">904 cc</span><span class="spec">經典 SS</span><span class="spec">氣冷 L 型雙缸・二汽門 Desmodue</span></div>
+<p class="desc">比 Superbike 溫和、比一般街車更純粹；半整流罩與全整流罩版本都成為九○年代入門 Ducati 跑車代表。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="經典 SS" data-kind="限量輕量化" data-search="1992 900 Superlight 900 Superlight 904 cc 氣冷 L 型雙缸・二汽門 Desmodue 經典 SS 限量輕量化 900 SS 的單座、輕量化與高階配備版本，黃色塗裝與編號銘牌讓它成為收藏熱門。">
+<div class="num">10</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse3.mm.bing.net/th?q=1992+Ducati+900+Superlight+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="900 Superlight" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>900 Superlight</div></div>
+<div class="body"><div class="topline"><span class="year">1992</span><span class="badge">限量輕量化</span></div><h2>900 Superlight</h2><div class="zh">900 Superlight</div>
+<div class="specs"><span class="spec">904 cc</span><span class="spec">經典 SS</span><span class="spec">氣冷 L 型雙缸・二汽門 Desmodue</span></div>
+<p class="desc">900 SS 的單座、輕量化與高階配備版本，黃色塗裝與編號銘牌讓它成為收藏熱門。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes/900-superlight" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="實驗／賽道" data-kind="純賽道" data-search="1993 Supermono Supermono 549／572 cc 水冷單缸・Desmo 實驗／賽道 純賽道 Pierre Terblanche 設計的單缸賽車，以假連桿平衡機構抑制震動，是 Ducati 工程美學的稀有實驗品。">
+<div class="num">11</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse4.mm.bing.net/th?q=1993+Ducati+Supermono+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="Supermono" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>Supermono</div></div>
+<div class="body"><div class="topline"><span class="year">1993</span><span class="badge">純賽道</span></div><h2>Supermono</h2><div class="zh">Supermono</div>
+<div class="specs"><span class="spec">549／572 cc</span><span class="spec">實驗／賽道</span><span class="spec">水冷單缸・Desmo</span></div>
+<p class="desc">Pierre Terblanche 設計的單缸賽車，以假連桿平衡機構抑制震動，是 Ducati 工程美學的稀有實驗品。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes/supermono" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="916 家族" data-kind="量產道路" data-search="1994 916 916 916 cc 水冷 L 型雙缸・Desmoquattro 916 家族 量產道路 Tamburini 的代表作：雙圓燈、單搖臂與座下雙出排氣，奠定現代 Ducati Superbike 的視覺標準。">
+<div class="num">12</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse1.mm.bing.net/th?q=1994+Ducati+916+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="916" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>916</div></div>
+<div class="body"><div class="topline"><span class="year">1994</span><span class="badge">量產道路</span></div><h2>916</h2><div class="zh">916</div>
+<div class="specs"><span class="spec">916 cc</span><span class="spec">916 家族</span><span class="spec">水冷 L 型雙缸・Desmoquattro</span></div>
+<p class="desc">Tamburini 的代表作：雙圓燈、單搖臂與座下雙出排氣，奠定現代 Ducati Superbike 的視覺標準。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes/916" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="916 家族" data-kind="中量級量產" data-search="1995 748 748 748 cc 水冷 L 型雙缸・Desmoquattro 916 家族 中量級量產 沿用 916 經典車體，搭配更小排量、較高轉的引擎，成為 Ducati 中量級仿賽的重要支線。">
+<div class="num">13</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse2.mm.bing.net/th?q=1995+Ducati+748+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="748" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>748</div></div>
+<div class="body"><div class="topline"><span class="year">1995</span><span class="badge">中量級量產</span></div><h2>748</h2><div class="zh">748</div>
+<div class="specs"><span class="spec">748 cc</span><span class="spec">916 家族</span><span class="spec">水冷 L 型雙缸・Desmoquattro</span></div>
+<p class="desc">沿用 916 經典車體，搭配更小排量、較高轉的引擎，成為 Ducati 中量級仿賽的重要支線。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="916 家族" data-kind="紀念特仕" data-search="1995 916 Senna 916 Senna 916 cc 水冷 L 型雙缸・Desmoquattro 916 家族 紀念特仕 以深灰／黑車身與紅色輪框紀念 Ayrton Senna，兼具慈善背景與高度收藏價值。">
+<div class="num">14</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse3.mm.bing.net/th?q=1995+Ducati+916+Senna+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="916 Senna" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>916 Senna</div></div>
+<div class="body"><div class="topline"><span class="year">1995</span><span class="badge">紀念特仕</span></div><h2>916 Senna</h2><div class="zh">916 Senna</div>
+<div class="specs"><span class="spec">916 cc</span><span class="spec">916 家族</span><span class="spec">水冷 L 型雙缸・Desmoquattro</span></div>
+<p class="desc">以深灰／黑車身與紅色輪框紀念 Ayrton Senna，兼具慈善背景與高度收藏價值。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes/916" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="916 家族" data-kind="認證車" data-search="1997 916 SPS 916 SPS 996 cc 水冷 L 型雙缸・Desmoquattro 916 家族 認證車 名稱仍是 916，實際排氣量已擴至 996 cc；是為 Superbike 賽事規則打造的高規格認證版本。">
+<div class="num">15</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse4.mm.bing.net/th?q=1997+Ducati+916+SPS+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="916 SPS" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>916 SPS</div></div>
+<div class="body"><div class="topline"><span class="year">1997</span><span class="badge">認證車</span></div><h2>916 SPS</h2><div class="zh">916 SPS</div>
+<div class="specs"><span class="spec">996 cc</span><span class="spec">916 家族</span><span class="spec">水冷 L 型雙缸・Desmoquattro</span></div>
+<p class="desc">名稱仍是 916，實際排氣量已擴至 996 cc；是為 Superbike 賽事規則打造的高規格認證版本。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes/916" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="經典 SS" data-kind="量產道路" data-search="1998 SS i.e. Family 750／900 SS i.e. 748／904 cc 氣冷 L 型雙缸・電子噴射 經典 SS 量產道路 Pierre Terblanche 重新設計的 Supersport 世代，以電子噴射、銳角車身延續日常型 Ducati 跑車。">
+<div class="num">16</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse1.mm.bing.net/th?q=1998+Ducati+900+SS+ie+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="SS i.e. Family" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>SS i.e. Family</div></div>
+<div class="body"><div class="topline"><span class="year">1998</span><span class="badge">量產道路</span></div><h2>SS i.e. Family</h2><div class="zh">750／900 SS i.e.</div>
+<div class="specs"><span class="spec">748／904 cc</span><span class="spec">經典 SS</span><span class="spec">氣冷 L 型雙缸・電子噴射</span></div>
+<p class="desc">Pierre Terblanche 重新設計的 Supersport 世代，以電子噴射、銳角車身延續日常型 Ducati 跑車。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="916 家族" data-kind="量產道路" data-search="1999 996 996 996 cc 水冷 L 型雙缸・Desmoquattro 916 家族 量產道路 916 外型的性能進化版，延續家族設計並成為 Carl Fogarty 世界冠軍年代的象徵。">
+<div class="num">17</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse2.mm.bing.net/th?q=1999+Ducati+996+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="996" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>996</div></div>
+<div class="body"><div class="topline"><span class="year">1999</span><span class="badge">量產道路</span></div><h2>996</h2><div class="zh">996</div>
+<div class="specs"><span class="spec">996 cc</span><span class="spec">916 家族</span><span class="spec">水冷 L 型雙缸・Desmoquattro</span></div>
+<p class="desc">916 外型的性能進化版，延續家族設計並成為 Carl Fogarty 世界冠軍年代的象徵。</p><a class="source" href="https://www.ducati.com/ww/en/app-ducati/myducati-app/census-family-superbike" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="916 家族" data-kind="認證車" data-search="2000 748 R 748 R 748 cc 水冷 L 型雙缸・Testastretta 916 家族 認證車 面向 Supersport 賽事的極端 748，採用更高規格引擎、進氣與底盤，是小排量家族的頂峰。">
+<div class="num">18</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse3.mm.bing.net/th?q=2000+Ducati+748+R+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="748 R" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>748 R</div></div>
+<div class="body"><div class="topline"><span class="year">2000</span><span class="badge">認證車</span></div><h2>748 R</h2><div class="zh">748 R</div>
+<div class="specs"><span class="spec">748 cc</span><span class="spec">916 家族</span><span class="spec">水冷 L 型雙缸・Testastretta</span></div>
+<p class="desc">面向 Supersport 賽事的極端 748，採用更高規格引擎、進氣與底盤，是小排量家族的頂峰。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="916 家族" data-kind="認證車" data-search="2001 996 R 996 R 998 cc 水冷 L 型雙缸・Testastretta 916 家族 認證車 首度導入量產 Testastretta 窄角汽缸頭，雖名為 996 R，實際排氣量已接近 998 cc。">
+<div class="num">19</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse4.mm.bing.net/th?q=2001+Ducati+996+R+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="996 R" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>996 R</div></div>
+<div class="body"><div class="topline"><span class="year">2001</span><span class="badge">認證車</span></div><h2>996 R</h2><div class="zh">996 R</div>
+<div class="specs"><span class="spec">998 cc</span><span class="spec">916 家族</span><span class="spec">水冷 L 型雙缸・Testastretta</span></div>
+<p class="desc">首度導入量產 Testastretta 窄角汽缸頭，雖名為 996 R，實際排氣量已接近 998 cc。</p><a class="source" href="https://www.ducati.com/ww/en/app-ducati/myducati-app/census-family-superbike" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="916 家族" data-kind="量產道路" data-search="2002 998 998 998 cc 水冷 L 型雙缸・Testastretta 916 家族 量產道路 916 經典車體的最終成熟型，將 Testastretta 引擎正式帶入主力版本，兼具美感與可靠性能。">
+<div class="num">20</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse1.mm.bing.net/th?q=2002+Ducati+998+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="998" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>998</div></div>
+<div class="body"><div class="topline"><span class="year">2002</span><span class="badge">量產道路</span></div><h2>998</h2><div class="zh">998</div>
+<div class="specs"><span class="spec">998 cc</span><span class="spec">916 家族</span><span class="spec">水冷 L 型雙缸・Testastretta</span></div>
+<p class="desc">916 經典車體的最終成熟型，將 Testastretta 引擎正式帶入主力版本，兼具美感與可靠性能。</p><a class="source" href="https://www.ducati.com/ww/en/app-ducati/myducati-app/census-family-superbike" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="749／999" data-kind="中量級量產" data-search="2003 749 749 748 cc 水冷 L 型雙缸・Testastretta 749／999 中量級量產 999 世代的中量級兄弟，垂直堆疊頭燈與雙側排氣極具爭議，也具有優秀賽道人體工學。">
+<div class="num">21</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse2.mm.bing.net/th?q=2003+Ducati+749+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="749" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>749</div></div>
+<div class="body"><div class="topline"><span class="year">2003</span><span class="badge">中量級量產</span></div><h2>749</h2><div class="zh">749</div>
+<div class="specs"><span class="spec">748 cc</span><span class="spec">749／999</span><span class="spec">水冷 L 型雙缸・Testastretta</span></div>
+<p class="desc">999 世代的中量級兄弟，垂直堆疊頭燈與雙側排氣極具爭議，也具有優秀賽道人體工學。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="749／999" data-kind="量產道路" data-search="2003 999 999 998 cc 水冷 L 型雙缸・Testastretta 749／999 量產道路 Terblanche 的大幅轉向設計，採雙搖臂與可調人體工學；賽事成績極強，後來評價逐年翻轉。">
+<div class="num">22</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse3.mm.bing.net/th?q=2003+Ducati+999+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="999" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>999</div></div>
+<div class="body"><div class="topline"><span class="year">2003</span><span class="badge">量產道路</span></div><h2>999</h2><div class="zh">999</div>
+<div class="specs"><span class="spec">998 cc</span><span class="spec">749／999</span><span class="spec">水冷 L 型雙缸・Testastretta</span></div>
+<p class="desc">Terblanche 的大幅轉向設計，採雙搖臂與可調人體工學；賽事成績極強，後來評價逐年翻轉。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes/999-f03" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="749／999" data-kind="認證車" data-search="2004 749 R 749 R 749 cc 水冷 L 型雙缸・Testastretta 749／999 認證車 為中量級 Supersport 競賽開發，短行程高轉引擎、可調幾何與高階懸吊讓它更接近廠車。">
+<div class="num">23</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse4.mm.bing.net/th?q=2004+Ducati+749+R+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="749 R" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>749 R</div></div>
+<div class="body"><div class="topline"><span class="year">2004</span><span class="badge">認證車</span></div><h2>749 R</h2><div class="zh">749 R</div>
+<div class="specs"><span class="spec">749 cc</span><span class="spec">749／999</span><span class="spec">水冷 L 型雙缸・Testastretta</span></div>
+<p class="desc">為中量級 Supersport 競賽開發，短行程高轉引擎、可調幾何與高階懸吊讓它更接近廠車。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="749／999" data-kind="認證車" data-search="2004 999 R 999 R 999 cc 水冷 L 型雙缸・Testastretta 749／999 認證車 999 家族最頂級的道路認證版，大量採用碳纖維與賽車規格零件，對應 Ducati 的 WorldSBK 主力。">
+<div class="num">24</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse1.mm.bing.net/th?q=2004+Ducati+999+R+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="999 R" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>999 R</div></div>
+<div class="body"><div class="topline"><span class="year">2004</span><span class="badge">認證車</span></div><h2>999 R</h2><div class="zh">999 R</div>
+<div class="specs"><span class="spec">999 cc</span><span class="spec">749／999</span><span class="spec">水冷 L 型雙缸・Testastretta</span></div>
+<p class="desc">999 家族最頂級的道路認證版，大量採用碳纖維與賽車規格零件，對應 Ducati 的 WorldSBK 主力。</p><a class="source" href="https://www.ducati.com/ww/en/racing/ducati-corse/palmares" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="1098／1198" data-kind="量產道路" data-search="2007 1098 1098 1099 cc 水冷 L 型雙缸・Testastretta Evoluzione 1098／1198 量產道路 重新擁抱 916 式雙燈、單搖臂與座下排氣，性能與傳統取得平衡，迅速成為新世代經典。">
+<div class="num">25</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse2.mm.bing.net/th?q=2007+Ducati+1098+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="1098" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>1098</div></div>
+<div class="body"><div class="topline"><span class="year">2007</span><span class="badge">量產道路</span></div><h2>1098</h2><div class="zh">1098</div>
+<div class="specs"><span class="spec">1099 cc</span><span class="spec">1098／1198</span><span class="spec">水冷 L 型雙缸・Testastretta Evoluzione</span></div>
+<p class="desc">重新擁抱 916 式雙燈、單搖臂與座下排氣，性能與傳統取得平衡，迅速成為新世代經典。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes/1098" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="MotoGP Replica" data-kind="限量道路賽車" data-search="2007 Desmosedici RR Desmosedici RR 989 cc 水冷 90° V4・Desmodromic MotoGP Replica 限量道路賽車 把 Desmosedici MotoGP 概念帶上公路的限量 V4，外觀、聲浪與工程配置都極接近真正 GP 賽車。">
+<div class="num">26</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse3.mm.bing.net/th?q=2008+Ducati+Desmosedici+RR+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="Desmosedici RR" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>Desmosedici RR</div></div>
+<div class="body"><div class="topline"><span class="year">2007</span><span class="badge">限量道路賽車</span></div><h2>Desmosedici RR</h2><div class="zh">Desmosedici RR</div>
+<div class="specs"><span class="spec">989 cc</span><span class="spec">MotoGP Replica</span><span class="spec">水冷 90° V4・Desmodromic</span></div>
+<p class="desc">把 Desmosedici MotoGP 概念帶上公路的限量 V4，外觀、聲浪與工程配置都極接近真正 GP 賽車。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes/desmosedici-rr" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="1098／1198" data-kind="中量級量產" data-search="2008 848 848 849 cc 水冷 L 型雙缸・Testastretta Evoluzione 1098／1198 中量級量產 1098 車體語彙的中量級版本，輸出較親近、轉向更輕快，成為 899／959／V2 的精神前身。">
+<div class="num">27</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse4.mm.bing.net/th?q=2008+Ducati+848+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="848" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>848</div></div>
+<div class="body"><div class="topline"><span class="year">2008</span><span class="badge">中量級量產</span></div><h2>848</h2><div class="zh">848</div>
+<div class="specs"><span class="spec">849 cc</span><span class="spec">1098／1198</span><span class="spec">水冷 L 型雙缸・Testastretta Evoluzione</span></div>
+<p class="desc">1098 車體語彙的中量級版本，輸出較親近、轉向更輕快，成為 899／959／V2 的精神前身。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="1098／1198" data-kind="認證車" data-search="2008 1098 R 1098 R 1198 cc 水冷 L 型雙缸・Testastretta Evoluzione 1098／1198 認證車 名為 1098 R、實際 1198 cc；導入道路量產車早期循跡控制並支援 Troy Bayliss 再奪世界冠軍。">
+<div class="num">28</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse1.mm.bing.net/th?q=2008+Ducati+1098+R+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="1098 R" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>1098 R</div></div>
+<div class="body"><div class="topline"><span class="year">2008</span><span class="badge">認證車</span></div><h2>1098 R</h2><div class="zh">1098 R</div>
+<div class="specs"><span class="spec">1198 cc</span><span class="spec">1098／1198</span><span class="spec">水冷 L 型雙缸・Testastretta Evoluzione</span></div>
+<p class="desc">名為 1098 R、實際 1198 cc；導入道路量產車早期循跡控制並支援 Troy Bayliss 再奪世界冠軍。</p><a class="source" href="https://www.ducati.com/ww/en/racing/ducati-corse/palmares" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="1098／1198" data-kind="量產道路" data-search="2009 1198 1198 1198 cc 水冷 L 型雙缸・Testastretta Evoluzione 1098／1198 量產道路 將 1098 R 的大排量概念下放主力車款，保留經典座下排氣，是鋼管車架 Superbike 的末期代表。">
+<div class="num">29</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse2.mm.bing.net/th?q=2009+Ducati+1198+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="1198" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>1198</div></div>
+<div class="body"><div class="topline"><span class="year">2009</span><span class="badge">量產道路</span></div><h2>1198</h2><div class="zh">1198</div>
+<div class="specs"><span class="spec">1198 cc</span><span class="spec">1098／1198</span><span class="spec">水冷 L 型雙缸・Testastretta Evoluzione</span></div>
+<p class="desc">將 1098 R 的大排量概念下放主力車款，保留經典座下排氣，是鋼管車架 Superbike 的末期代表。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="1098／1198" data-kind="高階量產" data-search="2011 1198 SP 1198 SP 1198 cc 水冷 L 型雙缸・Testastretta Evoluzione 1098／1198 高階量產 1198 車系終極道路版，加入快排、循跡控制、滑動式離合器與高階 Öhlins 配備。">
+<div class="num">30</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse3.mm.bing.net/th?q=2011+Ducati+1198+SP+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="1198 SP" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>1198 SP</div></div>
+<div class="body"><div class="topline"><span class="year">2011</span><span class="badge">高階量產</span></div><h2>1198 SP</h2><div class="zh">1198 SP</div>
+<div class="specs"><span class="spec">1198 cc</span><span class="spec">1098／1198</span><span class="spec">水冷 L 型雙缸・Testastretta Evoluzione</span></div>
+<p class="desc">1198 車系終極道路版，加入快排、循跡控制、滑動式離合器與高階 Öhlins 配備。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="雙缸 Panigale" data-kind="量產道路" data-search="2012 1199 Panigale 1199 Panigale 1198 cc 水冷 L 型雙缸・Superquadro 雙缸 Panigale 量產道路 取消傳統鋼管車架，改以引擎作為受力核心的單體式結構；Panigale 名稱正式成為新旗艦。">
+<div class="num">31</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse4.mm.bing.net/th?q=2012+Ducati+1199+Panigale+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="1199 Panigale" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>1199 Panigale</div></div>
+<div class="body"><div class="topline"><span class="year">2012</span><span class="badge">量產道路</span></div><h2>1199 Panigale</h2><div class="zh">1199 Panigale</div>
+<div class="specs"><span class="spec">1198 cc</span><span class="spec">雙缸 Panigale</span><span class="spec">水冷 L 型雙缸・Superquadro</span></div>
+<p class="desc">取消傳統鋼管車架，改以引擎作為受力核心的單體式結構；Panigale 名稱正式成為新旗艦。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="雙缸 Panigale" data-kind="認證車" data-search="2013 1199 Panigale R 1199 Panigale R 1198 cc 水冷 L 型雙缸・Superquadro 雙缸 Panigale 認證車 為 WorldSBK 認證需求強化連桿、飛輪、懸吊與空力，是第一代 Panigale 最接近賽車的版本。">
+<div class="num">32</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse1.mm.bing.net/th?q=2013+Ducati+1199+Panigale+R+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="1199 Panigale R" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>1199 Panigale R</div></div>
+<div class="body"><div class="topline"><span class="year">2013</span><span class="badge">認證車</span></div><h2>1199 Panigale R</h2><div class="zh">1199 Panigale R</div>
+<div class="specs"><span class="spec">1198 cc</span><span class="spec">雙缸 Panigale</span><span class="spec">水冷 L 型雙缸・Superquadro</span></div>
+<p class="desc">為 WorldSBK 認證需求強化連桿、飛輪、懸吊與空力，是第一代 Panigale 最接近賽車的版本。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="雙缸 Panigale" data-kind="中量級量產" data-search="2014 899 Panigale 899 Panigale 898 cc 水冷 L 型雙缸・Superquadro 雙缸 Panigale 中量級量產 848 EVO 後繼的 Supermid，898 cc Superquadro 作為受力核心，配 DQS、DTC、EBC 與三段 ABS，連成 899 → 959 → Panigale V2 的中量級 V2 仿賽線。">
+<div class="num">33</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse2.mm.bing.net/th?q=2014+Ducati+899+Panigale+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="899 Panigale" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>899 Panigale</div></div>
+<div class="body"><div class="topline"><span class="year">2014</span><span class="badge">中量級量產</span></div><h2>899 Panigale</h2><div class="zh">899 Panigale</div>
+<div class="specs"><span class="spec">898 cc</span><span class="spec">雙缸 Panigale</span><span class="spec">水冷 L 型雙缸・Superquadro</span></div>
+<p class="desc">848 EVO 後繼的 Supermid，898 cc Superquadro 作為受力核心，配 DQS、DTC、EBC 與三段 ABS，連成 899 → 959 → Panigale V2 的中量級 V2 仿賽線。</p><a class="source" href="https://www.motorcyclistonline.com/reviews/2014-ducati-899-panigale-first-look/" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="Superleggera" data-kind="限量輕量化" data-search="2014 1199 Superleggera 1199 Superleggera 1198 cc 水冷 L 型雙缸・Superquadro Superleggera 限量輕量化 大量使用鎂、碳纖維與鈦合金，將 1199 平台推向極致輕量化，限量 500 台。">
+<div class="num">34</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse3.mm.bing.net/th?q=2014+Ducati+1199+Superleggera+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="1199 Superleggera" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>1199 Superleggera</div></div>
+<div class="body"><div class="topline"><span class="year">2014</span><span class="badge">限量輕量化</span></div><h2>1199 Superleggera</h2><div class="zh">1199 Superleggera</div>
+<div class="specs"><span class="spec">1198 cc</span><span class="spec">Superleggera</span><span class="spec">水冷 L 型雙缸・Superquadro</span></div>
+<p class="desc">大量使用鎂、碳纖維與鈦合金，將 1199 平台推向極致輕量化，限量 500 台。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes/1199-superleggera" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="雙缸 Panigale" data-kind="量產道路" data-search="2015 1299 Panigale 1299 Panigale 1285 cc 水冷 L 型雙缸・Superquadro 雙缸 Panigale 量產道路 把大缸徑雙缸推到 1285 cc，加入彎道 ABS、IMU 與更完整電子系統，是大排量雙缸 Panigale 高峰。">
+<div class="num">35</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse4.mm.bing.net/th?q=2015+Ducati+1299+Panigale+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="1299 Panigale" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>1299 Panigale</div></div>
+<div class="body"><div class="topline"><span class="year">2015</span><span class="badge">量產道路</span></div><h2>1299 Panigale</h2><div class="zh">1299 Panigale</div>
+<div class="specs"><span class="spec">1285 cc</span><span class="spec">雙缸 Panigale</span><span class="spec">水冷 L 型雙缸・Superquadro</span></div>
+<p class="desc">把大缸徑雙缸推到 1285 cc，加入彎道 ABS、IMU 與更完整電子系統，是大排量雙缸 Panigale 高峰。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="雙缸 Panigale" data-kind="中量級量產" data-search="2016 959 Panigale 959 Panigale 955 cc 水冷 L 型雙缸・Superquadro 雙缸 Panigale 中量級量產 899 的後繼車，955 cc Superquadro 與 Euro 4 對應排氣升級，保留 DQS、DTC、EBC、ABS；是 2020 Panigale V2 的直接前身。">
+<div class="num">36</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse1.mm.bing.net/th?q=2016+Ducati+959+Panigale+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="959 Panigale" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>959 Panigale</div></div>
+<div class="body"><div class="topline"><span class="year">2016</span><span class="badge">中量級量產</span></div><h2>959 Panigale</h2><div class="zh">959 Panigale</div>
+<div class="specs"><span class="spec">955 cc</span><span class="spec">雙缸 Panigale</span><span class="spec">水冷 L 型雙缸・Superquadro</span></div>
+<p class="desc">899 的後繼車，955 cc Superquadro 與 Euro 4 對應排氣升級，保留 DQS、DTC、EBC、ABS；是 2020 Panigale V2 的直接前身。</p><a class="source" href="https://ultimatemotorcycling.com/2015/11/17/2016-ducati-959-panigale-unveiled-157-hp-supermid/" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="Superleggera" data-kind="限量輕量化" data-search="2017 1299 Superleggera 1299 Superleggera 1285 cc 水冷 L 型雙缸・Superquadro Superleggera 限量輕量化 首次在量產摩托車大量使用碳纖維車架、搖臂與輪框，代表 Ducati 雙缸時代的材料工程頂點。">
+<div class="num">37</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse2.mm.bing.net/th?q=2017+Ducati+1299+Superleggera+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="1299 Superleggera" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>1299 Superleggera</div></div>
+<div class="body"><div class="topline"><span class="year">2017</span><span class="badge">限量輕量化</span></div><h2>1299 Superleggera</h2><div class="zh">1299 Superleggera</div>
+<div class="specs"><span class="spec">1285 cc</span><span class="spec">Superleggera</span><span class="spec">水冷 L 型雙缸・Superquadro</span></div>
+<p class="desc">首次在量產摩托車大量使用碳纖維車架、搖臂與輪框，代表 Ducati 雙缸時代的材料工程頂點。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="雙缸 Panigale" data-kind="最終紀念版" data-search="2017 1299 Panigale R Final Edition 1299 R Final Edition 1285 cc 水冷 L 型雙缸・Superquadro 雙缸 Panigale 最終紀念版 用三色塗裝送別大排量 L 型雙缸旗艦，結合 1299 平台與 Panigale R 賽車技術。">
+<div class="num">38</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse3.mm.bing.net/th?q=2017+Ducati+1299+Panigale+R+Final+Edition+motorcycle&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="1299 Panigale R Final Edition" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>1299 Panigale R Final Edition</div></div>
+<div class="body"><div class="topline"><span class="year">2017</span><span class="badge">最終紀念版</span></div><h2>1299 Panigale R Final Edition</h2><div class="zh">1299 R Final Edition</div>
+<div class="specs"><span class="spec">1285 cc</span><span class="spec">雙缸 Panigale</span><span class="spec">水冷 L 型雙缸・Superquadro</span></div>
+<p class="desc">用三色塗裝送別大排量 L 型雙缸旗艦，結合 1299 平台與 Panigale R 賽車技術。</p><a class="source" href="https://www.ducati.com/ww/en/heritage/bikes" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="現代 SuperSport" data-kind="公路運動支線" data-search="2017 Ducati SuperSport SuperSport 937 937 cc 水冷 L 型雙缸・Testastretta 11° 現代 SuperSport 公路運動支線 2016 年發表、作為 2017 年式上市的公路運動支線，937 cc Testastretta 11° 雙缸搭配 Riding Modes、ABS 與 DTC，定位偏舒適道路跑車，不是 959 Panigale 接班車。">
+<div class="num">39</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse4.mm.bing.net/th?q=2017+Ducati+SuperSport+937+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="Ducati SuperSport" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>Ducati SuperSport</div></div>
+<div class="body"><div class="topline"><span class="year">2017</span><span class="badge">公路運動支線</span></div><h2>Ducati SuperSport</h2><div class="zh">SuperSport 937</div>
+<div class="specs"><span class="spec">937 cc</span><span class="spec">現代 SuperSport</span><span class="spec">水冷 L 型雙缸・Testastretta 11°</span></div>
+<p class="desc">2016 年發表、作為 2017 年式上市的公路運動支線，937 cc Testastretta 11° 雙缸搭配 Riding Modes、ABS 與 DTC，定位偏舒適道路跑車，不是 959 Panigale 接班車。</p><a class="source" href="https://paultan.org/2016/10/06/2017-ducati-supersport-and-supersport-s-revealed/" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="雙缸 Panigale" data-kind="高階版本" data-search="2018 959 Panigale Corse 959 Panigale Corse 955 cc 水冷 L 型雙缸・Superquadro 雙缸 Panigale 高階版本 959 的高階版本，延續 955 cc Superquadro 雙缸，加入 Corse 塗裝、Ohlins 懸吊、轉向阻尼器與鋰電池等輕量化配備，補上 V2 前的中量級 Panigale 線索。">
+<div class="num">40A</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse3.mm.bing.net/th?q=2018+Ducati+959+Panigale+Corse+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="959 Panigale Corse" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>959 Panigale Corse</div></div>
+<div class="body"><div class="topline"><span class="year">2018</span><span class="badge">高階版本</span></div><h2>959 Panigale Corse</h2><div class="zh">959 Panigale Corse</div>
+<div class="specs"><span class="spec">955 cc</span><span class="spec">雙缸 Panigale</span><span class="spec">水冷 L 型雙缸・Superquadro</span></div>
+<p class="desc">959 的高階版本，延續 955 cc Superquadro 雙缸，加入 Corse 塗裝、Ohlins 懸吊、轉向阻尼器與鋰電池等輕量化配備，補上 V2 前的中量級 Panigale 線索。</p><a class="source" href="https://www.virginducati.com/models/models2018/models2018-959panigalecorse/" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="Panigale V4" data-kind="量產道路" data-search="2018 Panigale V4 Panigale V4 第一代 1103 cc 水冷 90° V4・Desmosedici Stradale Panigale V4 量產道路 Ducati 量產 Superbike 首度轉向 1103 cc Desmosedici Stradale 90° V4；Front Frame、反向曲軸、六軸 IMU 與 DTC／DQS／DSC EVO 成為 V4 仿賽主線。">
+<div class="num">40</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse1.mm.bing.net/th?q=2018+Ducati+Panigale+V4+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="Panigale V4" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>Panigale V4</div></div>
+<div class="body"><div class="topline"><span class="year">2018</span><span class="badge">量產道路</span></div><h2>Panigale V4</h2><div class="zh">Panigale V4 第一代</div>
+<div class="specs"><span class="spec">1103 cc</span><span class="spec">Panigale V4</span><span class="spec">水冷 90° V4・Desmosedici Stradale</span></div>
+<p class="desc">Ducati 量產 Superbike 首度轉向 1103 cc Desmosedici Stradale 90° V4；Front Frame、反向曲軸、六軸 IMU 與 DTC／DQS／DSC EVO 成為 V4 仿賽主線。</p><a class="source" href="https://www.moto-data.net/ducati/panigale-v4-2018" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="Panigale V4" data-kind="認證車" data-search="2019 Panigale V4 R Panigale V4 R 第一代 998 cc 水冷 90° V4・Desmosedici Stradale R Panigale V4 認證車 為 WorldSBK 排氣量上限而生，短行程 998 cc 高轉引擎配上定風翼，是 V4 賽事武器的道路認證版。">
+<div class="num">41</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse2.mm.bing.net/th?q=2019+Ducati+Panigale+V4+R+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="Panigale V4 R" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>Panigale V4 R</div></div>
+<div class="body"><div class="topline"><span class="year">2019</span><span class="badge">認證車</span></div><h2>Panigale V4 R</h2><div class="zh">Panigale V4 R 第一代</div>
+<div class="specs"><span class="spec">998 cc</span><span class="spec">Panigale V4</span><span class="spec">水冷 90° V4・Desmosedici Stradale R</span></div>
+<p class="desc">為 WorldSBK 排氣量上限而生，短行程 998 cc 高轉引擎配上定風翼，是 V4 賽事武器的道路認證版。</p><a class="source" href="https://www.ducati.com/ww/en/bikes/panigale/panigale-v4-r" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="雙缸 Panigale" data-kind="中量級量產" data-search="2020 Panigale V2 Panigale V2 955 955 cc 水冷 L 型雙缸・Superquadro 雙缸 Panigale 中量級量產 959 的全面進化，仍用 955 cc Superquadro，新增單搖臂、V4 家族外觀、六軸 IMU、Cornering ABS、DTC EVO 2 與 DQS EVO 2。">
+<div class="num">42</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse3.mm.bing.net/th?q=2020+Ducati+Panigale+V2+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="Panigale V2" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>Panigale V2</div></div>
+<div class="body"><div class="topline"><span class="year">2020</span><span class="badge">中量級量產</span></div><h2>Panigale V2</h2><div class="zh">Panigale V2 955</div>
+<div class="specs"><span class="spec">955 cc</span><span class="spec">雙缸 Panigale</span><span class="spec">水冷 L 型雙缸・Superquadro</span></div>
+<p class="desc">959 的全面進化，仍用 955 cc Superquadro，新增單搖臂、V4 家族外觀、六軸 IMU、Cornering ABS、DTC EVO 2 與 DQS EVO 2。</p><a class="source" href="https://www.ducati.com/th/th/bikes/panigale-v2-2020" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="Superleggera" data-kind="限量輕量化" data-search="2020 Superleggera V4 Superleggera V4 998 cc 水冷 90° V4・Desmosedici Stradale R Superleggera 限量輕量化 碳纖維車架、搖臂、輪框與 GP16 式空力套件，限量 500 台，是第一代 V4 平台的終極工程展示。">
+<div class="num">43</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse4.mm.bing.net/th?q=2020+Ducati+Superleggera+V4+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="Superleggera V4" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>Superleggera V4</div></div>
+<div class="body"><div class="topline"><span class="year">2020</span><span class="badge">限量輕量化</span></div><h2>Superleggera V4</h2><div class="zh">Superleggera V4</div>
+<div class="specs"><span class="spec">998 cc</span><span class="spec">Superleggera</span><span class="spec">水冷 90° V4・Desmosedici Stradale R</span></div>
+<p class="desc">碳纖維車架、搖臂、輪框與 GP16 式空力套件，限量 500 台，是第一代 V4 平台的終極工程展示。</p><a class="source" href="https://www.ducati.com/ww/en/bikes/panigale/superleggera-v4" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="現代 SuperSport" data-kind="公路運動支線" data-search="2021 SuperSport 950 SuperSport 950 937 cc 水冷 L 型雙缸・Testastretta 11° 現代 SuperSport 公路運動支線 延續 937 cc Testastretta 11°，外觀靠攏 Panigale V4，導入六軸 IMU、Cornering ABS、DTC、DWC 與 DQS，定位仍是舒適道路跑車。">
+<div class="num">44</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse1.mm.bing.net/th?q=2021+Ducati+SuperSport+950+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="SuperSport 950" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>SuperSport 950</div></div>
+<div class="body"><div class="topline"><span class="year">2021</span><span class="badge">公路運動支線</span></div><h2>SuperSport 950</h2><div class="zh">SuperSport 950</div>
+<div class="specs"><span class="spec">937 cc</span><span class="spec">現代 SuperSport</span><span class="spec">水冷 L 型雙缸・Testastretta 11°</span></div>
+<p class="desc">延續 937 cc Testastretta 11°，外觀靠攏 Panigale V4，導入六軸 IMU、Cornering ABS、DTC、DWC 與 DQS，定位仍是舒適道路跑車。</p><a class="source" href="https://www.ducati.com/us/en/bikes/supersport/supersport-950" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="Panigale V4" data-kind="賽道高階版" data-search="2022 Panigale V4 SP2 Panigale V4 SP2 1103 cc 水冷 90° V4・Desmosedici Stradale Panigale V4 賽道高階版 以 V4 S 為基礎加入碳纖維輪框、乾式離合器與賽道套件，定位在 S 與 R 之間的單圈性能版本。">
+<div class="num">45</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse2.mm.bing.net/th?q=2022+Ducati+Panigale+V4+SP2+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="Panigale V4 SP2" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>Panigale V4 SP2</div></div>
+<div class="body"><div class="topline"><span class="year">2022</span><span class="badge">賽道高階版</span></div><h2>Panigale V4 SP2</h2><div class="zh">Panigale V4 SP2</div>
+<div class="specs"><span class="spec">1103 cc</span><span class="spec">Panigale V4</span><span class="spec">水冷 90° V4・Desmosedici Stradale</span></div>
+<p class="desc">以 V4 S 為基礎加入碳纖維輪框、乾式離合器與賽道套件，定位在 S 與 R 之間的單圈性能版本。</p><a class="source" href="https://www.ducati.com/ww/en/bikes/panigale" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="Panigale V4" data-kind="量產道路" data-search="2025 Panigale V4 — 7th Generation Panigale V4 第七世代 1103 cc 水冷 90° V4・Desmosedici Stradale Panigale V4 量產道路 新世代改用中空對稱雙搖臂，重新設計車架剛性、人體工學與電子控制，是 Ducati 官方定義的第七代 Superbike。">
+<div class="num">46</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse4.mm.bing.net/th?q=2025+Ducati+Panigale+V4+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="Panigale V4 — 7th Generation" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>Panigale V4 — 7th Generation</div></div>
+<div class="body"><div class="topline"><span class="year">2025</span><span class="badge">量產道路</span></div><h2>Panigale V4 — 7th Generation</h2><div class="zh">Panigale V4 第七世代</div>
+<div class="specs"><span class="spec">1103 cc</span><span class="spec">Panigale V4</span><span class="spec">水冷 90° V4・Desmosedici Stradale</span></div>
+<p class="desc">新世代改用中空對稱雙搖臂，重新設計車架剛性、人體工學與電子控制，是 Ducati 官方定義的第七代 Superbike。</p><a class="source" href="https://www.ducati.com/ww/en/bikes/panigale/panigale-v4" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="新世代 V2" data-kind="中量級量產" data-search="2025 Panigale V2 890 新 Panigale V2 890 890 cc 水冷 90° V2・可變汽門正時 新世代 V2 中量級量產 放棄 Superquadro Desmo，改用更輕的 890 cc V2 與可變正時，以低重量和易用性取代單純追求峰值馬力。">
+<div class="num">47</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse1.mm.bing.net/th?q=2025+Ducati+Panigale+V2+890+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="Panigale V2 890" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>Panigale V2 890</div></div>
+<div class="body"><div class="topline"><span class="year">2025</span><span class="badge">中量級量產</span></div><h2>Panigale V2 890</h2><div class="zh">新 Panigale V2 890</div>
+<div class="specs"><span class="spec">890 cc</span><span class="spec">新世代 V2</span><span class="spec">水冷 90° V2・可變汽門正時</span></div>
+<p class="desc">放棄 Superquadro Desmo，改用更輕的 890 cc V2 與可變正時，以低重量和易用性取代單純追求峰值馬力。</p><a class="source" href="https://www.ducati.com/ww/en/bikes/panigale/panigale-v2" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card" data-section="main" data-family="Panigale V4" data-kind="認證車" data-search="2026 Panigale V4 R — New Generation 新 Panigale V4 R 998 cc 水冷 90° V4・Desmosedici Stradale R Panigale V4 認證車 第七世代車體的 WorldSBK 認證核心，導入賽車式檔位排列與更進階制動／引擎煞車策略。">
+<div class="num">48</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse4.mm.bing.net/th?q=2026+Ducati+Panigale+V4+R+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="Panigale V4 R — New Generation" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>Panigale V4 R — New Generation</div></div>
+<div class="body"><div class="topline"><span class="year">2026</span><span class="badge">認證車</span></div><h2>Panigale V4 R — New Generation</h2><div class="zh">新 Panigale V4 R</div>
+<div class="specs"><span class="spec">998 cc</span><span class="spec">Panigale V4</span><span class="spec">水冷 90° V4・Desmosedici Stradale R</span></div>
+<p class="desc">第七世代車體的 WorldSBK 認證核心，導入賽車式檔位排列與更進階制動／引擎煞車策略。</p><a class="source" href="https://www.ducati.com/ww/en/bikes/panigale/panigale-v4-r" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article></main></section>
+<section class="catalog-section special-section" id="special-section"><div class="section-head"><div class="kicker">COLLECTOR & LIVERY STORIES</div><h2>紀念與特殊塗裝</h2><p>這些版本有收藏、賽事或品牌歷史意義，但不代表一個新的技術世代，因此以特別篇方式集中介紹。</p><span class="section-count">3 款</span></div><div class="grid special-grid"><article class="card special" data-section="special" data-family="Panigale V4" data-kind="紀念特仕" data-search="2024 Panigale V4 SP2 30° Anniversario 916 V4 SP2 916 30 週年 1103 cc 水冷 90° V4・Desmosedici Stradale Panigale V4 紀念特仕 限量 500 台，以 1999 年 996 廠車塗裝向 916 家族三十週年致敬，連結兩個最成功的 Ducati Superbike 世代。">
+<div class="special-ribbon">不列入主世代</div><div class="num">S01</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse3.mm.bing.net/th?q=Ducati+Panigale+V4+SP2+30+Anniversario+916+motorcycle&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="Panigale V4 SP2 30° Anniversario 916" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>Panigale V4 SP2 30° Anniversario 916</div></div>
+<div class="body"><div class="topline"><span class="year">2024</span><span class="badge">紀念特仕</span></div><h2>Panigale V4 SP2 30° Anniversario 916</h2><div class="zh">V4 SP2 916 30 週年</div>
+<div class="specs"><span class="spec">1103 cc</span><span class="spec">Panigale V4</span><span class="spec">水冷 90° V4・Desmosedici Stradale</span></div>
+<p class="desc">限量 500 台，以 1999 年 996 廠車塗裝向 916 家族三十週年致敬，連結兩個最成功的 Ducati Superbike 世代。</p><a class="source" href="https://www.ducati.com/ww/en/bikes/panigale/panigale-v4-sp2-30-anniversario-916" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card special" data-section="special" data-family="Panigale V4" data-kind="限量收藏版" data-search="2025 Panigale V4 Tricolore Panigale V4 Tricolore 1103 cc 水冷 90° V4・Desmosedici Stradale Panigale V4 限量收藏版 以第七世代 V4 S 為基礎，限量 1000 台，三色塗裝、碳纖維輪框與高階煞車強調收藏與賽道雙重定位。">
+<div class="special-ribbon">不列入主世代</div><div class="num">S02</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse2.mm.bing.net/th?q=2025+Ducati+Panigale+V4+Tricolore+motorcycle+studio&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="Panigale V4 Tricolore" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>Panigale V4 Tricolore</div></div>
+<div class="body"><div class="topline"><span class="year">2025</span><span class="badge">限量收藏版</span></div><h2>Panigale V4 Tricolore</h2><div class="zh">Panigale V4 Tricolore</div>
+<div class="specs"><span class="spec">1103 cc</span><span class="spec">Panigale V4</span><span class="spec">水冷 90° V4・Desmosedici Stradale</span></div>
+<p class="desc">以第七世代 V4 S 為基礎，限量 1000 台，三色塗裝、碳纖維輪框與高階煞車強調收藏與賽道雙重定位。</p><a class="source" href="https://www.ducati.com/ww/en/bikes/panigale/panigale-v4-tricolore" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article>
+<article class="card special" data-section="special" data-family="新世代 V2" data-kind="車手限量版" data-search="2026 Panigale V2 MM93 / FB63 Panigale V2 MM93／FB63 890 cc 水冷 90° V2・可變汽門正時 新世代 V2 車手限量版 分別向 Marc Márquez 與 Francesco Bagnaia 致敬，加入鍛造輪框、賽車風格三角台與較低分離把。">
+<div class="special-ribbon">不列入主世代</div><div class="num">S03</div>
+<div class="photo"><img loading="lazy" referrerpolicy="no-referrer" src="https://tse3.mm.bing.net/th?q=Ducati+Panigale+V2+MM93+FB63+motorcycle&amp;w=900&amp;h=620&amp;c=7&amp;rs=1&amp;p=0" alt="Panigale V2 MM93 / FB63" onerror="this.parentElement.classList.add('broken')"><div class="fallback">圖片載入失敗<br>Panigale V2 MM93 / FB63</div></div>
+<div class="body"><div class="topline"><span class="year">2026</span><span class="badge">車手限量版</span></div><h2>Panigale V2 MM93 / FB63</h2><div class="zh">Panigale V2 MM93／FB63</div>
+<div class="specs"><span class="spec">890 cc</span><span class="spec">新世代 V2</span><span class="spec">水冷 90° V2・可變汽門正時</span></div>
+<p class="desc">分別向 Marc Márquez 與 Francesco Bagnaia 致敬，加入鍛造輪框、賽車風格三角台與較低分離把。</p><a class="source" href="https://www.ducati.com/ww/en/bikes/panigale/panigale-v2" target="_blank" rel="noopener">查看參考資料 ↗</a></div></article></div></section>
+<section class="scope"><div class="scope-box"><b>收錄原則：</b>以可辨識的獨立量產車系、重大機械版本、賽事認證版與代表性收藏版為一張卡。一般 S 版、年度小改款與純配色差異不逐一拆開；Streetfighter、Monster、Multistrada 等非全整流罩／非仿賽定位車款不收錄。Supermono 為純賽道特例，因其工程與設計影響力而保留。<br><br><b>圖片說明：</b>卡片圖片使用車名關鍵字的網路縮圖服務，方便直接預覽；正式公開網站建議改用自有或已授權圖片。資料結構保存在 <code>data/models.json</code>。</div></section>
+<footer>非 Ducati 官方網站 · 主時間軸與紀念特仕已分層 · 更新至 2026 年 7 月</footer><a class="backtop" href="#top" aria-label="回到頂部">↑</a><script>
+const cards=[...document.querySelectorAll('.card')];
+const buttons=[...document.querySelectorAll('[data-filter]')];
+const q=document.querySelector('#q');
+const shown=document.querySelector('#shown');
+const shownMain=document.querySelector('#shown-main');
+const shownSpecial=document.querySelector('#shown-special');
+const mainSection=document.querySelector('#main-section');
+const specialSection=document.querySelector('#special-section');
+const groupDefs=[
+  {key:'classic-road',kicker:'CLASSIC ROAD SPORT',title:'早期經典與公路跑車前史',route:'SS / F1 / Paso / Supermono',desc:'從 Super Sport、F1 到 Paso，整理 Ducati 在全整流罩道路跑車和輕量賽車上的基礎。',match:card=>['經典 SS','F1／Paso','實驗／賽道','MotoGP Replica'].includes(card.dataset.family)},
+  {key:'superbike-main',kicker:'SUPERBIKE MAINLINE',title:'正統 Superbike 主線',route:'851 → 916 → 999 → 1098 / 1198 → 1199 / 1299',desc:'以量產 Superbike、賽事認證車和大改款平台為主，呈現 Ducati 核心仿賽世代。',match:card=>['851／888','916 家族','749／999','1098／1198'].includes(card.dataset.family)||['量產道路','認證車','高階量產','最終紀念版'].includes(card.dataset.kind)&&card.dataset.family==='雙缸 Panigale'&&!/899 Panigale|959 Panigale|Panigale V2 955|959 Panigale Corse|Panigale V2 890/.test(card.dataset.search)},
+  {key:'panigale-v2-line',kicker:'PANIGALE V2 LINE',title:'中量級 V2 仿賽線',route:'2014 899 → 2016 959 → 2020 Panigale V2 → 2025 V2 890',desc:'這條才是 899、959 和 Panigale V2 的接續關係；SuperSport 不放在這裡。',match:card=>/899 Panigale|959 Panigale|Panigale V2 955|959 Panigale Corse|Panigale V2 890/.test(card.dataset.search)},
+  {key:'panigale-v4-line',kicker:'PANIGALE V4 LINE',title:'Panigale V4 仿賽線',route:'2018 V4 → V4 R / SP2 → 第七世代 V4',desc:'1103 cc V4 與 998 cc V4 R 分流呈現，保留量產道路版、認證車與高階賽道版本。',match:card=>card.dataset.family==='Panigale V4'},
+  {key:'road-sport',kicker:'ROAD SPORT BRANCH',title:'公路運動支線',route:'2017 Ducati SuperSport 937 → 2021 SuperSport 950',desc:'舒適騎姿、道路扭力和日常配備是主軸；它是全整流罩道路跑車，不是 Panigale 的前後接班。',match:card=>card.dataset.family==='現代 SuperSport'},
+  {key:'lightweight-special',kicker:'LIGHTWEIGHT EXTREMES',title:'Superleggera 工程支線',route:'1199 Superleggera → 1299 Superleggera → Superleggera V4',desc:'材料、輕量化與限量工程展示為主，和一般量產換代分開看。',match:card=>card.dataset.family==='Superleggera'}
+];
+const mainGrid=document.querySelector('#main-grid');
+if(mainGrid){
+  const mainCards=[...mainGrid.querySelectorAll('.card')];
+  const groups=document.createElement('div');
+  groups.className='catalog-groups';
+  mainGrid.replaceWith(groups);
+  const used=new Set();
+  groupDefs.forEach(def=>{
+    const matched=mainCards.filter(card=>!used.has(card)&&def.match(card));
+    if(!matched.length) return;
+    matched.forEach(card=>{card.dataset.group=def.key;used.add(card);});
+    const section=document.createElement('section');
+    section.className='catalog-group';
+    section.dataset.group=def.key;
+    section.innerHTML=`<div class="group-head"><div><div class="group-kicker">${def.kicker}</div><h3>${def.title}</h3><p>${def.desc}</p></div><div class="group-route">${def.route}</div></div>`;
+    const grid=document.createElement('div');
+    grid.className='grid';
+    matched.forEach(card=>grid.appendChild(card));
+    section.appendChild(grid);
+    groups.appendChild(section);
+  });
+  const rest=mainCards.filter(card=>!used.has(card));
+  if(rest.length){
+    rest.forEach(card=>{card.dataset.group='other-main';});
+    const section=document.createElement('section');
+    section.className='catalog-group';
+    section.dataset.group='other-main';
+    section.innerHTML='<div class="group-head"><div><div class="group-kicker">OTHER MAIN ENTRIES</div><h3>其他主圖鑑項目</h3><p>尚未歸入上述路線的主圖鑑卡片。</p></div><div class="group-route">補充分支</div></div>';
+    const grid=document.createElement('div');
+    grid.className='grid';
+    rest.forEach(card=>grid.appendChild(card));
+    section.appendChild(grid);
+    groups.appendChild(section);
+  }
+}
+let filter='all';
+function apply(){
+  const term=q.value.trim().toLowerCase(); let count=0, mainCount=0, specialCount=0;
+  cards.forEach(card=>{
+    const section=card.dataset.section;
+    const okFilter=filter==='all'||filter===section||card.dataset.family===filter||card.dataset.kind===filter||card.dataset.group===filter;
+    const okSearch=!term||card.dataset.search.toLowerCase().includes(term);
+    const visible=okFilter&&okSearch;
+    card.classList.toggle('hidden',!visible);
+    if(visible){count++; if(section==='main') mainCount++; else specialCount++;}
+  });
+  shown.textContent=count; shownMain.textContent=mainCount; shownSpecial.textContent=specialCount;
+  document.querySelectorAll('.catalog-group').forEach(group=>{
+    const any=[...group.querySelectorAll('.card')].some(card=>!card.classList.contains('hidden'));
+    group.classList.toggle('section-hidden',!any);
+  });
+  mainSection.classList.toggle('section-hidden',mainCount===0);
+  specialSection.classList.toggle('section-hidden',specialCount===0);
+}
+buttons.forEach(btn=>btn.addEventListener('click',()=>{buttons.forEach(x=>x.classList.remove('active'));btn.classList.add('active');filter=btn.dataset.filter;apply()}));
+q.addEventListener('input',apply); apply();
+</script></body></html>

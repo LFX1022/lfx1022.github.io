@@ -16,7 +16,7 @@ export function MySetup() {
         <SectionHeading
           eyebrow="06 / My Setup"
           title="我的電腦"
-          description="不只是硬體規格，而是我的電腦、用途、名稱與故事。（規格陸續補上）"
+          description="每一台主機都有自己的角色與名字，從升級、組裝到日常使用，記錄它們如何陪我工作、遊戲與創作。"
         />
 
         <div className="mt-14 space-y-8">

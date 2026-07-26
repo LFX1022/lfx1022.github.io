@@ -69,7 +69,7 @@ export function RecordArchivePreview({
             Interest Archive
           </span>
           <strong className="relative mt-2 text-2xl font-semibold text-steel-100">
-            53 Heroes
+            {archive.previewTitle ?? title}
           </strong>
           <span className="relative mt-5 rounded-sm border border-steel-500/60 bg-ink-950/65 px-4 py-2 font-mono text-xs tracking-wide text-steel-200 transition-colors group-hover/archive:border-merlot-300 group-hover/archive:text-white">
             {archive.label} ↗

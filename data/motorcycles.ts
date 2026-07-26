@@ -211,12 +211,6 @@ export const r3Gallery = [
     width: 1442,
     height: 919,
   },
-  {
-    src: "/images/motorcycles/R3/IMG_1469.JPG",
-    alt: "Yamaha YZF-R3 RyuGa — 道別紀念照",
-    width: 690,
-    height: 919,
-  },
 ];
 
 export const cbr600rr360Frames = Array.from({ length: 36 }, (_, index) => ({

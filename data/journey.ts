@@ -13,7 +13,7 @@ export const journey: JourneyItem[] = [
     category: "成長",
     title: "求學與早期探索",
     summary:
-      "在樂樂棒球校隊裡，我學著承擔，也把累積的經驗傳給下一批人。",
+      "在樂樂棒球校隊裡，我學著承擔，也在畢業那天把這份經驗傳承給學弟妹。",
     story: [
       {
         heading: "大華國小｜第一次學著承擔",

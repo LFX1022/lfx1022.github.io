@@ -141,6 +141,24 @@ export interface InterestItem {
   featured?: boolean;
 }
 
+/** 生活回憶照片 */
+export interface InterestMemoryImage {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
+/** 生活回憶項目（Life & Interests 的照片記錄使用） */
+export interface InterestMemory extends InterestMemoryImage {
+  eyebrow: string;
+  title: string;
+  description: string;
+  date?: string;
+  /** 同一段回憶有多張照片時，用翻頁顯示 */
+  slides?: InterestMemoryImage[];
+}
+
 /** 電腦設備規格欄位（My Setup 使用） */
 export interface SpecField {
   /** 欄位名稱，例如 CPU、GPU、主機板… */
@@ -230,6 +248,8 @@ export interface StoryArchive {
   eyebrow: string;
   /** iframe 的可存取標題 */
   frameTitle: string;
+  /** 主站入口上的短標，例如 53 Heroes / 51 Models */
+  previewTitle?: string;
   /** 主站入口使用的縮圖 */
   previewImage?: {
     src: string;

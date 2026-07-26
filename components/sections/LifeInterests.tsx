@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
 import { Icon } from "@/components/Icon";
@@ -6,6 +5,7 @@ import { JournalCarousel } from "@/components/JournalCarousel";
 import { Carousel } from "@/components/Carousel";
 import { Motorcycle360 } from "@/components/Motorcycle360";
 import { DreamGarageGallery } from "@/components/DreamGarageGallery";
+import { MemoryGallery } from "@/components/MemoryGallery";
 import { interestMemories, interests } from "@/data/interests";
 import {
   daytonaGallery,
@@ -66,35 +66,26 @@ export function LifeInterests() {
           {interestMemories.map((memory) => (
             <Reveal key={memory.src}>
               <article className="grid items-center gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(18rem,0.8fr)]">
-                <figure className="relative overflow-hidden border border-steel-500/30 bg-ink-900 shadow-[0_26px_70px_rgba(0,0,0,0.28)]">
-                  <Image
-                    src={memory.src}
-                    alt={memory.alt}
-                    width={memory.width}
-                    height={memory.height}
-                    sizes="(min-width: 1024px) 58rem, calc(100vw - 48px)"
-                    className="block h-auto w-full object-cover saturate-[0.94]"
-                  />
-                  <figcaption className="sr-only">{memory.alt}</figcaption>
-                </figure>
+                <MemoryGallery slides={memory.slides ?? [memory]} />
 
-                <div>
-                  <p className="eyebrow">
-                    <span className="h-px w-6 bg-merlot-500" aria-hidden />
-                    {memory.eyebrow}
-                  </p>
-                  {"date" in memory && memory.date ? (
-                    <time
-                      dateTime={memory.date.replaceAll("/", "-")}
-                      className="mt-3 block font-mono text-[10px] tracking-label text-merlot-300"
-                    >
-                      {memory.date}
-                    </time>
-                  ) : null}
-                  <h3 className="text-gold-glow mt-4 text-2xl font-semibold tracking-tight sm:text-3xl">
+                <div className="border-l border-ink-600/70 pl-5 lg:pl-7">
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+                    {"date" in memory && memory.date ? (
+                      <time
+                        dateTime={memory.date.replaceAll("/", "-")}
+                        className="font-mono text-[10px] text-merlot-300"
+                      >
+                        {memory.date}
+                      </time>
+                    ) : null}
+                    <span className="font-mono text-[10px] text-steel-500">
+                      {memory.eyebrow}
+                    </span>
+                  </div>
+                  <h3 className="text-gold-glow mt-4 text-xl font-semibold leading-relaxed sm:text-2xl">
                     {memory.title}
                   </h3>
-                  <p className="mt-4 text-sm leading-relaxed text-steel-400 sm:text-base">
+                  <p className="mt-3 max-w-lg text-sm leading-7 text-steel-300/90">
                     {memory.description}
                   </p>
                 </div>
@@ -123,53 +114,97 @@ export function LifeInterests() {
 
         <div className="container-x mt-14">
           <Reveal>
-            <p className="eyebrow">
-              <span className="h-px w-6 bg-merlot-500" aria-hidden />
-              現役車庫 · Current Garage
-            </p>
+            <div className="flex flex-wrap items-end justify-between gap-3">
+              <p className="eyebrow">
+                <span className="h-px w-6 bg-merlot-500" aria-hidden />
+                歷代車庫 · Garage Archive
+              </p>
+              <span className="font-mono text-[10px] text-steel-500/70">
+                2021/05/12 - 2024/12/21
+              </span>
+            </div>
             <div className="mt-4 flex flex-wrap items-end justify-between gap-2">
-              <h3 className="garage-model-name">
-                2024 Triumph Daytona 660
-              </h3>
+              <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                <h3 className="garage-model-name">
+                  2018 Suzuki GSX-R150
+                </h3>
+                <span className="font-mono text-[11px] text-steel-500/65">
+                  2021/05/12 - 2023/04/28 · 717 天
+                </span>
+              </div>
               <p className="garage-vehicle-name">
-                Merlot
+                小Pool車
               </p>
             </div>
           </Reveal>
         </div>
         <Reveal className="mt-6">
-          <Carousel slides={daytonaGallery} />
+          <Carousel slides={poolGallery} />
         </Reveal>
-
-        {/* Merlot 生活札記 大標 */}
-        <div className="container-x mt-16">
-          <Reveal>
-            <p className="eyebrow">
-              <span className="h-px w-6 bg-merlot-500" aria-hidden />
-              Merlot · Life Journal
-            </p>
-            <h3 className="garage-model-name mt-4">
-              Merlot の生活手帖
-            </h3>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-steel-400">
-              ツーリング、試乗レビュー、日常の映像記録。
-            </p>
-          </Reveal>
-        </div>
-
-        {/* Merlot の生活手帖：換頁瀏覽（一次一則，依日期排序） */}
-        <div className="container-x mt-8">
-          <Reveal>
-            <JournalCarousel items={merlotJournal} />
-          </Reveal>
-        </div>
 
         <div className="container-x mt-20">
           <Reveal>
             <div className="flex flex-wrap items-end justify-between gap-2">
-              <h3 className="garage-model-name">
-                2020 Suzuki GSX-R150
-              </h3>
+              <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                <h3 className="garage-model-name">
+                  2016 Yamaha YZF-R3
+                </h3>
+                <span className="font-mono text-[11px] text-steel-500/65">
+                  2023/03/05 - 2024/12/21 · 658 天
+                </span>
+              </div>
+              <p className="garage-vehicle-name">
+                RyuGa
+              </p>
+            </div>
+          </Reveal>
+        </div>
+        <Reveal className="mt-6">
+          <Carousel slides={r3Gallery} />
+        </Reveal>
+
+        {/* RyuGa の生活手帖：換頁瀏覽 */}
+        <div className="container-x mt-16">
+          <Reveal>
+            <p className="eyebrow">
+              <span className="h-px w-6 bg-merlot-500" aria-hidden />
+              RyuGa · Life Journal
+            </p>
+            <h3 className="garage-model-name mt-4">
+              RyuGa の生活手帖
+            </h3>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-steel-400">
+              改裝、騎乘與最後道別的記錄。
+            </p>
+          </Reveal>
+        </div>
+
+        <div className="container-x mt-8">
+          <Reveal>
+            <JournalCarousel items={r3Journal} />
+          </Reveal>
+        </div>
+
+        <div className="container-x mt-24 border-t border-ink-600/60 pt-14">
+          <Reveal>
+            <div className="flex flex-wrap items-end justify-between gap-3">
+              <p className="eyebrow">
+                <span className="h-px w-6 bg-merlot-500" aria-hidden />
+                現役車庫 · Current Garage
+              </p>
+              <span className="font-mono text-[10px] text-steel-500/70">
+                2024/05/30 - 至今
+              </span>
+            </div>
+            <div className="mt-4 flex flex-wrap items-end justify-between gap-2">
+              <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                <h3 className="garage-model-name">
+                  2020 Suzuki GSX-R150
+                </h3>
+                <span className="font-mono text-[11px] text-steel-500/65">
+                  2024/05/30 - 至今 · 788 天
+                </span>
+              </div>
               <p className="garage-vehicle-name">
                 小豆腐
               </p>
@@ -203,61 +238,47 @@ export function LifeInterests() {
           </Reveal>
         </div>
 
-        <div className="container-x mt-24 border-t border-ink-600/60 pt-14">
-          <Reveal>
-            <p className="eyebrow">
-              <span className="h-px w-6 bg-merlot-500" aria-hidden />
-              歷代車庫 · Garage Archive
-            </p>
-            <div className="mt-4 flex flex-wrap items-end justify-between gap-2">
-              <h3 className="garage-model-name">
-                2018 Suzuki GSX-R150
-              </h3>
-              <p className="garage-vehicle-name">
-                小Pool車
-              </p>
-            </div>
-          </Reveal>
-        </div>
-        <Reveal className="mt-6">
-          <Carousel slides={poolGallery} />
-        </Reveal>
-
         <div className="container-x mt-20">
           <Reveal>
             <div className="flex flex-wrap items-end justify-between gap-2">
-              <h3 className="garage-model-name">
-                2016 Yamaha YZF-R3
-              </h3>
+              <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                <h3 className="garage-model-name">
+                  2024 Triumph Daytona 660
+                </h3>
+                <span className="font-mono text-[11px] text-steel-500/65">
+                  2025/01/10 - 至今 · 563 天
+                </span>
+              </div>
               <p className="garage-vehicle-name">
-                RyuGa
+                Merlot
               </p>
             </div>
           </Reveal>
         </div>
         <Reveal className="mt-6">
-          <Carousel slides={r3Gallery} />
+          <Carousel slides={daytonaGallery} />
         </Reveal>
 
-        {/* RyuGa の生活手帖：換頁瀏覽 */}
+        {/* Merlot 生活札記 大標 */}
         <div className="container-x mt-16">
           <Reveal>
             <p className="eyebrow">
               <span className="h-px w-6 bg-merlot-500" aria-hidden />
-              RyuGa · Life Journal
+              Merlot · Life Journal
             </p>
             <h3 className="garage-model-name mt-4">
-              RyuGa の生活手帖
+              Merlot の生活手帖
             </h3>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-steel-400">
-              改裝、騎乘與最後道別的記錄。
+              ツーリング、試乗レビュー、日常の映像記録。
             </p>
           </Reveal>
         </div>
 
+        {/* Merlot の生活手帖：換頁瀏覽（一次一則，依日期排序） */}
         <div className="container-x mt-8">
           <Reveal>
-            <JournalCarousel items={r3Journal} />
+            <JournalCarousel items={merlotJournal} />
           </Reveal>
         </div>
 

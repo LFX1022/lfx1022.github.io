@@ -81,16 +81,18 @@ export function AboutMe() {
 
               <h2
                 id="about-title"
-                className="mt-7 text-4xl font-semibold leading-[1.12] tracking-[-0.035em] text-chalk-100 sm:text-5xl lg:text-6xl xl:text-[4.35rem]"
+                className="mt-7 max-w-4xl text-3xl font-semibold leading-[1.18] tracking-normal text-chalk-100 sm:text-4xl lg:text-5xl xl:text-[3.55rem]"
               >
-                {aboutSection.title.map((line, index) => (
-                  <span
-                    key={line}
-                    className={index === 1 ? "block text-gold-glow" : "block"}
-                  >
-                    {line}
-                  </span>
-                ))}
+                <span className="block">這裡不是成就展覽，</span>
+                <span className="block">
+                  而是一座由我
+                  <span className="text-gold-glow">親手慢慢建立</span>
+                  的，
+                </span>
+                <span className="block">
+                  關於
+                  <span className="text-gold-glow">我自己的博物館</span>。
+                </span>
               </h2>
 
               <div className="mt-8 max-w-xl space-y-2 text-base leading-8 text-steel-300 sm:text-lg">
@@ -171,14 +173,14 @@ export function AboutMe() {
                   </figcaption>
                 </div>
 
-                <blockquote className="motto-calligraphy relative mt-7 min-h-[10rem] px-2 text-[1.8rem] leading-[1.5] text-chalk-100 sm:min-h-[11rem] sm:px-5 sm:text-[2.1rem]">
+                <blockquote className="motto-calligraphy relative mx-auto mt-7 min-h-[8.5rem] max-w-[26rem] px-2 text-[1.75rem] leading-[1.28] text-chalk-100 sm:min-h-[9.25rem] sm:px-4 sm:text-[2rem]">
                   {aboutSection.museum.map((line, index) => (
                     <span
                       key={line}
                       className={
                         index === 0
-                          ? "motto-line motto-line-first block w-fit"
-                          : "motto-line motto-line-second ml-auto mt-8 block w-fit"
+                          ? "motto-line motto-line-first block"
+                          : "motto-line motto-line-second mt-4 block"
                       }
                     >
                       {line}

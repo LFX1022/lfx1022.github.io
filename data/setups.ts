@@ -201,7 +201,7 @@ export const computerJournal = {
     {
       image: "/images/COMPUTER/IMAG0595.jpg",
       alt: "電腦の手帖：弟弟暑假班電腦搬來家裡變成網咖",
-      caption: "弟弟暑假班的電腦搬來我家，房間直接變成網咖。那時候超開心。",
+      caption: "弟弟暑假的時候電腦搬來我家，房間直接變成網咖。那時候超開心。",
       date: "2019/08/19",
       aspect: "16 / 9",
       wide: true,

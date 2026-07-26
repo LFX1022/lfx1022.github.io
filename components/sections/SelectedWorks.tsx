@@ -2,7 +2,6 @@ import Image from "next/image";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
 import { Icon } from "@/components/Icon";
-import { MediaCarousel } from "@/components/MediaCarousel";
 import { RecordArchivePreview } from "@/components/RecordArchivePreview";
 import { stories } from "@/data/stories";
 import type { IconName, Story, StoryMedia } from "@/types";
@@ -61,7 +60,7 @@ function StoryCard({ story }: { story: Story }) {
             title={story.title}
           />
         ) : media.length > 1 ? (
-          <MediaCarousel items={media} title={story.title} />
+          <MediaGrid items={media} title={story.title} />
         ) : media.length === 1 ? (
           <div className="relative aspect-[16/10] overflow-hidden bg-ink-900">
             <MediaItem item={media[0]} title={story.title} />
@@ -101,6 +100,23 @@ function StoryCard({ story }: { story: Story }) {
         </ul>
       </div>
     </article>
+  );
+}
+
+function MediaGrid({ items, title }: { items: StoryMedia[]; title: string }) {
+  return (
+    <div className="grid overflow-hidden bg-ink-950">
+      {items.map((item) => (
+        <div key={item.src} className="relative aspect-video overflow-hidden border-b border-ink-700 last:border-b-0 bg-ink-900">
+          <MediaItem item={item} title={title} />
+          {item.caption ? (
+            <span className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950/85 to-transparent px-4 pb-3 pt-8 font-mono text-xs leading-snug text-steel-100">
+              {item.caption}
+            </span>
+          ) : null}
+        </div>
+      ))}
+    </div>
   );
 }
 

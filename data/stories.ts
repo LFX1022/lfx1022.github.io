@@ -17,7 +17,7 @@ export const stories: Story[] = [
     tags: ["Revit", "施工動畫"],
     // 依序顯示：002 在前、001 在後（左右並排）
     media: [
-      { src: "/images/BIM/002.mp4", caption: "國一甲支撐先進工法" },
+      { src: "/images/BIM/002.mp4", caption: "國一甲 支撐先進工法" },
       { src: "/images/BIM/001.mp4", caption: "布袋商港聯外道路新闢工程 懸臂工法" },
     ],
   },
@@ -50,6 +50,25 @@ export const stories: Story[] = [
   },
   {
     index: "05",
+    title: "Ducati 仿賽與道路跑車圖鑑",
+    type: "archive",
+    category: "興趣圖鑑 · Ducati",
+    description: "整理 Ducati V2、V4 仿賽主線與 SuperSport 公路運動支線，避免把不同定位車款混在同一條接班線。",
+    tags: ["Ducati", "V2 / V4", "52 Models"],
+    archive: {
+      src: "/archives/ducati/index.html",
+      label: "展開圖鑑",
+      eyebrow: "INTEREST ARCHIVE · DUCATI",
+      frameTitle: "Ducati 仿賽與道路跑車年代圖鑑",
+      previewTitle: "52 Models",
+      previewImage: {
+        src: "/images/motorcycles/panigale-v2/ducati-introduces-white-livery-for-the-panigale-v2.webp",
+        alt: "Ducati Panigale V2 白色車款預覽",
+      },
+    },
+  },
+  {
+    index: "06",
     title: "Ultraman 整合圖鑑",
     type: "archive",
     category: "興趣圖鑑 · Ultraman",
@@ -60,6 +79,7 @@ export const stories: Story[] = [
       label: "展開更多",
       eyebrow: "INTEREST ARCHIVE · ULTRAMAN",
       frameTitle: "Ultraman 53 位英雄年代圖鑑",
+      previewTitle: "53 Heroes",
       previewImage: {
         src: "/images/archives/ultraman-first-pattern.png",
         alt: "初代超人力霸王胸前紅銀紋路與彩色計時器",
