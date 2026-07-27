@@ -16,12 +16,14 @@ interface Motorcycle360Props {
   frames: Motorcycle360Frame[];
   alt: string;
   backgroundImage?: string;
+  crop?: boolean;
 }
 
 export function Motorcycle360({
   frames,
   alt,
   backgroundImage,
+  crop = false,
 }: Motorcycle360Props) {
   const [frame, setFrame] = useState(0);
   const [loaded, setLoaded] = useState(0);
@@ -229,15 +231,10 @@ export function Motorcycle360({
             decoding="async"
             ref={(image) => prepareFrame(image, src)}
             onLoad={(event) => prepareFrame(event.currentTarget, src)}
-            className={`absolute inset-0 h-full w-full select-none object-contain ${
+            className={`absolute inset-0 h-full w-full select-none ${crop ? "object-cover scale-[1.24]" : "object-contain"} ${
               index === frame ? "opacity-100" : "opacity-0"
             }`}
-            style={{
-              WebkitMaskImage:
-                "radial-gradient(ellipse 98% 96% at 50% 48%, #000 62%, rgba(0, 0, 0, 0.96) 78%, transparent 100%)",
-              maskImage:
-                "radial-gradient(ellipse 98% 96% at 50% 48%, #000 62%, rgba(0, 0, 0, 0.96) 78%, transparent 100%)",
-            }}
+            style={{ imageRendering: "auto", filter: crop ? "contrast(1.04) saturate(1.03)" : undefined }}
           />
         ))}
 

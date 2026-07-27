@@ -1,0 +1,89 @@
+{
+  "ok": true,
+  "verdict": "pass",
+  "confidence": 0.86,
+  "estimatedFidelity": 0.86,
+  "targetThreshold": 0.7,
+  "materialId": "wine-paint",
+  "sourceImage": "data/models/daytona660/pbr/wine-paint/source.png",
+  "outDir": "data/models/daytona660/pbr/wine-paint",
+  "palette": [
+    "#0C1011",
+    "#C0A69E",
+    "#E6DAD5",
+    "#77786F",
+    "#E00E0D",
+    "#790B03"
+  ],
+  "maps": {
+    "albedo": {
+      "path": "data/models/daytona660/pbr/wine-paint/wine-paint_albedo.png",
+      "url": "wine-paint_albedo.png",
+      "channel": "albedo",
+      "source": "reference-pixel-extraction"
+    },
+    "roughness": {
+      "path": "data/models/daytona660/pbr/wine-paint/wine-paint_roughness.png",
+      "url": "wine-paint_roughness.png",
+      "channel": "roughness",
+      "source": "reference-pixel-extraction"
+    },
+    "height": {
+      "path": "data/models/daytona660/pbr/wine-paint/wine-paint_height.png",
+      "url": "wine-paint_height.png",
+      "channel": "height",
+      "source": "reference-pixel-extraction"
+    },
+    "normal": {
+      "path": "data/models/daytona660/pbr/wine-paint/wine-paint_normal.png",
+      "url": "wine-paint_normal.png",
+      "channel": "normal",
+      "source": "reference-pixel-extraction"
+    },
+    "ao": {
+      "path": "data/models/daytona660/pbr/wine-paint/wine-paint_ao.png",
+      "url": "wine-paint_ao.png",
+      "channel": "ao",
+      "source": "reference-pixel-extraction"
+    }
+  },
+  "diagnostics": {
+    "sourceWidth": 1080,
+    "sourceHeight": 1616,
+    "mapSize": 256,
+    "cropBBoxPixels": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 1616
+    },
+    "mask": {
+      "backgroundColor": "#222D26",
+      "backgroundNoise": 59.245,
+      "transparentPixelFraction": 0.0,
+      "foregroundCoverage": 0.9187
+    },
+    "mapStats": {
+      "valueRange": 0.8545,
+      "heightP90Gradient": 0.15759,
+      "roughnessBase": 0.746,
+      "roughnessVariation": 0.205,
+      "normalStrength": 0.341,
+      "blurRadius": 5
+    },
+    "palette": [
+      "#0C1011",
+      "#C0A69E",
+      "#E6DAD5",
+      "#77786F",
+      "#E00E0D",
+      "#790B03"
+    ]
+  },
+  "warnings": [
+    "image is not clearly isolated from background; using most pixels as material evidence",
+    "object/background separation is weak",
+    "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+  ],
+  "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+}

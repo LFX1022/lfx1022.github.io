@@ -22,7 +22,10 @@ export function Reveal({ children, delay = 0, className = "" }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   // armed = 已在 client 端啟用動畫；hydrate 前為 false，確保 SSR 內容可見
   const [armed, setArmed] = useState(false);
-  const [visible, setVisible] = useState(false);
+  // Keep content visible by default.  Hash navigation can place a section in
+  // view before the observer is attached; starting hidden in that case leaves
+  // the whole section looking empty until another layout/scroll event occurs.
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const node = ref.current;

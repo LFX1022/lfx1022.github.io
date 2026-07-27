@@ -4,11 +4,13 @@ import { Icon } from "@/components/Icon";
 import { JournalCarousel } from "@/components/JournalCarousel";
 import { Carousel } from "@/components/Carousel";
 import { Motorcycle360 } from "@/components/Motorcycle360";
+import { Daytona660ThreeModel } from "@/components/Daytona660ThreeModel";
 import { DreamGarageGallery } from "@/components/DreamGarageGallery";
 import { MemoryGallery } from "@/components/MemoryGallery";
 import { interestMemories, interests } from "@/data/interests";
 import {
   daytonaGallery,
+  daytona660360Frames,
   dreamGarage,
   gsxr150Gallery,
   merlotJournal,
@@ -258,6 +260,46 @@ export function LifeInterests() {
         <Reveal className="mt-6">
           <Carousel slides={daytonaGallery} />
         </Reveal>
+
+        <div id="daytona-360" className="container-x mt-16 scroll-mt-28">
+          <Reveal>
+            <p className="eyebrow">
+              <span className="h-px w-6 bg-merlot-500" aria-hidden />
+              Interactive View · Realtime 3D
+            </p>
+            <div className="mt-4 flex flex-wrap items-end justify-between gap-3">
+              <h3 className="garage-model-name">Merlot 3D</h3>
+              <span className="font-mono text-[10px] uppercase tracking-label text-steel-500/70">
+                Orbit · Zoom · Fullscreen
+              </span>
+            </div>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-steel-400">
+              依多角度圖面建立的程序化模型；拖曳旋轉、滾輪縮放，自由查看車身結構。
+            </p>
+          </Reveal>
+
+          <Reveal className="mt-8">
+            <Motorcycle360
+              frames={daytona660360Frames}
+              alt="Triumph Daytona 660 實拍 360 度展示"
+              crop
+            />
+
+            <div className="mt-12 border-t border-ink-600/60 pt-10">
+              <p className="eyebrow">
+                <span className="h-px w-6 bg-merlot-500" aria-hidden />
+                Procedural 3D Model
+              </p>
+              <h3 className="garage-model-name mt-4">Daytona 660 3D</h3>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-steel-400">
+                以 Daytona 660 車身資料建立的可旋轉程序模型，作為實拍 360 之外的立體參考。
+              </p>
+              <div className="mt-8">
+                <Daytona660ThreeModel />
+              </div>
+            </div>
+          </Reveal>
+        </div>
 
         {/* Merlot 生活札記 大標 */}
         <div className="container-x mt-16">

@@ -23,5 +23,12 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules", "_to_delete", ".codex-tmp", ".agents"]
+  "exclude": [
+    "node_modules",
+    "out",
+    "_to_delete",
+    ".codex-tmp",
+    ".agents",
+    "public/archives/triumph-daytona-archive"
+  ]
 }

@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[64156,["/archives/triumph-daytona-archive/_next/static/chunks/11wjg6faxrfpt.js","/archives/triumph-daytona-archive/_next/static/chunks/0wgziqdcwgf7i.js","/archives/triumph-daytona-archive/_next/static/chunks/0jn4bfzz3pm4b.js"],"DaytonaArchive"]
+3:I[26718,["/archives/triumph-daytona-archive/_next/static/chunks/11wjg6faxrfpt.js","/archives/triumph-daytona-archive/_next/static/chunks/0wgziqdcwgf7i.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{}],[["$","script","script-0",{"src":"/archives/triumph-daytona-archive/_next/static/chunks/0jn4bfzz3pm4b.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"W_fX6jrJpXeqOWL8CQbjp"}
+5:null

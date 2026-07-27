@@ -1,0 +1,171 @@
+{
+  "sourceImage": "public/images/motorcycles/daytona660/Daytona660360/01.PNG",
+  "zonesDir": "data/models/daytona660/detail-zones",
+  "detailInventory": {
+    "scanMethod": "component-zones",
+    "targetMinDetails": 22,
+    "details": [
+      {
+        "id": "front-wheel",
+        "kind": "",
+        "description": "",
+        "region": {
+          "x": 0.55,
+          "y": 0.4,
+          "width": 0.18,
+          "height": 0.36,
+          "units": "normalized"
+        },
+        "scale": "",
+        "affects": "",
+        "mapsTo": {
+          "type": "",
+          "ref": ""
+        },
+        "evidenceRef": "data/models/daytona660/detail-zones/front-wheel.png",
+        "confidence": 0.0
+      },
+      {
+        "id": "front-cowl",
+        "kind": "",
+        "description": "",
+        "region": {
+          "x": 0.5,
+          "y": 0.35,
+          "width": 0.2,
+          "height": 0.28,
+          "units": "normalized"
+        },
+        "scale": "",
+        "affects": "",
+        "mapsTo": {
+          "type": "",
+          "ref": ""
+        },
+        "evidenceRef": "data/models/daytona660/detail-zones/front-cowl.png",
+        "confidence": 0.0
+      },
+      {
+        "id": "tank",
+        "kind": "",
+        "description": "",
+        "region": {
+          "x": 0.4,
+          "y": 0.34,
+          "width": 0.16,
+          "height": 0.24,
+          "units": "normalized"
+        },
+        "scale": "",
+        "affects": "",
+        "mapsTo": {
+          "type": "",
+          "ref": ""
+        },
+        "evidenceRef": "data/models/daytona660/detail-zones/tank.png",
+        "confidence": 0.0
+      },
+      {
+        "id": "engine",
+        "kind": "",
+        "description": "",
+        "region": {
+          "x": 0.39,
+          "y": 0.5,
+          "width": 0.22,
+          "height": 0.28,
+          "units": "normalized"
+        },
+        "scale": "",
+        "affects": "",
+        "mapsTo": {
+          "type": "",
+          "ref": ""
+        },
+        "evidenceRef": "data/models/daytona660/detail-zones/engine.png",
+        "confidence": 0.0
+      },
+      {
+        "id": "rear-wheel",
+        "kind": "",
+        "description": "",
+        "region": {
+          "x": 0.28,
+          "y": 0.43,
+          "width": 0.2,
+          "height": 0.35,
+          "units": "normalized"
+        },
+        "scale": "",
+        "affects": "",
+        "mapsTo": {
+          "type": "",
+          "ref": ""
+        },
+        "evidenceRef": "data/models/daytona660/detail-zones/rear-wheel.png",
+        "confidence": 0.0
+      },
+      {
+        "id": "tail-seat",
+        "kind": "",
+        "description": "",
+        "region": {
+          "x": 0.27,
+          "y": 0.34,
+          "width": 0.22,
+          "height": 0.22,
+          "units": "normalized"
+        },
+        "scale": "",
+        "affects": "",
+        "mapsTo": {
+          "type": "",
+          "ref": ""
+        },
+        "evidenceRef": "data/models/daytona660/detail-zones/tail-seat.png",
+        "confidence": 0.0
+      },
+      {
+        "id": "exhaust",
+        "kind": "",
+        "description": "",
+        "region": {
+          "x": 0.33,
+          "y": 0.53,
+          "width": 0.18,
+          "height": 0.2,
+          "units": "normalized"
+        },
+        "scale": "",
+        "affects": "",
+        "mapsTo": {
+          "type": "",
+          "ref": ""
+        },
+        "evidenceRef": "data/models/daytona660/detail-zones/exhaust.png",
+        "confidence": 0.0
+      },
+      {
+        "id": "frame-swingarm",
+        "kind": "",
+        "description": "",
+        "region": {
+          "x": 0.33,
+          "y": 0.44,
+          "width": 0.22,
+          "height": 0.28,
+          "units": "normalized"
+        },
+        "scale": "",
+        "affects": "",
+        "mapsTo": {
+          "type": "",
+          "ref": ""
+        },
+        "evidenceRef": "data/models/daytona660/detail-zones/frame-swingarm.png",
+        "confidence": 0.0
+      }
+    ]
+  },
+  "authoringInstruction": "Open each zone crop under zonesDir and replace every detail stub's kind, description, scale, affects, mapsTo, and confidence with what is actually observed. Add more detail entries per zone if a single zone contains multiple distinct marks; do not leave stubs unfilled or unlinked (mapsTo must reference a real component.localFeatures or material.localOverrides entry)."
+}

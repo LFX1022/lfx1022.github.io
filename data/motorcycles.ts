@@ -217,6 +217,12 @@ export const cbr600rr360Frames = Array.from({ length: 36 }, (_, index) => ({
   src: `/images/motorcycles/cbr600rr/600rrmadal/aligned/${String(index + 1).padStart(3, "0")}.PNG`,
 }));
 
+// Daytona 660 turntable captures.  Keep these as the faithful photo-based
+// viewer; the images are already 1920px wide and load only when near view.
+export const daytona660360Frames = Array.from({ length: 36 }, (_, index) => ({
+  src: `/images/motorcycles/daytona660/Daytona660360/${String(index + 1).padStart(2, "0")}.PNG`,
+}));
+
 export const panigaleV2Gallery = [
   {
     src: "/images/motorcycles/panigale-v2/1.webp",
