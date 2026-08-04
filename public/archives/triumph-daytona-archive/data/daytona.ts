@@ -327,13 +327,13 @@ export const models: DaytonaModel[] = [
       "它不是 675 的直接後繼：動力、騎姿與產品任務都更偏道路，卻保留三缸聲浪、線性加速與 Daytona 跑格。",
     significance:
       "它讓 Daytona 再次成為可廣泛接觸的量產車，也為品牌的現代 Supersport 定義開啟新方向。",
-    image: "/images/models/daytona-660-2024-red.webp",
+    image: "/images/models/daytona-660-merlot-garage-cover.jpeg",
     imageFit: "contain",
-    imageAlt: "2024 Triumph Daytona 660 Carnival Red 紅色全車",
-    imageCredit: "Triumph Motorcycles",
-    imageLicense: "Triumph 官方媒體素材",
+    imageAlt: "LFX Merlot Daytona 660 車庫封面圖",
+    imageCredit: "LFX 辭海",
+    imageLicense: "個人車庫封面照片",
     imageSource:
-      "https://triumph-mediakits.com/en/all-motorcycles/roadsters/2024-daytona-660.html",
+      "/images/motorcycles/daytona660/660250809.jpeg",
     sourceLabel: "Triumph 2024 發表資料",
     sourceUrl:
       "https://www.triumphmotorcycles.com/for-the-ride/news/motorcycles/daytona-660-1-9-2024",
