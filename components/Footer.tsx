@@ -1,4 +1,5 @@
 import { profile } from "@/data/profile";
+import { siteMeta } from "@/data/site-meta";
 import { BrandMeaning } from "@/components/BrandMeaning";
 import { ViewCounter } from "@/components/ViewCounter";
 
@@ -16,6 +17,9 @@ export function Footer() {
         <div className="flex flex-col gap-1.5 sm:items-end sm:text-right">
           <p className="font-mono text-xs tracking-wide text-steel-500">
             {brand.tagline}
+          </p>
+          <p className="font-mono text-[11px] tracking-wide text-steel-600">
+            最後編輯：{siteMeta.lastEdited}
           </p>
           <ViewCounter />
         </div>

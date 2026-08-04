@@ -17,6 +17,7 @@ interface Motorcycle360Props {
   alt: string;
   backgroundImage?: string;
   crop?: boolean;
+  cleanFrameArtifacts?: boolean;
 }
 
 export function Motorcycle360({
@@ -24,6 +25,7 @@ export function Motorcycle360({
   alt,
   backgroundImage,
   crop = false,
+  cleanFrameArtifacts = false,
 }: Motorcycle360Props) {
   const [frame, setFrame] = useState(0);
   const [loaded, setLoaded] = useState(0);
@@ -237,6 +239,54 @@ export function Motorcycle360({
             style={{ imageRendering: "auto", filter: crop ? "contrast(1.04) saturate(1.03)" : undefined }}
           />
         ))}
+
+        {cleanFrameArtifacts ? (
+          <>
+            <span
+              style={{
+                pointerEvents: "none",
+                position: "absolute",
+                zIndex: 20,
+                display: "block",
+                background: "#fff",
+                left: 0,
+                top: 0,
+                width: "100%",
+                height: "28%",
+              }}
+              aria-hidden
+            />
+            <span
+              style={{
+                pointerEvents: "none",
+                position: "absolute",
+                zIndex: 20,
+                display: "block",
+                background: "#fff",
+                left: 0,
+                top: "33%",
+                width: "18%",
+                height: "39%",
+              }}
+              aria-hidden
+            />
+            <span
+              style={{
+                pointerEvents: "none",
+                position: "absolute",
+                zIndex: 20,
+                display: "block",
+                background: "#fff",
+                left: "50%",
+                bottom: 0,
+                width: "30%",
+                height: "12%",
+                transform: "translateX(-50%)",
+              }}
+              aria-hidden
+            />
+          </>
+        ) : null}
 
         <div
           className={`pointer-events-none absolute left-1/2 top-4 z-30 flex max-w-[calc(100%-2rem)] -translate-x-1/2 items-center gap-2 rounded-full border border-black/10 bg-white/90 px-3 py-2 text-black shadow-[0_12px_32px_rgba(0,0,0,0.16)] backdrop-blur-md transition-all duration-500 ${

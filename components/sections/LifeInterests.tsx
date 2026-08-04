@@ -283,6 +283,7 @@ export function LifeInterests() {
               frames={daytona660360Frames}
               alt="Triumph Daytona 660 實拍 360 度展示"
               crop
+              cleanFrameArtifacts
             />
 
             <div className="mt-12 border-t border-ink-600/60 pt-10">
