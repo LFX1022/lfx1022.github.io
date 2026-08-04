@@ -14,6 +14,9 @@ type Filter = "all" | EngineFamily;
 
 const archiveBasePath = "/archives/triumph-daytona-archive";
 
+const getModelImageSrc = (image: string) =>
+  image.startsWith("/images/motorcycles/") ? image : `${archiveBasePath}${image}`;
+
 const filters: { value: Filter; label: string; note: string }[] = [
   { value: "all", label: "全部", note: `${models.length} 節點` },
   { value: "triple", label: "三缸", note: "品牌主脈" },
@@ -42,7 +45,7 @@ function ModelImage({ model, priority = false }: { model: DaytonaModel; priority
 
   return (
     <Image
-      src={`${archiveBasePath}${model.image}`}
+      src={getModelImageSrc(model.image)}
       alt={model.imageAlt}
       width={1600}
       height={1000}

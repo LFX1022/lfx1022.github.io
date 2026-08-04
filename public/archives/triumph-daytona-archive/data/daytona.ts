@@ -239,32 +239,8 @@ export const models: DaytonaModel[] = [
     sourceUrl: "https://www.triumphmotorcycles.com/our-story",
   },
   {
-    id: "daytona-675-gen2",
-    year: "2013—2017",
-    eyebrow: "SECOND-GENERATION FOCUS",
-    name: "Daytona 675 · Gen 2",
-    capacity: "675 cc",
-    engine: "水冷直列三缸",
-    family: "triple",
-    position: "更集中、更現代的第二代 675",
-    summary:
-      "2013 年式重新設計引擎、車架與車身，排氣由高位座下移至低位，重量分配與整車集中化更符合新世代賽道需求。",
-    difference:
-      "外觀、引擎與車架皆非普通小改；和 2006 初代並列時，這才是 675 車系真正的第二個完整世代。",
-    significance:
-      "它把 Daytona 675 推至成熟頂點，亦成為 675R 後期版本與 Moto2 765 精神上的直接前身。",
-    image: "/images/models/daytona-675r.jpg",
-    imageAlt: "2012 發表的 Triumph Daytona 675R 新世代",
-    imageCredit: "Triumph Motorcycles",
-    imageLicense: "官方品牌歷史影像",
-    imageSource: "https://www.triumphmotorcycles.com/our-story/brand-timeline",
-    sourceLabel: "Triumph 原廠輪胎年式表",
-    sourceUrl:
-      "https://www.triumphmotorcycles.com/media-library/7b5bb1aeb714454ebb19829bc799622a.pdf?la=en-US",
-  },
-  {
     id: "daytona-675r",
-    year: "2011—2017",
+    year: "2011—2012 / 2013—2017",
     eyebrow: "R-SPEC BRANCH",
     name: "Daytona 675R",
     capacity: "675 cc",
@@ -287,6 +263,30 @@ export const models: DaytonaModel[] = [
       "https://www.triumphmotorcycles.com/media-library/7b5bb1aeb714454ebb19829bc799622a.pdf?la=en-US",
   },
   {
+    id: "daytona-675-gen2",
+    year: "2013—2017",
+    eyebrow: "SECOND-GENERATION FOCUS",
+    name: "Daytona 675 · Gen 2",
+    capacity: "675 cc",
+    engine: "水冷直列三缸",
+    family: "triple",
+    position: "更集中、更現代的第二代 675",
+    summary:
+      "2013 年式重新設計引擎、車架與車身，排氣由高位座下移至低位，重量分配與整車集中化更符合新世代賽道需求。",
+    difference:
+      "外觀、引擎與車架皆非普通小改；和 2006 初代並列時，這才是 675 車系真正的第二個完整世代。",
+    significance:
+      "它把 Daytona 675 推至成熟頂點，亦成為 675R 後期版本與 Moto2 765 精神上的直接前身。",
+    image: "/images/models/daytona-675r.jpg",
+    imageAlt: "2013 Triumph Daytona 675 / 675R 第二代平台",
+    imageCredit: "Triumph Motorcycles",
+    imageLicense: "官方品牌歷史影像",
+    imageSource: "https://www.triumphmotorcycles.com/our-story/brand-timeline",
+    sourceLabel: "Triumph 原廠輪胎年式表",
+    sourceUrl:
+      "https://www.triumphmotorcycles.com/media-library/7b5bb1aeb714454ebb19829bc799622a.pdf?la=en-US",
+  },
+  {
     id: "moto2-765",
     year: "2020",
     eyebrow: "MOTO2 CONNECTION",
@@ -301,7 +301,7 @@ export const models: DaytonaModel[] = [
       "它不是標準量產 Daytona 的換色版，而是以 Moto2 合作為核心的限量獨立作品；2019 發表、2020 年式交付。",
     significance:
       "在 675 停產與 660 誕生之間，它守住 Daytona 的純種性能象徵，也把 765 賽事技術帶回公路。",
-    image: "/images/models/daytona-moto2-765.jpg",
+    image: "/images/motorcycles/daytona660/18d5cfa8636adcd8b9db4c08e6e8f7f72.jpg",
     imageFit: "contain",
     imageAlt: "Triumph Daytona Moto2 765 Limited Edition",
     imageCredit: "Triumph Motorcycles",
@@ -353,7 +353,7 @@ export const models: DaytonaModel[] = [
       "這是配備與調校更新，不是全新車架或全新引擎世代；因此在圖鑑中標為年式更新，而不另算第 2 代。",
     significance:
       "它回應騎士對懸吊可調與快排的期待，也顯示 Daytona 660 正逐步補強運動性，而非改變道路跑車本質。",
-    image: "/images/models/daytona-660-2026-silver.webp",
+    image: "/images/motorcycles/daytona660/1_Daytona_660_MY26_2189_JP.jpg",
     imageFit: "contain",
     imageAlt: "2026 Triumph Daytona 660 Aluminium Silver 銀色全車",
     imageCredit: "Triumph Motorcycles",
