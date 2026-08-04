@@ -173,7 +173,7 @@ export function AboutMe() {
                   </figcaption>
                 </div>
 
-                <blockquote className="motto-calligraphy relative mx-auto mt-7 min-h-[8.5rem] max-w-[26rem] px-2 text-[1.75rem] leading-[1.28] text-chalk-100 sm:min-h-[9.25rem] sm:px-4 sm:text-[2rem]">
+                <blockquote className="motto-calligraphy relative mx-auto mt-7 min-h-[8.5rem] max-w-[29rem] px-3 text-[1.75rem] leading-[1.28] text-chalk-100 sm:min-h-[9.25rem] sm:px-5 sm:text-[2rem]">
                   {aboutSection.museum.map((line, index) => (
                     <span
                       key={line}

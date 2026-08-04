@@ -4,7 +4,7 @@ import { Icon } from "@/components/Icon";
 import { JournalCarousel } from "@/components/JournalCarousel";
 import { Carousel } from "@/components/Carousel";
 import { Motorcycle360 } from "@/components/Motorcycle360";
-import { Daytona660ThreeModel } from "@/components/Daytona660ThreeModel";
+import { LazyDaytona660ThreeModel } from "@/components/LazyDaytona660ThreeModel";
 import { DreamGarageGallery } from "@/components/DreamGarageGallery";
 import { MemoryGallery } from "@/components/MemoryGallery";
 import { interestMemories, interests } from "@/data/interests";
@@ -283,7 +283,9 @@ export function LifeInterests() {
               frames={daytona660360Frames}
               alt="Triumph Daytona 660 實拍 360 度展示"
               crop
-              cleanFrameArtifacts
+              focusCrop
+              imageScale={1.55}
+              imageOffsetY="-2%"
             />
 
             <div className="mt-12 border-t border-ink-600/60 pt-10">
@@ -296,7 +298,7 @@ export function LifeInterests() {
                 以 Daytona 660 車身資料建立的可旋轉程序模型，作為實拍 360 之外的立體參考。
               </p>
               <div className="mt-8">
-                <Daytona660ThreeModel />
+                <LazyDaytona660ThreeModel />
               </div>
             </div>
           </Reveal>

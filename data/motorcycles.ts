@@ -80,6 +80,7 @@ export const merlotJournal = [
 ];
 
 export const daytonaGallery = [
+  { src: "/images/motorcycles/daytona660/daytona-660-2024-red.webp", alt: "Triumph Daytona 660 Merlot Red 官方側面圖", width: 1600, height: 1000 },
   { src: "/images/motorcycles/daytona660/660250809.jpeg", alt: "Triumph Daytona 660 — 停車場 3/4 前", width: 1389, height: 928 },
   { src: "/images/motorcycles/daytona660/IMG_4907.jpeg", alt: "Triumph Daytona 660 — 停車格 3/4 前", width: 1080, height: 1616 },
   { src: "/images/motorcycles/daytona660/IMG_4908.jpeg", alt: "Triumph Daytona 660 — 側身採光窗", width: 1080, height: 1616 },

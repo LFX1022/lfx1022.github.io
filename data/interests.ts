@@ -131,8 +131,8 @@ export const interestMemories: InterestMemory[] = [
     width: 719,
     height: 959,
     eyebrow: "Family Memory · 大學",
-    title: "冒煙的喬",
-    description: "跟家人吃飯的一天，穿得很有自信，也留下了喜歡的樣子。",
+    title: "跟家人呷奔",
+    description: "有的時候也不知道為啥自己這麼帥。",
     date: "2020/05/10",
   },
   {

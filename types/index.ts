@@ -324,5 +324,6 @@ export type IconName =
   | "Youtube"
   | "Linkedin"
   | "MessageCircle"
+  | "MessageCircleQuestion"
   | "ChevronLeft"
   | "ChevronRight";

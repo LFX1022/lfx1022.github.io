@@ -23,6 +23,7 @@ import {
   Youtube,
   Linkedin,
   MessageCircle,
+  MessageCircleQuestion,
   ChevronLeft,
   ChevronRight,
   type LucideIcon,
@@ -56,6 +57,7 @@ const iconMap: Record<IconName, LucideIcon> = {
   Youtube,
   Linkedin,
   MessageCircle,
+  MessageCircleQuestion,
   ChevronLeft,
   ChevronRight,
 };

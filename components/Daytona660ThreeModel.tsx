@@ -28,6 +28,7 @@ export function Daytona660ThreeModel() {
   const selectionRef = useRef<THREE.Object3D | null>(null);
   const selectionBoxRef = useRef<THREE.Box3Helper | null>(null);
   const explodedRef = useRef(false);
+  const visibleRef = useRef(false);
   const [active, setActive] = useState(false);
   const [ready, setReady] = useState(false);
   const [exploded, setExploded] = useState(false);
@@ -61,10 +62,9 @@ export function Daytona660ThreeModel() {
     if (!mount) return;
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries.some((entry) => entry.isIntersecting)) {
-          setActive(true);
-          observer.disconnect();
-        }
+        const visible = entries.some((entry) => entry.isIntersecting);
+        visibleRef.current = visible;
+        if (visible) setActive(true);
       },
       { rootMargin: "500px" },
     );
@@ -90,7 +90,7 @@ export function Daytona660ThreeModel() {
       alpha: false,
       powerPreference: "high-performance",
     });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.05;
@@ -125,7 +125,7 @@ export function Daytona660ThreeModel() {
     const key = new THREE.DirectionalLight(0xfff1dc, 3.9);
     key.position.set(4.8, 6.3, 4.2);
     key.castShadow = true;
-    key.shadow.mapSize.set(2048, 2048);
+    key.shadow.mapSize.set(1024, 1024);
     key.shadow.camera.left = -4;
     key.shadow.camera.right = 4;
     key.shadow.camera.top = 4;
@@ -222,6 +222,10 @@ export function Daytona660ThreeModel() {
     resize();
 
     const animate = () => {
+      if (!visibleRef.current && !document.fullscreenElement) {
+        frameId = window.requestAnimationFrame(animate);
+        return;
+      }
       model.assemblies.forEach((assembly) => {
         const target = explodedRef.current ? assembly.explodeOffset : new THREE.Vector3();
         assembly.object.position.lerp(target, 0.075);

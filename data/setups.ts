@@ -238,5 +238,13 @@ export const computerJournal = {
       aspect: "3 / 4",
       wide: false,
     },
+    {
+      image: "/images/COMPUTER/IMG_4796.JPG",
+      alt: "電腦の手帖：ROG 顯卡支架",
+      caption: "跟網友收了 ROG 顯卡支架，真的很帥。",
+      date: "2026/08/03",
+      aspect: "4 / 3",
+      wide: true,
+    },
   ],
 };

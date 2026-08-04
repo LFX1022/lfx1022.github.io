@@ -33,7 +33,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     label: "匿名投稿",
-    icon: "MessageCircle",
+    icon: "MessageCircleQuestion",
     href: "https://tally.so/r/44YrNY",
     handle: "想說的話可以留在這裡，不必留下名字",
   },

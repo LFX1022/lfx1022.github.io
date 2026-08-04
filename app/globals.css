@@ -34,7 +34,7 @@
       url("/images/texture/microcement.png");
     background-size: auto, 600px 600px;
     background-repeat: no-repeat, repeat;
-    background-attachment: fixed, scroll;
+    background-attachment: scroll, scroll;
   }
 
   /* 尊重使用者的減少動態設定 */
@@ -245,7 +245,7 @@
     isolation: isolate;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     font-family: "AdobeKaitiStd-Regular", "Adobe Kaiti Std", "KaiTi",
       "STKaiti", "DFKai-SB", "BiauKai", "Noto Serif TC", serif;
     font-weight: 600;
@@ -314,20 +314,18 @@
     position: relative;
     z-index: 1;
     width: max-content;
-    margin-inline: auto;
+    margin-inline: 0;
     color: #f3efe4;
-    background:
-      linear-gradient(
-        104deg,
-        #fffaf0 0%,
-        #d8d3c7 28%,
-        #fffdf5 49%,
-        #cbc7bd 72%,
-        #f7f0e3 100%
-      ),
-      url("/images/texture/microcement.png");
+    background: linear-gradient(
+      104deg,
+      #fffaf0 0%,
+      #d8d3c7 28%,
+      #fffdf5 49%,
+      #cbc7bd 72%,
+      #f7f0e3 100%
+    );
     background-clip: text;
-    background-size: 100% 100%, 170px 170px;
+    background-size: 100% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 0.32px rgba(255, 252, 241, 0.82);
@@ -338,13 +336,23 @@
   }
 
   .motto-line-first {
-    margin-right: 1.15rem;
-    transform: rotate(-0.7deg);
+    align-self: flex-start;
+    transform: translate(0.65rem, 0.35rem) rotate(-0.7deg);
   }
 
   .motto-line-second {
-    margin-left: 1.15rem;
-    transform: rotate(0.8deg);
+    align-self: flex-end;
+    transform: translate(-0.75rem, 0.65rem) rotate(0.8deg);
+  }
+
+  @media (max-width: 640px) {
+    .motto-line-first {
+      transform: translate(0.2rem, 0.25rem) rotate(-0.7deg);
+    }
+
+    .motto-line-second {
+      transform: translate(-0.2rem, 0.45rem) rotate(0.8deg);
+    }
   }
 
   .motto-seal {
@@ -411,13 +419,13 @@
   .journey-read-link {
     position: relative;
     isolation: isolate;
-    display: inline-grid;
+    display: inline-flex;
     width: 8.75rem;
     height: 2rem;
     box-sizing: border-box;
-    grid-template-columns: 0.3rem minmax(0, 1fr) 1.15rem;
     align-items: center;
-    column-gap: 0.5rem;
+    justify-content: center;
+    gap: 0.5rem;
     overflow: hidden;
     border: 1px solid rgba(196, 154, 87, 0.2);
     background: rgba(52, 56, 58, 0.18);
@@ -493,6 +501,7 @@
   }
 
   .journey-read-link-dot {
+    flex: 0 0 auto;
     width: 0.3rem;
     height: 0.3rem;
     background: rgba(196, 154, 87, 0.65);
@@ -500,12 +509,20 @@
   }
 
   .journey-read-link-label {
+    display: flex;
     min-width: 0;
+    height: 100%;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.04rem;
     text-align: center;
+    white-space: nowrap;
   }
 
   .journey-read-link-icon {
     display: grid;
+    flex: 0 0 auto;
     width: 1.15rem;
     height: 1.15rem;
     place-items: center;
