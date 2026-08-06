@@ -1,5 +1,6 @@
 node_modules/
 .next/
+.next-broken-*/
 out/
 __pycache__/
 *.pyc
@@ -23,6 +24,9 @@ public/images/COMPUTER/IMG_3991.HEIC
 *.zip
 tsconfig.tsbuildinfo
 /build
+/archives/*/node_modules/
+/archives/*/.next/
+/archives/*/out/
 .DS_Store
 *.pem
 npm-debug.log*

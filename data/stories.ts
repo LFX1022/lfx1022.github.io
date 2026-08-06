@@ -54,13 +54,13 @@ export const stories: Story[] = [
     type: "archive",
     category: "興趣圖鑑 · Triumph",
     description: "從 Hinckley Daytona、T595／955i、675、Moto2 765 到 Daytona 660，依平台、引擎與歷史定位整理車系演進。",
-    tags: ["Triumph", "Daytona", "14 Nodes"],
+    tags: ["Triumph", "Daytona", "15 Nodes"],
     archive: {
       src: "/archives/triumph-daytona-archive/index.html",
       label: "展開圖鑑",
       eyebrow: "INTEREST ARCHIVE · TRIUMPH",
       frameTitle: "Triumph Daytona 仿賽年代圖鑑",
-      previewTitle: "14 Nodes",
+      previewTitle: "15 Nodes",
       previewImage: {
         src: "/archives/triumph-daytona-archive/images/models/daytona-official-archive.jpg",
         alt: "Triumph Daytona 675 官方歷史影像",

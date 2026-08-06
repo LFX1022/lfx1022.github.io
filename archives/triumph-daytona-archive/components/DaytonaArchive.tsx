@@ -32,6 +32,22 @@ function FilterMark({ family }: { family: EngineFamily }) {
 
 function ModelImage({ model, priority = false }: { model: DaytonaModel; priority?: boolean }) {
   const [failed, setFailed] = useState(false);
+  const [page, setPage] = useState(0);
+  const [cycle, setCycle] = useState(0);
+  const images = model.images?.length ? model.images : [model.image];
+
+  useEffect(() => {
+    if (images.length < 2) return;
+    const timer = window.setInterval(() => {
+      setPage((current) => (current + 1) % images.length);
+    }, 4500);
+    return () => window.clearInterval(timer);
+  }, [cycle, images.length, model.id]);
+
+  const changePage = (nextPage: number) => {
+    setPage((nextPage + images.length) % images.length);
+    setCycle((current) => current + 1);
+  };
 
   if (failed) {
     return (
@@ -44,15 +60,44 @@ function ModelImage({ model, priority = false }: { model: DaytonaModel; priority
   }
 
   return (
-    <Image
-      src={getModelImageSrc(model.image)}
-      alt={model.imageAlt}
-      width={1600}
-      height={1000}
-      className={model.imageFit === "contain" ? "is-contain" : undefined}
-      loading={priority ? "eager" : "lazy"}
-      onError={() => setFailed(true)}
-    />
+    <>
+      <span
+        className="image-track"
+        style={{ transform: `translateX(-${page * 100}%)` }}
+      >
+        {images.map((image, index) => (
+          <Image
+            key={image}
+            src={getModelImageSrc(image)}
+            alt={`${model.imageAlt}${images.length > 1 ? `，第 ${index + 1} 張` : ""}`}
+            width={1600}
+            height={1000}
+            className={model.imageFit === "contain" ? "is-contain" : undefined}
+            loading={priority && index === 0 ? "eager" : "lazy"}
+            onError={() => setFailed(true)}
+          />
+        ))}
+      </span>
+      {images.length > 1 ? (
+        <span className="image-pagination" aria-live="polite" onClick={(event) => event.stopPropagation()}>
+          <button type="button" className="image-page-arrow" onClick={() => changePage(page - 1)} aria-label="上一張圖片">‹</button>
+          <span className="image-page-count">{page + 1} / {images.length}</span>
+          <span className="image-page-dots">
+            {images.map((image, index) => (
+              <button
+                type="button"
+                className={index === page ? "active" : ""}
+                key={image}
+                onClick={() => changePage(index)}
+                aria-label={`切換到第 ${index + 1} 張圖片`}
+                aria-current={index === page ? "true" : undefined}
+              />
+            ))}
+          </span>
+          <button type="button" className="image-page-arrow" onClick={() => changePage(page + 1)} aria-label="下一張圖片">›</button>
+        </span>
+      ) : null}
+    </>
   );
 }
 
@@ -203,7 +248,7 @@ export function DaytonaArchive() {
           </div>
           <div className="hero-stats" aria-label="圖鑑統計">
             <div><b>35</b><span>YEARS<br />OF DAYTONA</span></div>
-            <div><b>14</b><span>TIMELINE<br />NODES</span></div>
+            <div><b>15</b><span>TIMELINE<br />NODES</span></div>
             <div><b>3 / 4</b><span>CYLINDER<br />PATHS</span></div>
           </div>
         </div>
@@ -270,10 +315,11 @@ export function DaytonaArchive() {
               <div className="timeline-node" aria-hidden="true">
                 <span>{String(index + 1).padStart(2, "0")}</span>
               </div>
-              <button className="model-media" type="button" onClick={() => setSelected(model)} aria-label={`查看 ${model.name} 詳情`}>
+              <div className="model-media">
                 <ModelImage model={model} />
+                <button className="model-open-button" type="button" onClick={() => setSelected(model)} aria-label={`查看 ${model.name} 詳情`} />
                 <span className="media-corner">VIEW MODEL <b>↗</b></span>
-              </button>
+              </div>
               <div className="model-copy">
                 <div className="model-topline">
                   <span>{model.eyebrow}</span>
@@ -327,17 +373,14 @@ export function DaytonaArchive() {
       <section className="method-section" id="method">
         <div className="method-copy">
           <span className="overline"><span /> EDITORIAL METHOD</span>
-          <h2>我們怎麼判斷<br />「一個新世代」？</h2>
-          <p>
-            車名相同，不代表機械相同；年份變了，也不一定就是新一代。
-            本圖鑑優先看引擎、車架、底盤、車身與產品任務是否發生結構性變化。
-          </p>
+          <h2>Daytona 675<br />分代快速比較</h2>
+          <p>Daytona 675 是車系本體，Daytona 675R 是高規版本，不是另一個世代。2009—2012 可視為初代中期改款；2013 年因新引擎、新車架、新車身與低位排氣，才適合稱為第二代大改款。</p>
         </div>
         <ol className="method-list">
-          <li><span>01</span><div><b>平台先於塗裝</b><p>車架與引擎換代，才是主要分界；年度新色不另開節點。</p></div></li>
-          <li><span>02</span><div><b>發表年與年式分開</b><p>例如 Daytona 600 於 2002 發表、主要歸在 2003 年式；Moto2 765 則是 2019 發表、2020 年式。</p></div></li>
-          <li><span>03</span><div><b>R 版看硬體，不看字母</b><p>675R 有 Öhlins、Brembo 與快排的實質差異，所以獨立呈現。</p></div></li>
-          <li><span>04</span><div><b>年式更新不是全新世代</b><p>MY26 Daytona 660 裝備進化明確，但核心平台未變，因此標成 Update。</p></div></li>
+          <li><span>01</span><div><b>675</b><p>Daytona 675 車系的標準車型，也是世代判讀的本體。</p></div></li>
+          <li><span>02</span><div><b>675R</b><p>建立在同世代 675 上的高規版本，不是另一個世代。</p></div></li>
+          <li><span>03</span><div><b>2009—2012</b><p>初代中期改款，仍保留座墊下方高位排氣架構。</p></div></li>
+          <li><span>04</span><div><b>2013—2018</b><p>引擎、車架、車身與低位排氣全面更新的第二代大改款。</p></div></li>
         </ol>
       </section>
 

@@ -118,7 +118,7 @@ export function RecordArchivePreview({
                   title={archive.frameTitle}
                   loading="lazy"
                   referrerPolicy="no-referrer"
-                  sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox"
+                  sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
                   className="min-h-0 flex-1 bg-[#07101d]"
                 />
               </section>
