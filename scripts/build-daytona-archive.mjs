@@ -13,20 +13,23 @@ const destination = path.join(
   "triumph-daytona-archive",
 );
 
-const command = process.platform === "win32"
-  ? [process.env.ComSpec ?? "cmd.exe", ["/d", "/s", "/c", "npm.cmd run build"]]
-  : ["npm", ["run", "build"]];
-const build = spawnSync(command[0], command[1], {
-  cwd: source,
-  stdio: "inherit",
-});
+const npm = process.platform === "win32"
+  ? [process.env.ComSpec ?? "cmd.exe", ["/d", "/s", "/c", "npm.cmd"]]
+  : ["npm", []];
 
-if (build.error) {
-  console.error(build.error);
-}
+for (const args of [["ci"], ["run", "build"]]) {
+  const result = spawnSync(npm[0], [...npm[1], ...args], {
+    cwd: source,
+    stdio: "inherit",
+  });
 
-if (build.status !== 0) {
-  process.exit(build.status ?? 1);
+  if (result.error) {
+    console.error(result.error);
+  }
+
+  if (result.status !== 0) {
+    process.exit(result.status ?? 1);
+  }
 }
 
 await rm(destination, { recursive: true, force: true });
