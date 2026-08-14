@@ -42,6 +42,7 @@ export function Motorcycle360({
   const [hasInteracted, setHasInteracted] = useState(false);
   const [demoing, setDemoing] = useState(false);
   const lastX = useRef<number | null>(null);
+  const draggingRef = useRef(false);
   const rootRef = useRef<HTMLDivElement>(null);
   const demoStarted = useRef(false);
   const decodedFrames = useRef(new Set<string>());
@@ -209,22 +210,26 @@ export function Motorcycle360({
   const onPointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
     if (!ready) return;
     lastX.current = event.clientX;
+    draggingRef.current = true;
     setDragging(true);
     setHasInteracted(true);
     event.currentTarget.setPointerCapture(event.pointerId);
   };
 
   const onPointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
-    if (!dragging || lastX.current === null) return;
+    if (!draggingRef.current || lastX.current === null) return;
     const distance = event.clientX - lastX.current;
-    const steps = Math.trunc(distance / 12);
+    const stepSize = event.pointerType === "touch" ? 8 : 12;
+    const steps = Math.trunc(distance / stepSize);
     if (steps === 0) return;
     rotate(-steps);
-    lastX.current += steps * 12;
+    event.preventDefault();
+    lastX.current += steps * stepSize;
   };
 
   const endDrag = () => {
     lastX.current = null;
+    draggingRef.current = false;
     setDragging(false);
   };
 
@@ -242,7 +247,7 @@ export function Motorcycle360({
   return (
     <div
       ref={rootRef}
-      className={`relative isolate bg-transparent outline-none ring-1 ring-[#d8b879]/30 shadow-[0_0_16px_rgba(216,184,121,0.20),0_0_42px_rgba(196,154,87,0.10)] transition-shadow focus-visible:ring-merlot-300/70 ${
+      className={`relative isolate select-none bg-transparent outline-none ring-1 ring-[#d8b879]/30 shadow-[0_0_16px_rgba(216,184,121,0.20),0_0_42px_rgba(196,154,87,0.10)] transition-shadow focus-visible:ring-merlot-300/70 ${
         !ready ? "cursor-default" : dragging ? "cursor-grabbing" : "cursor-grab"
       }`}
       role="region"
@@ -254,8 +259,10 @@ export function Motorcycle360({
       onPointerMove={onPointerMove}
       onPointerUp={endDrag}
       onPointerCancel={endDrag}
-      onPointerLeave={endDrag}
-      style={{ touchAction: "pan-y" }}
+      onPointerLeave={(event) => {
+        if (!event.currentTarget.hasPointerCapture(event.pointerId)) endDrag();
+      }}
+      style={{ touchAction: "pan-y", overscrollBehavior: "contain", WebkitUserSelect: "none" }}
     >
       <span
         className="pointer-events-none absolute -inset-x-8 -inset-y-5 -z-10 opacity-80 blur-xl"

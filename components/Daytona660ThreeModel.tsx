@@ -97,13 +97,25 @@ export function Daytona660ThreeModel() {
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     renderer.domElement.setAttribute("aria-label", "Triumph Daytona 660 多視角重建三維模型");
+    renderer.domElement.style.display = "block";
+    renderer.domElement.style.width = "100%";
+    renderer.domElement.style.height = "100%";
+    renderer.domElement.style.touchAction = "none";
+    renderer.domElement.style.userSelect = "none";
+    renderer.domElement.style.setProperty("-webkit-user-select", "none");
     mount.appendChild(renderer.domElement);
     rendererRef.current = renderer;
 
     const controls = new OrbitControls(camera, renderer.domElement);
+    const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
     controls.target.copy(CAMERA_TARGET);
     controls.enableDamping = true;
     controls.dampingFactor = 0.055;
+    controls.enablePan = false;
+    controls.rotateSpeed = isCoarsePointer ? 0.72 : 0.58;
+    controls.zoomSpeed = isCoarsePointer ? 0.82 : 0.72;
+    controls.touches.ONE = THREE.TOUCH.ROTATE;
+    controls.touches.TWO = THREE.TOUCH.DOLLY_ROTATE;
     controls.minDistance = 3.45;
     controls.maxDistance = 8.4;
     controls.minPolarAngle = 0.34;
@@ -266,7 +278,7 @@ export function Daytona660ThreeModel() {
   return (
     <div
       ref={mountRef}
-      className="relative aspect-[4/3] w-full overflow-hidden border border-[#d8b879]/30 bg-[#0b0c0e] shadow-[0_0_18px_rgba(216,184,121,0.16),0_0_52px_rgba(141,18,48,0.12)] sm:aspect-video"
+      className="relative aspect-[4/3] w-full touch-none select-none overflow-hidden border border-[#d8b879]/30 bg-[#0b0c0e] shadow-[0_0_18px_rgba(216,184,121,0.16),0_0_52px_rgba(141,18,48,0.12)] sm:aspect-video"
       role="region"
       aria-label="Triumph Daytona 660 多視角程序化 3D 模型，可拖曳旋轉、點選組件並拆解查看"
       aria-busy={!ready}
