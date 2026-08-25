@@ -236,6 +236,7 @@ export interface StoryMedia {
   src: string;
   /** 可選：顯示在該媒體上的說明文字 */
   caption?: string;
+  poster?: string;
 }
 
 /** 作品與紀錄卡片可展開的獨立圖鑑內容 */

@@ -1,3 +1,7 @@
+import { formatTaipeiTimestamp } from "@/lib/taipei-date";
+
 export const siteMeta = {
-  lastEdited: "2026.08.14 14:38",
+  get lastEdited() {
+    return formatTaipeiTimestamp();
+  },
 };

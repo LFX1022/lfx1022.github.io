@@ -25,7 +25,7 @@ export const merlotJournal = [
     aspect: "3 / 4",
   },
   {
-    src: "/images/motorcycles/daytona660/IMG_2404.MOV",
+    src: "/images/motorcycles/daytona660/IMG_2251.JPG",
     caption: "第一次參加台中凱旋車聚",
     date: "2025/02/14",
     aspect: "9 / 16",

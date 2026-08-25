@@ -128,6 +128,7 @@ function MediaItem({ item, title }: { item: StoryMedia; title: string }) {
       <video
         className="h-full w-full object-cover"
         src={src}
+        poster={item.poster}
         aria-label={title}
         autoPlay
         loop

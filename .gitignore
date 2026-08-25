@@ -2,9 +2,17 @@ node_modules/
 .next/
 .next-broken-*/
 out/
+dist/
 __pycache__/
 *.pyc
 .codex-tmp/
+/.img2threejs/
+.chrome-debug-profile/
+.edge-debug-profile/
+.npm-cache/
+.tmp-preview-logs/
+.tmp-review/
+.codex/
 .env
 .env.*
 public/images/CYUT/CBR150R.jpg
@@ -35,4 +43,5 @@ next-env.d.ts
 # 本機私人背景與原始素材
 LFX_PERSONAL_CONTEXT.md
 LFX_PRIVATE_CONTEXT.md
+LFX_SESSION_LOG.md
 source-media/

@@ -7,6 +7,8 @@ import { Motorcycle360 } from "@/components/Motorcycle360";
 import { LazyDaytona660ThreeModel } from "@/components/LazyDaytona660ThreeModel";
 import { DreamGarageGallery } from "@/components/DreamGarageGallery";
 import { MemoryGallery } from "@/components/MemoryGallery";
+import { GarageOwnership } from "@/components/GarageOwnership";
+import { garageOwnership } from "@/data/garage";
 import { interestMemories, interests } from "@/data/interests";
 import {
   daytonaGallery,
@@ -121,18 +123,21 @@ export function LifeInterests() {
                 <span className="h-px w-6 bg-merlot-500" aria-hidden />
                 歷代車庫 · Garage Archive
               </p>
-              <span className="font-mono text-[10px] text-steel-500/70">
-                2021/05/12 - 2024/12/21
-              </span>
+              <GarageOwnership
+                record={garageOwnership.archiveRange}
+                showDays={false}
+                className="font-mono text-[10px] text-steel-500/70"
+              />
             </div>
             <div className="mt-4 flex flex-wrap items-end justify-between gap-2">
               <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
                 <h3 className="garage-model-name">
                   2018 Suzuki GSX-R150
                 </h3>
-                <span className="font-mono text-[11px] text-steel-500/65">
-                  2021/05/12 - 2023/04/28 · 717 天
-                </span>
+                <GarageOwnership
+                  record={garageOwnership.pool}
+                  className="font-mono text-[11px] text-steel-500/65"
+                />
               </div>
               <p className="garage-vehicle-name">
                 小Pool車
@@ -151,9 +156,10 @@ export function LifeInterests() {
                 <h3 className="garage-model-name">
                   2016 Yamaha YZF-R3
                 </h3>
-                <span className="font-mono text-[11px] text-steel-500/65">
-                  2023/03/05 - 2024/12/21 · 658 天
-                </span>
+                <GarageOwnership
+                  record={garageOwnership.r3}
+                  className="font-mono text-[11px] text-steel-500/65"
+                />
               </div>
               <p className="garage-vehicle-name">
                 RyuGa
@@ -194,18 +200,21 @@ export function LifeInterests() {
                 <span className="h-px w-6 bg-merlot-500" aria-hidden />
                 現役車庫 · Current Garage
               </p>
-              <span className="font-mono text-[10px] text-steel-500/70">
-                2024/05/30 - 至今
-              </span>
+              <GarageOwnership
+                record={garageOwnership.tofu}
+                showDays={false}
+                className="font-mono text-[10px] text-steel-500/70"
+              />
             </div>
             <div className="mt-4 flex flex-wrap items-end justify-between gap-2">
               <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
                 <h3 className="garage-model-name">
                   2020 Suzuki GSX-R150
                 </h3>
-                <span className="font-mono text-[11px] text-steel-500/65">
-                  2024/05/30 - 至今 · 788 天
-                </span>
+                <GarageOwnership
+                  record={garageOwnership.tofu}
+                  className="font-mono text-[11px] text-steel-500/65"
+                />
               </div>
               <p className="garage-vehicle-name">
                 小豆腐
@@ -247,9 +256,10 @@ export function LifeInterests() {
                 <h3 className="garage-model-name">
                   2024 Triumph Daytona 660
                 </h3>
-                <span className="font-mono text-[11px] text-steel-500/65">
-                  2025/01/10 - 至今 · 563 天
-                </span>
+                <GarageOwnership
+                  record={garageOwnership.merlot}
+                  className="font-mono text-[11px] text-steel-500/65"
+                />
               </div>
               <p className="garage-vehicle-name">
                 Merlot

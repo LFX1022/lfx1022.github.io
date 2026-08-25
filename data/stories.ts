@@ -18,6 +18,11 @@ export const stories: Story[] = [
     // 依序顯示：002 在前、001 在後（左右並排）
     media: [
       { src: "/images/BIM/002.mp4", caption: "國一甲 支撐先進工法" },
+      {
+        src: "/images/BIM/02_000.mp4",
+        caption: "國一甲 結塊推進工法",
+        poster: "/images/BIM/02_000-poster.jpg",
+      },
       { src: "/images/BIM/001.mp4", caption: "布袋商港聯外道路新闢工程 懸臂工法" },
     ],
   },

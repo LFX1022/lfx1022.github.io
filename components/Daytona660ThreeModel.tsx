@@ -285,7 +285,7 @@ export function Daytona660ThreeModel() {
     >
       <div className="pointer-events-none absolute inset-x-0 top-0 z-10 flex items-center justify-between bg-gradient-to-b from-black/70 to-transparent px-4 pb-12 pt-4 font-mono text-[10px] uppercase tracking-label text-white/75">
         <span>Daytona 660 · Multi-view 3D</span>
-        <span>{ready ? "38-Part Geometry" : "Building Model"}</span>
+        <span>{ready ? "36-View Geometry" : "Building Model"}</span>
       </div>
 
       <div className="absolute bottom-4 right-4 z-10 flex gap-2">

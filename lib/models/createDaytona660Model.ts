@@ -321,6 +321,46 @@ function textDecal(text: string, width: number, side: number, y: number, x: numb
   return object;
 }
 
+function sideFastener(
+  x: number,
+  y: number,
+  side: number,
+  z: number,
+  material: THREE.Material,
+  name: string,
+  radius = 0.021,
+) {
+  const object = namedMesh(new THREE.CylinderGeometry(radius, radius * 0.86, 0.012, 18), material, name);
+  object.rotation.x = Math.PI / 2;
+  object.position.set(x, y, side * z);
+  return object;
+}
+
+function sideSeam(
+  points: Array<[number, number]>,
+  side: number,
+  z: number,
+  material: THREE.Material,
+  name: string,
+  radius = 0.006,
+) {
+  const curve = new THREE.CatmullRomCurve3(points.map(([x, y]) => new THREE.Vector3(x, y, side * z)));
+  return namedMesh(new THREE.TubeGeometry(curve, Math.max(12, points.length * 10), radius, 6, false), material, name);
+}
+
+function addMirroredSideDetail(
+  parent: THREE.Object3D,
+  points: Array<[number, number]>,
+  z: number,
+  material: THREE.Material,
+  name: string,
+  radius = 0.006,
+) {
+  [-1, 1].forEach((side) => {
+    addSurfaceDetail(parent, sideSeam(points, side, z, material, `${name}-${side}`, radius));
+  });
+}
+
 function createWheel(x: number, width: number, materials: DaytonaMaterials, name: string) {
   const group = new THREE.Group();
   group.name = name;
@@ -360,7 +400,6 @@ function createWheel(x: number, width: number, materials: DaytonaMaterials, name
   }
   tread.castShadow = true;
   tread.instanceMatrix.needsUpdate = true;
-  tread.visible = false;
   addSurfaceDetail(group, tread);
 
   const discSides = name === "front-wheel" ? [-0.17, 0.17] : [0.19];
@@ -401,6 +440,14 @@ function addFrontAssembly(assembly: THREE.Group, materials: DaytonaMaterials) {
     caliper.position.set(1.03, 0.64, z * 1.07);
     caliper.rotation.z = -0.3;
     assembly.add(caliper);
+
+    const brakeLine = new THREE.CatmullRomCurve3([
+      new THREE.Vector3(0.87, 1.47, z),
+      new THREE.Vector3(0.92, 1.25, z * 1.08),
+      new THREE.Vector3(1.0, 0.92, z * 1.14),
+      new THREE.Vector3(1.03, 0.68, z * 1.14),
+    ]);
+    assembly.add(namedMesh(new THREE.TubeGeometry(brakeLine, 32, 0.008, 6, false), materials.black, `front-brake-line-${sideIndex}`));
   });
   assembly.add(tubeBetween(new THREE.Vector3(0.88, 1.47, -0.26), new THREE.Vector3(0.88, 1.47, 0.26), 0.032, materials.darkMetal, "triple-clamp"));
 
@@ -408,6 +455,7 @@ function addFrontAssembly(assembly: THREE.Group, materials: DaytonaMaterials) {
   fender.rotation.z = Math.PI * 0.09;
   fender.scale.z = 2.7;
   assembly.add(fender);
+  addMirroredSideDetail(assembly, [[0.91, 0.97], [1.18, 1.05], [1.47, 0.96]], 0.24, materials.wineDark, "front-fender-crease", 0.008);
 
   [-1, 1].forEach((side) => {
     const stem = tubeBetween(
@@ -423,6 +471,11 @@ function addFrontAssembly(assembly: THREE.Group, materials: DaytonaMaterials) {
     grip.rotation.x = Math.PI / 2;
     grip.position.set(0.79, 1.54, side * 0.5);
     assembly.add(grip);
+
+    const barEnd = namedMesh(new THREE.SphereGeometry(0.043, 14, 10), materials.steel, `bar-end-${side}`);
+    barEnd.scale.set(1, 0.72, 0.72);
+    barEnd.position.set(0.78, 1.54, side * 0.63);
+    assembly.add(barEnd);
   });
 }
 
@@ -454,6 +507,18 @@ function addChassis(assembly: THREE.Group, materials: DaytonaMaterials) {
   }
   fins.instanceMatrix.needsUpdate = true;
   addSurfaceDetail(assembly, fins);
+
+  [-1, 1].forEach((side) => {
+    const framePlate = extrudedPanel([
+      [-0.76, 1.08], [-0.48, 1.24], [0.06, 1.14], [0.29, 0.96],
+      [0.08, 0.82], [-0.47, 0.82], [-0.76, 0.94],
+    ], 0.045, materials.cast, `cast-frame-side-plate-${side}`, 0.01);
+    framePlate.position.z = side * 0.335;
+    addSurfaceDetail(assembly, framePlate);
+
+    const pivotBoss = sideFastener(-0.31, 0.85, side, 0.372, materials.darkMetal, `swingarm-pivot-boss-${side}`, 0.048);
+    addSurfaceDetail(assembly, pivotBoss);
+  });
 }
 
 function addPowertrain(assembly: THREE.Group, materials: DaytonaMaterials) {
@@ -485,7 +550,34 @@ function addPowertrain(assembly: THREE.Group, materials: DaytonaMaterials) {
     const ring = namedMesh(new THREE.TorusGeometry(0.18, 0.012, 10, 40), materials.cast, `engine-cover-ring-${side}`);
     ring.position.set(-0.12, 0.66, side * 0.38);
     addSurfaceDetail(assembly, ring);
+
+    const boltCount = 8;
+    const bolts = new THREE.InstancedMesh(new THREE.CylinderGeometry(0.014, 0.012, 0.014, 10), materials.steel, boltCount);
+    bolts.name = `engine-cover-bolts-${side}`;
+    const matrix = new THREE.Matrix4();
+    const quaternion = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1, 0, 0), Math.PI / 2);
+    for (let index = 0; index < boltCount; index += 1) {
+      const angle = (index / boltCount) * Math.PI * 2;
+      matrix.compose(
+        new THREE.Vector3(-0.12 + Math.cos(angle) * 0.155, 0.66 + Math.sin(angle) * 0.155, side * 0.41),
+        quaternion,
+        new THREE.Vector3(1, 1, 1),
+      );
+      bolts.setMatrixAt(index, matrix);
+    }
+    bolts.instanceMatrix.needsUpdate = true;
+    addSurfaceDetail(assembly, bolts);
   });
+
+  const finMatrix = new THREE.Matrix4();
+  const cylinderFins = new THREE.InstancedMesh(new THREE.BoxGeometry(0.27, 0.012, 0.31), materials.cast, 9);
+  cylinderFins.name = "triple-cylinder-cooling-fins";
+  for (let index = 0; index < 9; index += 1) {
+    finMatrix.makeTranslation(0.15, 0.86 + index * 0.027, 0);
+    cylinderFins.setMatrixAt(index, finMatrix);
+  }
+  cylinderFins.instanceMatrix.needsUpdate = true;
+  addSurfaceDetail(assembly, cylinderFins);
 
   const collector = namedMesh(new THREE.CapsuleGeometry(0.13, 0.48, 8, 18), materials.exhaust, "exhaust-collector");
   collector.rotation.z = Math.PI / 2 - 0.12;
@@ -501,6 +593,12 @@ function addPowertrain(assembly: THREE.Group, materials: DaytonaMaterials) {
   outlet.rotation.z = Math.PI / 2;
   outlet.position.set(-0.82, 0.33, -0.35);
   assembly.add(outlet);
+
+  const outletRing = namedMesh(new THREE.TorusGeometry(0.086, 0.01, 8, 28), materials.steel, "exhaust-outlet-ring");
+  outletRing.rotation.y = Math.PI / 2;
+  outletRing.position.set(-0.885, 0.33, -0.35);
+  addSurfaceDetail(assembly, outletRing);
+  addSurfaceDetail(assembly, tubeBetween(new THREE.Vector3(-0.28, 0.36, -0.37), new THREE.Vector3(-0.72, 0.38, -0.43), 0.01, materials.steel, "exhaust-heat-shield-rib", 8));
 }
 
 function addBodywork(assembly: THREE.Group, materials: DaytonaMaterials) {
@@ -511,6 +609,7 @@ function addBodywork(assembly: THREE.Group, materials: DaytonaMaterials) {
     { x: 1.42, y: 1.17, top: 0.16, bottom: 0.14, width: 0.3 },
   ], 36), materials.wine, "front-cowl");
   assembly.add(frontCowl);
+  addMirroredSideDetail(assembly, [[0.55, 1.31], [0.83, 1.4], [1.24, 1.28]], 0.285, materials.wineDark, "front-cowl-shoulder-crease", 0.007);
 
   const intake = frontFaceShape([
     [-0.105, 0.11], [0, -0.07], [0.105, 0.11], [0.055, 0.16], [0, 0.055], [-0.055, 0.16],
@@ -524,9 +623,18 @@ function addBodywork(assembly: THREE.Group, materials: DaytonaMaterials) {
   assembly.add(brow);
 
   [
+    [[-0.325, 0.045], [-0.08, -0.052], [-0.022, 0.062], [-0.112, 0.177], [-0.325, 0.148]],
+    [[0.022, 0.062], [0.08, -0.052], [0.325, 0.045], [0.325, 0.148], [0.112, 0.177]],
+  ].forEach((points, index) => assembly.add(frontFaceShape(points as Array<[number, number]>, materials.black, `headlight-bezel-${index}`, 1.452, 1.12)));
+  [
     [[-0.29, 0.06], [-0.07, -0.025], [-0.025, 0.065], [-0.12, 0.16], [-0.29, 0.135]],
     [[0.025, 0.065], [0.07, -0.025], [0.29, 0.06], [0.29, 0.135], [0.12, 0.16]],
-  ].forEach((points, index) => assembly.add(frontFaceShape(points as Array<[number, number]>, materials.lamp, `headlight-${index}`, 1.445, 1.12)));
+  ].forEach((points, index) => assembly.add(frontFaceShape(points as Array<[number, number]>, materials.lamp, `headlight-${index}`, 1.458, 1.12)));
+
+  [
+    [[-0.31, -0.11], [-0.21, -0.47], [-0.06, -0.45], [-0.105, -0.09]],
+    [[0.06, -0.45], [0.21, -0.47], [0.31, -0.11], [0.105, -0.09]],
+  ].forEach((points, index) => assembly.add(frontFaceShape(points as Array<[number, number]>, materials.black, `front-lower-intake-shadow-${index}`, 1.405, 1.03)));
 
   const tank = namedMesh(loftGeometry([
     { x: -0.65, y: 1.36, top: 0.11, bottom: 0.1, width: 0.23 },
@@ -537,6 +645,28 @@ function addBodywork(assembly: THREE.Group, materials: DaytonaMaterials) {
   ], 40), materials.wine, "fuel-tank");
   tank.rotation.z = -0.015;
   assembly.add(tank);
+
+  const fuelCap = namedMesh(new THREE.CylinderGeometry(0.096, 0.096, 0.016, 42), materials.darkMetal, "fuel-cap");
+  fuelCap.position.set(-0.14, 1.61, 0);
+  assembly.add(fuelCap);
+  const fuelCapRing = namedMesh(new THREE.TorusGeometry(0.096, 0.006, 8, 36), materials.steel, "fuel-cap-ring");
+  fuelCapRing.rotation.x = Math.PI / 2;
+  fuelCapRing.position.set(-0.14, 1.62, 0);
+  assembly.add(fuelCapRing);
+  [-1, 1].forEach((side) => {
+    addSurfaceDetail(assembly, sideSeam([[-0.56, 1.42], [-0.22, 1.53], [0.2, 1.45]], side, 0.245, materials.wineDark, `tank-knee-crease-${side}`, 0.008));
+    const kneeScallop = extrudedPanel([
+      [-0.53, 1.21], [-0.21, 1.28], [0.16, 1.22], [0.01, 1.12], [-0.43, 1.08],
+    ], 0.014, materials.wineDark, `tank-knee-scallop-${side}`, 0.004);
+    kneeScallop.position.z = side * 0.345;
+    addSurfaceDetail(assembly, kneeScallop);
+
+    const tankSeatInfill = extrudedPanel([
+      [-0.86, 1.28], [-0.62, 1.35], [-0.37, 1.29], [-0.42, 1.18], [-0.73, 1.14], [-0.91, 1.19],
+    ], 0.014, materials.black, `tank-seat-black-infill-${side}`, 0.004);
+    tankSeatInfill.position.z = side * 0.352;
+    addSurfaceDetail(assembly, tankSeatInfill);
+  });
 
   const upperFairingPoints: Array<[number, number]> = [
     [-0.43, 1.11], [0.22, 1.3], [0.82, 1.29], [1.2, 1.07],
@@ -559,8 +689,28 @@ function addBodywork(assembly: THREE.Group, materials: DaytonaMaterials) {
     const inset = extrudedPanel(insetPoints, 0.018, materials.black, `fairing-inset-${side}`, 0.006);
     inset.position.z = side * 0.362;
     assembly.add(inset);
+    addSurfaceDetail(assembly, sideSeam([[-0.4, 1.08], [0.18, 1.24], [0.79, 1.19], [1.2, 1.02]], side, 0.366, materials.black, `upper-fairing-panel-gap-${side}`, 0.006));
+    addSurfaceDetail(assembly, sideSeam([[0.18, 0.78], [0.52, 0.72], [0.94, 0.78], [1.14, 0.93]], side, 0.356, materials.black, `lower-fairing-panel-gap-${side}`, 0.006));
+    addSurfaceDetail(assembly, sideSeam([[-0.08, 0.93], [0.34, 1.02], [0.65, 1.11]], side, 0.374, materials.darkMetal, `fairing-inset-upper-lip-${side}`, 0.012));
+    addSurfaceDetail(assembly, sideSeam([[-0.12, 1.04], [0.26, 1.15], [0.73, 1.1], [1.07, 0.97]], side, 0.394, materials.cast, `fairing-long-silver-trim-${side}`, 0.009));
+    const silverSlash = extrudedPanel([
+      [-0.05, 1.09], [0.24, 1.17], [0.67, 1.12], [0.58, 1.05], [0.2, 1.06], [-0.08, 1.01],
+    ], 0.014, materials.cast, `fairing-silver-slash-${side}`, 0.004);
+    silverSlash.position.z = side * 0.382;
+    addSurfaceDetail(assembly, silverSlash);
+    const lowerDuct = extrudedPanel([
+      [0.16, 0.62], [0.52, 0.63], [0.89, 0.72], [0.72, 0.55], [0.26, 0.5],
+    ], 0.016, materials.black, `lower-fairing-air-duct-${side}`, 0.004);
+    lowerDuct.position.z = side * 0.374;
+    addSurfaceDetail(assembly, lowerDuct);
+    const lowerGraphic = textDecal("660", 0.43, side, 0.5, 0.47, `lower-660-decal-${side}`);
+    lowerGraphic.position.z = side * 0.387;
+    addSurfaceDetail(assembly, lowerGraphic);
     assembly.add(textDecal("DAYTONA 660", 0.46, side, 1.15, 0.38, `daytona-decal-${side}`));
     assembly.add(textDecal("TRIUMPH", 0.28, side, 1.52, -0.05, `tank-decal-${side}`));
+    [
+      [-0.33, 0.88], [0.05, 1.16], [0.72, 1.18], [0.86, 0.74], [1.08, 0.91],
+    ].forEach(([x, y], index) => addSurfaceDetail(assembly, sideFastener(x, y, side, 0.389, materials.darkMetal, `fairing-fastener-${side}-${index}`, 0.018)));
     const sideLamp = extrudedPanel([
       [1.25, 1.18], [1.42, 1.15], [1.4, 1.21], [1.29, 1.24],
     ], 0.01, materials.lamp, `headlight-side-${side}`, 0.002);
@@ -577,6 +727,7 @@ function addBodywork(assembly: THREE.Group, materials: DaytonaMaterials) {
     [-0.42, 0.3], [0.38, 0.22], [0.92, 0.42], [0.73, 0.58], [-0.34, 0.5],
   ], 0.48, materials.matte, "belly-pan", 0.012);
   assembly.add(belly);
+  addMirroredSideDetail(assembly, [[-0.3, 0.41], [0.16, 0.35], [0.74, 0.48]], 0.245, materials.cast, "belly-pan-silver-rib", 0.01);
 
   const tail = namedMesh(loftGeometry([
     { x: -1.62, y: 1.29, top: 0.07, bottom: 0.055, width: 0.075 },
@@ -585,6 +736,7 @@ function addBodywork(assembly: THREE.Group, materials: DaytonaMaterials) {
     { x: -0.72, y: 1.37, top: 0.1, bottom: 0.08, width: 0.27 },
   ], 32), materials.wine, "tail-cowl");
   assembly.add(tail);
+  addMirroredSideDetail(assembly, [[-1.58, 1.34], [-1.3, 1.42], [-0.86, 1.4], [-0.72, 1.34]], 0.235, materials.wineDark, "tail-cowl-side-crease", 0.007);
 
   const riderSeat = namedMesh(loftGeometry([
     { x: -1.0, y: 1.4, top: 0.08, bottom: 0.04, width: 0.23 },
@@ -592,12 +744,14 @@ function addBodywork(assembly: THREE.Group, materials: DaytonaMaterials) {
     { x: -0.48, y: 1.39, top: 0.055, bottom: 0.045, width: 0.29 },
   ], 28), materials.matte, "rider-seat");
   assembly.add(riderSeat);
+  addMirroredSideDetail(assembly, [[-0.96, 1.46], [-0.73, 1.49], [-0.48, 1.43]], 0.26, materials.black, "rider-seat-edge-seam", 0.008);
   const pillionSeat = namedMesh(loftGeometry([
     { x: -1.42, y: 1.39, top: 0.055, bottom: 0.035, width: 0.15 },
     { x: -1.18, y: 1.46, top: 0.075, bottom: 0.04, width: 0.2 },
     { x: -0.98, y: 1.46, top: 0.055, bottom: 0.035, width: 0.21 },
   ], 24), materials.matte, "pillion-seat");
   assembly.add(pillionSeat);
+  addMirroredSideDetail(assembly, [[-1.42, 1.42], [-1.2, 1.5], [-0.98, 1.48]], 0.19, materials.black, "pillion-seat-edge-seam", 0.007);
 
   const windscreen = namedMesh(ribbonGeometry([
     { x: 0.64, y: 1.43, width: 0.21, crown: 0.012 },
@@ -606,6 +760,7 @@ function addBodywork(assembly: THREE.Group, materials: DaytonaMaterials) {
     { x: 1.13, y: 1.47, width: 0.17, crown: 0.012 },
   ], 16), materials.glass, "windscreen");
   assembly.add(windscreen);
+  addMirroredSideDetail(assembly, [[0.63, 1.43], [0.8, 1.62], [1.05, 1.58], [1.13, 1.47]], 0.235, materials.black, "windscreen-rolled-edge", 0.006);
 
   [-1, 1].forEach((side) => {
     assembly.add(tubeBetween(
@@ -624,6 +779,12 @@ function addBodywork(assembly: THREE.Group, materials: DaytonaMaterials) {
     signal.scale.set(1.4, 0.55, 0.55);
     signal.position.set(1.06, 1.16, side * 0.38);
     assembly.add(signal);
+
+    const tailVent = extrudedPanel([
+      [-1.55, 1.26], [-1.33, 1.34], [-0.88, 1.33], [-0.96, 1.24], [-1.42, 1.19],
+    ], 0.014, materials.black, `tail-under-vent-${side}`, 0.004);
+    tailVent.position.z = side * 0.258;
+    addSurfaceDetail(assembly, tailVent);
   });
 
   const tailLamp = extrudedPanel([[-0.11, -0.025], [0.11, -0.025], [0.08, 0.025], [-0.08, 0.025]], 0.028, materials.tailLamp, "tail-light-strip", 0.004);
@@ -640,6 +801,11 @@ function addRearAssembly(assembly: THREE.Group, materials: DaytonaMaterials) {
       tubeBetween(new THREE.Vector3(-0.35, 0.75, side * 0.27), new THREE.Vector3(-1.18, 0.55, side * 0.22), 0.06, materials.darkMetal, `swingarm-upper-${side}`, 16),
       tubeBetween(new THREE.Vector3(-0.34, 0.59, side * 0.27), new THREE.Vector3(-1.18, 0.48, side * 0.22), 0.048, materials.darkMetal, `swingarm-lower-${side}`, 16),
     );
+    const swingarmPlate = extrudedPanel([
+      [-0.46, 0.72], [-0.72, 0.65], [-1.23, 0.56], [-1.28, 0.47], [-0.68, 0.49], [-0.36, 0.58],
+    ], 0.03, materials.darkMetal, `swingarm-broad-side-plate-${side}`, 0.008);
+    swingarmPlate.position.z = side * 0.294;
+    addSurfaceDetail(assembly, swingarmPlate);
   });
   assembly.add(tubeBetween(new THREE.Vector3(-0.45, 0.78, 0), new THREE.Vector3(-0.68, 1.18, 0), 0.045, materials.gold, "rear-shock", 16));
 
@@ -647,6 +813,22 @@ function addRearAssembly(assembly: THREE.Group, materials: DaytonaMaterials) {
   sprocket.rotation.x = Math.PI / 2;
   sprocket.position.set(-1.18, 0.52, 0.25);
   assembly.add(sprocket);
+  const sprocketTeeth = new THREE.InstancedMesh(new THREE.BoxGeometry(0.026, 0.012, 0.024), materials.steel, 24);
+  sprocketTeeth.name = "rear-sprocket-teeth";
+  const sprocketMatrix = new THREE.Matrix4();
+  const sprocketQuaternion = new THREE.Quaternion();
+  for (let index = 0; index < 24; index += 1) {
+    const angle = (index / 24) * Math.PI * 2;
+    sprocketQuaternion.setFromAxisAngle(new THREE.Vector3(0, 0, 1), angle);
+    sprocketMatrix.compose(
+      new THREE.Vector3(-1.18 + Math.cos(angle) * 0.226, 0.52 + Math.sin(angle) * 0.226, 0.25),
+      sprocketQuaternion,
+      new THREE.Vector3(1, 1, 1),
+    );
+    sprocketTeeth.setMatrixAt(index, sprocketMatrix);
+  }
+  sprocketTeeth.instanceMatrix.needsUpdate = true;
+  addSurfaceDetail(assembly, sprocketTeeth);
   const frontSprocket = namedMesh(new THREE.CylinderGeometry(0.1, 0.1, 0.03, 28), materials.darkMetal, "front-sprocket");
   frontSprocket.rotation.x = Math.PI / 2;
   frontSprocket.position.set(-0.28, 0.56, 0.25);
@@ -655,9 +837,56 @@ function addRearAssembly(assembly: THREE.Group, materials: DaytonaMaterials) {
     tubeBetween(new THREE.Vector3(-1.18, 0.67, 0.27), new THREE.Vector3(-0.28, 0.64, 0.27), 0.013, materials.steel, "chain-top", 8),
     tubeBetween(new THREE.Vector3(-1.18, 0.38, 0.27), new THREE.Vector3(-0.28, 0.48, 0.27), 0.013, materials.steel, "chain-bottom", 8),
   );
+  const chainLinks = new THREE.InstancedMesh(new THREE.BoxGeometry(0.048, 0.017, 0.012), materials.darkMetal, 34);
+  chainLinks.name = "chain-link-plates";
+  const chainMatrix = new THREE.Matrix4();
+  const chainQuaternion = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 0, 1), -0.04);
+  for (let index = 0; index < 17; index += 1) {
+    const t = index / 16;
+    chainMatrix.compose(
+      new THREE.Vector3(-1.16 + t * 0.86, 0.67 - t * 0.03, 0.292),
+      chainQuaternion,
+      new THREE.Vector3(1, 1, 1),
+    );
+    chainLinks.setMatrixAt(index, chainMatrix);
+    chainMatrix.compose(
+      new THREE.Vector3(-1.16 + t * 0.86, 0.38 + t * 0.1, 0.292),
+      chainQuaternion,
+      new THREE.Vector3(1, 1, 1),
+    );
+    chainLinks.setMatrixAt(index + 17, chainMatrix);
+  }
+  chainLinks.instanceMatrix.needsUpdate = true;
+  addSurfaceDetail(assembly, chainLinks);
+
+  const chainGuard = extrudedPanel([
+    [-1.26, 0.8], [-0.96, 0.82], [-0.45, 0.71], [-0.48, 0.66], [-1.24, 0.73],
+  ], 0.025, materials.black, "chain-guard", 0.006);
+  chainGuard.position.z = 0.31;
+  addSurfaceDetail(assembly, chainGuard);
+
+  [-1, 1].forEach((side) => {
+    const axleBlock = namedMesh(new THREE.BoxGeometry(0.13, 0.075, 0.045), materials.cast, `rear-axle-block-${side}`);
+    axleBlock.position.set(-1.18, 0.52, side * 0.29);
+    addSurfaceDetail(assembly, axleBlock);
+    const rearSignal = namedMesh(new THREE.SphereGeometry(0.032, 14, 10), materials.orangeLamp, `rear-signal-${side}`);
+    rearSignal.scale.set(1.35, 0.55, 0.55);
+    rearSignal.position.set(-1.55, 1.16, side * 0.32);
+    assembly.add(rearSignal);
+  });
 
   const plateHolder = tubeBetween(new THREE.Vector3(-1.45, 1.23, 0), new THREE.Vector3(-1.68, 0.82, 0), 0.018, materials.black, "plate-holder", 10);
   assembly.add(plateHolder);
+  [-1, 1].forEach((side) => {
+    assembly.add(tubeBetween(
+      new THREE.Vector3(-1.44, 1.22, side * 0.08),
+      new THREE.Vector3(-1.68, 0.84, side * 0.13),
+      0.01,
+      materials.darkMetal,
+      `plate-holder-side-rail-${side}`,
+      8,
+    ));
+  });
   const plate = namedMesh(new THREE.BoxGeometry(0.035, 0.19, 0.3), materials.black, "rear-number-plate");
   plate.position.set(-1.68, 0.77, 0);
   plate.rotation.z = -0.2;
