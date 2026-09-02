@@ -9,6 +9,8 @@ import { MySetup } from "@/components/sections/MySetup";
 import { WhatIDo } from "@/components/sections/WhatIDo";
 import { SelectedWorks } from "@/components/sections/SelectedWorks";
 import { Contact } from "@/components/sections/Contact";
+import { Guestbook } from "@/components/sections/Guestbook";
+import { approvedGuestbookEntries } from "@/data/guestbook";
 
 export default function Home() {
   return (
@@ -31,7 +33,8 @@ export default function Home() {
         <WhatIDo />
         {/* 8. Selected Works & Stories 作品與紀錄 */}
         <SelectedWorks />
-        {/* 9. Contact 聯絡方式 */}
+        <Guestbook entries={approvedGuestbookEntries} />
+        {/* 10. Contact 聯絡方式 */}
         <Contact />
       </main>
       <Footer />

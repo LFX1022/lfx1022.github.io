@@ -24,6 +24,7 @@ export const stories: Story[] = [
         poster: "/images/BIM/02_000-poster.jpg",
       },
       { src: "/images/BIM/001.mp4", caption: "布袋商港聯外道路新闢工程 懸臂工法" },
+      { src: "/images/BIM/01.gif", caption: "布袋港外港填區圍堤工程" },
     ],
   },
   {

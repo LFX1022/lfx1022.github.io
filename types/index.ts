@@ -300,6 +300,16 @@ export interface SocialLink {
  * 允許使用的 Lucide 圖示名稱。
  * 若要新增圖示，先在此加入名稱，再到 components/Icon.tsx 補上對應。
  */
+export type GuestbookStatus = "pending" | "approved" | "rejected";
+
+export interface GuestbookEntry {
+  id: string;
+  name: string;
+  message: string;
+  createdAt: string;
+  status: GuestbookStatus;
+  link?: string;
+}
 export type IconName =
   | "MapPin"
   | "GraduationCap"

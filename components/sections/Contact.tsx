@@ -20,7 +20,7 @@ export function Contact() {
             <Reveal className="max-w-md">
               <p className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-label text-merlot-500">
                 <span className="h-px w-6 bg-merlot-500" aria-hidden />
-                07 / Contact
+                10 / Contact
               </p>
               <h2 className="text-gold-glow mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
                 聯絡方式
