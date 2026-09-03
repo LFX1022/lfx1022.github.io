@@ -92,13 +92,13 @@ export const daytonaGallery = [
 export const tofuJournal = [
   {
     src: "/images/motorcycles/gsxr150/IMG_9573.jpg",
-    caption: "入手前・賣家 PO 的商品照,第一次見到他",
+    caption: "入手前・賣家 PO 的商品照，第一次見到它",
     date: "2024/04/27",
     aspect: "3 / 4",
   },
   {
     src: "/images/motorcycles/gsxr150/IMG_9576.jpg",
-    caption: "騎著 RyuGa 上台中牽豆腐回家,底迪幫忙騎回屏科",
+    caption: "騎著 RyuGa 到台中牽小豆腐回家，底迪幫忙騎回屏科",
     date: "2024/05/30",
     aspect: "3 / 4",
   },

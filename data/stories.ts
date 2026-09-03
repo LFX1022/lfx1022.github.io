@@ -10,25 +10,32 @@ import type { Story } from "@/types";
 export const stories: Story[] = [
   {
     index: "01",
-    title: "工程模型與施工動畫",
+    title: "國道一號甲線專案",
     type: "engineering",
     category: "施工動畫",
-    description: "Revit 建模與施工動畫的紀錄。內容待補。",
-    tags: ["Revit", "施工動畫"],
-    // 依序顯示：002 在前、001 在後（左右並排）
+    description: "國道一號甲線專案的 Revit 建模與施工動畫紀錄。內容待補。",
+    tags: ["Revit", "施工動畫", "國一甲"],
     media: [
-      { src: "/images/BIM/002.mp4", caption: "國一甲 支撐先進工法" },
-      {
-        src: "/images/BIM/02_000.mp4",
-        caption: "國一甲 結塊推進工法",
-        poster: "/images/BIM/02_000-poster.jpg",
-      },
+      { src: "/images/BIM/國一甲_主線跨台15懸臂工法.mp4", caption: "國一甲 主線跨台 15 懸臂工法" },
+      { src: "/images/BIM/國一甲_八支線場撐工法R.mp4", caption: "國一甲 八線場撐工法" },
+      { src: "/images/BIM/國一甲_主線支撐先進工法 短片MK-05.mp4", caption: "國一甲 主線支撐先進工法" },
+      { src: "/images/BIM/自動化節塊推進MK-04.mp4", caption: "國一甲 自動化節塊推進工法" },
+    ],
+  },
+  {
+    index: "02",
+    title: "布袋商港新闢工程",
+    type: "engineering",
+    category: "施工動畫",
+    description: "布袋商港新闢工程與相關施工動畫紀錄。內容待補。",
+    tags: ["Revit", "施工動畫", "布袋商港"],
+    media: [
       { src: "/images/BIM/001.mp4", caption: "布袋商港聯外道路新闢工程 懸臂工法" },
       { src: "/images/BIM/01.gif", caption: "布袋港外港填區圍堤工程" },
     ],
   },
   {
-    index: "02",
+    index: "03",
     title: "Dynamo 與 AI 工作流程",
     type: "automation",
     category: "自動化 · AI",
@@ -37,7 +44,7 @@ export const stories: Story[] = [
     image: "",
   },
   {
-    index: "03",
+    index: "04",
     title: "重機騎乘與保養紀錄",
     type: "motorcycle",
     category: "重機 · 生活",
@@ -46,7 +53,7 @@ export const stories: Story[] = [
     image: "",
   },
   {
-    index: "04",
+    index: "05",
     title: "電腦設備與內容創作",
     type: "hardware",
     category: "硬體 · 創作",
@@ -55,7 +62,7 @@ export const stories: Story[] = [
     image: "",
   },
   {
-    index: "05",
+    index: "06",
     title: "Triumph Daytona 仿賽年代圖鑑",
     type: "archive",
     category: "興趣圖鑑 · Triumph",
@@ -74,7 +81,7 @@ export const stories: Story[] = [
     },
   },
   {
-    index: "06",
+    index: "07",
     title: "Ducati 仿賽與道路跑車圖鑑",
     type: "archive",
     category: "興趣圖鑑 · Ducati",
@@ -93,7 +100,7 @@ export const stories: Story[] = [
     },
   },
   {
-    index: "07",
+    index: "08",
     title: "Ultraman 整合圖鑑",
     type: "archive",
     category: "興趣圖鑑 · Ultraman",

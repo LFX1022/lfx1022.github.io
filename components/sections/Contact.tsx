@@ -26,7 +26,7 @@ export function Contact() {
                 聯絡方式
               </h2>
               <p className="mt-4 text-base leading-relaxed text-chalk-300">
-                想聊聊工作、重機、科技，或任何合作，都歡迎找我。（連結陸續設定）
+                想聊工作、重機、科技，或任何合作，都歡迎找我。
               </p>
             </Reveal>
 

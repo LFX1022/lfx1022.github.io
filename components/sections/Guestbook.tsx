@@ -14,8 +14,8 @@ export function Guestbook({ entries }: GuestbookProps) {
   return (
     <section id="guestbook" className="scroll-mt-28 py-16 sm:py-24">
       <div className="container-x">
-        <div className="grid gap-x-12 gap-y-8 lg:grid-cols-[1fr_1.1fr] lg:items-start">
-          <Reveal className="max-w-md">
+        <div className="grid gap-8 lg:grid-cols-2 lg:items-stretch">
+          <Reveal className="max-w-md lg:col-span-2">
             <p className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-label text-merlot-500">
               <span className="h-px w-6 bg-merlot-500" aria-hidden />
               09 / Guestbook
@@ -28,10 +28,8 @@ export function Guestbook({ entries }: GuestbookProps) {
             </p>
           </Reveal>
 
-          <div className="hidden lg:block" aria-hidden />
-
-          <Reveal className="max-w-md">
-            <div className="rounded-lg border border-coal-700 bg-coal-900/85 p-5 shadow-2xl shadow-black/10">
+          <Reveal className="h-full">
+            <div className="flex min-h-[260px] h-full w-full flex-col rounded-lg border border-coal-700 bg-coal-900/85 p-5 shadow-2xl shadow-black/10">
               <div className="flex items-center gap-3 border-b border-coal-700 pb-4">
                 <span className="flex h-10 w-10 items-center justify-center rounded-md bg-coal-800 text-merlot-500">
                   <MessageSquare size={20} strokeWidth={1.6} />
@@ -46,9 +44,6 @@ export function Guestbook({ entries }: GuestbookProps) {
 
               <div className="mt-5 text-sm leading-relaxed text-steel-300">
                 <p className="font-medium text-chalk-100">留言會經本人確認後公開。</p>
-                <p className="mt-2 text-steel-400">
-                  表單會在新分頁開啟；我會從 Tally 後台查看留言，再手動整理已公開內容。
-                </p>
                 <a
                   href={tallyFormUrl}
                   target="_blank"
@@ -62,8 +57,8 @@ export function Guestbook({ entries }: GuestbookProps) {
             </div>
           </Reveal>
 
-          <Reveal delay={120} className="lg:justify-self-end">
-            <div className="min-h-[260px] w-full rounded-lg border border-coal-700 bg-coal-900/70 p-6 shadow-2xl shadow-black/10 sm:p-7 lg:max-w-2xl">
+          <Reveal delay={120} className="h-full">
+            <div className="min-h-[260px] h-full w-full rounded-lg border border-coal-700 bg-coal-900/70 p-6 shadow-2xl shadow-black/10 sm:p-7">
               <p className="font-mono text-xs uppercase tracking-label text-steel-400">
                 Approved Notes
               </p>

@@ -50,6 +50,18 @@
 - 資訊完整不能以犧牲視覺張力、留白、質感與個人辨識度為代價。
 - 具體規劃、文案限制與驗收標準以 `CONTENT_PLAN.md` 為準。
 
+## 檔案歸檔規則
+
+使用者常會先把新增檔案丟在專案最外層。整理時依下列原則歸檔，不讓根目錄累積素材：
+
+- 根目錄只保留專案設定、文件與必要入口檔案，例如 `package.json`、`README.md`、`AGENTS.md`、`CONTENT_PLAN.md`。
+- 會被網站前台直接顯示的圖片、影片與 GIF 放在 `public/images/` 下，依主題分資料夾：BIM／工程紀錄放 `public/images/BIM/`，電腦放 `public/images/COMPUTER/`，重機與車輛相關放 `public/images/motorcycles/`。
+- 不需要直接公開載入、但用來保存來源或規格的紀錄檔放在 `records/` 下，依主題分資料夾：電腦放 `records/computer/`，BIM／工程放 `records/bim/`，重機與車輛放 `records/motorcycles/`。
+- 新增或移動前台素材後，同步更新 `data/` 中的路徑；避免在元件中重複寫死。
+- 無法判定用途、公開邊界或是否仍需要的檔案，先詢問本人，不自行刪除。
+- 只刪除可明確判定為暫存、重複或已被新版取代且沒有引用的雜項；刪除前先確認沒有被 `data/`、`app/`、`components/` 或公開頁面引用。
+- `LFX_PRIVATE_CONTEXT.md`、未授權原始素材與私人背景資料不得移入公開目錄。
+
 ## 網站施工階段
 
 目前採用：
