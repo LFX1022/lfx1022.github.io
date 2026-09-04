@@ -3,6 +3,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
 import { Icon } from "@/components/Icon";
 import { RecordArchivePreview } from "@/components/RecordArchivePreview";
+import { StoryImageCarousel } from "@/components/StoryImageCarousel";
 import { stories } from "@/data/stories";
 import type { IconName, Story, StoryMedia } from "@/types";
 
@@ -19,17 +20,19 @@ const typeIcon: Record<Story["type"], IconName> = {
 };
 
 export function SelectedWorks() {
+  const workStories = stories.filter((story) => story.type !== "archive");
+  const archiveStories = stories.filter((story) => story.type === "archive");
   return (
-    <section id="stories" className="scroll-mt-28 border-t border-ink-600/60 py-24 sm:py-32">
+    <section id="records-archive" className="scroll-mt-28 border-t border-ink-600/60 py-24 sm:py-32">
       <div className="container-x">
         <SectionHeading
-          eyebrow="08 / Selected Works & Stories"
+          eyebrow="03 / Records Archive"
           title="作品與紀錄"
-          description="工程、Dynamo、重機、硬體、影像、創作與生活——之後會陸續放進來。"
+          description="把工程、BIM、動畫模擬與內容整理放在同一個地方，讓每段經歷都有可以被看見的證據。"
         />
 
         <div className="mt-14 grid gap-6">
-          {stories.map((story, i) => (
+          {workStories.map((story, i) => (
             <Reveal key={story.index} delay={(i % 2) * 90}>
               <StoryCard story={story} />
             </Reveal>
@@ -40,6 +43,26 @@ export function SelectedWorks() {
   );
 }
 
+export function StoryArchives() {
+  const archiveStories = stories.filter((story) => story.type === "archive");
+
+  return (
+    <section className="scroll-mt-28 border-t border-ink-600/60 py-24 sm:py-32">
+      <div className="container-x">
+        <h2 className="text-gold-glow text-3xl font-semibold tracking-tight sm:text-4xl">
+          圖鑑整理
+        </h2>
+        <div className="mt-10 grid gap-6">
+          {archiveStories.map((story, i) => (
+            <Reveal key={story.index} delay={(i % 2) * 90}>
+              <StoryCard story={story} />
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 // 把單一 story 正規化成媒體清單：優先用 media，其次 video / image
 function storyMedia(story: Story): StoryMedia[] {
   if (story.media?.length) return story.media;
@@ -50,6 +73,7 @@ function storyMedia(story: Story): StoryMedia[] {
 
 function StoryCard({ story }: { story: Story }) {
   const media = storyMedia(story);
+  const hasVisuals = media.length > 0 || Boolean(story.galleries?.length);
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-md border border-ink-600 bg-ink-800/40 transition-colors hover:border-steel-600 md:flex-row">
       <div className="relative md:w-2/3 md:shrink-0">
@@ -59,17 +83,8 @@ function StoryCard({ story }: { story: Story }) {
             index={story.index}
             title={story.title}
           />
-        ) : media.length > 1 ? (
-          <MediaGrid items={media} title={story.title} />
-        ) : media.length === 1 ? (
-          <div className="relative aspect-[16/10] overflow-hidden bg-ink-900">
-            <MediaItem item={media[0]} title={story.title} />
-            {media[0].caption ? (
-              <span className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950/85 to-transparent px-4 pb-3 pt-8 font-mono text-xs leading-snug text-steel-100">
-                {media[0].caption}
-              </span>
-            ) : null}
-          </div>
+        ) : hasVisuals ? (
+          <StoryVisualStack story={story} media={media} />
         ) : (
           <div className="relative aspect-[16/10] overflow-hidden bg-ink-900">
             <PlaceholderVisual story={story} />
@@ -103,6 +118,29 @@ function StoryCard({ story }: { story: Story }) {
   );
 }
 
+
+function StoryVisualStack({ story, media }: { story: Story; media: StoryMedia[] }) {
+  return (
+    <div className="grid overflow-hidden bg-ink-950">
+      {media.length > 1 ? (
+        <MediaGrid items={media} title={story.title} />
+      ) : media.length === 1 ? (
+        <div className="relative aspect-[16/10] overflow-hidden bg-ink-900">
+          <MediaItem item={media[0]} title={story.title} />
+          {media[0].caption ? (
+            <span className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950/85 to-transparent px-4 pb-3 pt-8 font-mono text-xs leading-snug text-steel-100">
+              {media[0].caption}
+            </span>
+          ) : null}
+        </div>
+      ) : null}
+
+      {story.galleries?.map((gallery) => (
+        <StoryImageCarousel key={gallery.title} gallery={gallery} />
+      ))}
+    </div>
+  );
+}
 function MediaGrid({ items, title }: { items: StoryMedia[]; title: string }) {
   return (
     <div className="grid overflow-hidden bg-ink-950">
@@ -138,6 +176,7 @@ function MediaItem({ item, title }: { item: StoryMedia; title: string }) {
       />
     );
   }
+  const fitClass = item.fit === "contain" ? "object-contain p-3" : "object-cover";
   return (
     <Image
       src={src}
@@ -145,7 +184,7 @@ function MediaItem({ item, title }: { item: StoryMedia; title: string }) {
       fill
       sizes="(min-width: 640px) 50vw, 100vw"
       unoptimized={/\.gif$/i.test(src)}
-      className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+      className={`${fitClass} transition-transform duration-700 group-hover:scale-[1.03]`}
     />
   );
 }

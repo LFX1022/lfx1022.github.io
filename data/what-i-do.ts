@@ -10,7 +10,7 @@ export const whatIDo: WhatIDoCategory[] = [
     title: "BIM 與工程",
     titleEn: "BIM & Engineering",
     icon: "Boxes",
-    items: ["Revit 建模", "工程圖說判讀", "模型整合與衝突檢討"],
+    items: ["Revit 建模", "施工動畫模擬", "模型整合與衝突檢討"],
   },
   {
     title: "自動化與 AI 工具",

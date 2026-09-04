@@ -29,7 +29,7 @@ export function LifeInterests() {
         <SectionHeading
           eyebrow="05 / Life & Interests"
           title="生活與興趣"
-          description="工作以外的我。"
+          description="工作之外，重機、電腦與影像也一起構成我累積生活感與工具感的方式。"
         />
 
         {/* 興趣分類卡片；重機為重點，視覺上稍微突出 */}

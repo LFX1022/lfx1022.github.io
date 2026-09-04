@@ -281,10 +281,11 @@ export const journey: JourneyItem[] = [
         ],
         images: [
           {
-            src: "/images/BIM/IMG_0132.jpg",
+            src: "/images/BIM/IMG_0405.mp4",
             alt: "福清營造剛入住的宿舍空間影片紀錄",
             width: 1381,
             height: 959,
+            mediaType: "video",
             caption: "2024/09/23｜宿舍生存模式開啟",
             layout: "standalone",
           },

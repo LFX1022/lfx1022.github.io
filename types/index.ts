@@ -237,8 +237,17 @@ export interface StoryMedia {
   /** 可選：顯示在該媒體上的說明文字 */
   caption?: string;
   poster?: string;
+  /** cover 會填滿裁切；contain 會完整顯示，適合工程說明圖 */
+  fit?: "cover" | "contain";
 }
 
+
+/** 作品與紀錄卡片內的照片輪播 */
+export interface StoryGallery {
+  title: string;
+  slides: Array<StoryMedia & { alt: string }>;
+  autoPlayMs?: number;
+}
 /** 作品與紀錄卡片可展開的獨立圖鑑內容 */
 export interface StoryArchive {
   /** 公開靜態 HTML 路徑，展開後才載入 */
@@ -278,6 +287,8 @@ export interface Story {
   tags: string[];
   /** 多媒體清單：依序顯示多段動畫 / 圖片（優先於 video / image） */
   media?: StoryMedia[];
+  /** 補充照片輪播：顯示在主要媒體下方 */
+  galleries?: StoryGallery[];
   /** 影片路徑，放在 public/images/ 下（可選；單一媒體用） */
   video?: string;
   /** 圖片路徑，放在 public/images/ 下（可選；單一媒體用） */

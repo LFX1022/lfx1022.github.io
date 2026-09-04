@@ -7,6 +7,7 @@
     "build:archive": "node scripts/build-daytona-archive.mjs",
     "build:site": "next build",
     "verify:deploy": "node scripts/verify-static-assets.mjs",
+    "verify:preview": "node scripts/verify-preview-assets.mjs",
     "build": "npm run build:archive && npm run build:site && npm run verify:deploy",
     "start": "next start",
     "lint": "next lint"

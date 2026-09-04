@@ -9,11 +9,10 @@ import { BrandMeaning } from "@/components/BrandMeaning";
 const navLinks = [
   { label: "About", zh: "關於", href: "#about" },
   { label: "Journey", zh: "經歷", href: "#journey" },
+  { label: "Records", zh: "工作紀錄", href: "#records" },
   { label: "Life", zh: "生活", href: "#life" },
   { label: "Garage", zh: "車庫", href: "#garage" },
   { label: "Setup", zh: "電腦", href: "#setup" },
-  { label: "Work", zh: "工作", href: "#work" },
-  { label: "Stories", zh: "紀錄", href: "#stories" },
   { label: "Contact", zh: "聯絡", href: "#contact" },
 ];
 

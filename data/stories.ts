@@ -19,6 +19,7 @@ export const stories: Story[] = [
       { src: "/images/BIM/國一甲_主線跨台15懸臂工法.mp4", caption: "國一甲 主線跨台 15 懸臂工法" },
       { src: "/images/BIM/國一甲_八支線場撐工法R.mp4", caption: "國一甲 八線場撐工法" },
       { src: "/images/BIM/國一甲_主線支撐先進工法 短片MK-05.mp4", caption: "國一甲 主線支撐先進工法" },
+      { src: "/images/BIM/01、支撐先進航道限高3D模擬7.png", caption: "支撐先進航道限高3D模擬", fit: "contain" },
       { src: "/images/BIM/自動化節塊推進MK-04.mp4", caption: "國一甲 自動化節塊推進工法" },
     ],
   },
@@ -36,20 +37,67 @@ export const stories: Story[] = [
   },
   {
     index: "03",
+    title: "彰化和美跨河橋梁新建工程",
+    type: "engineering",
+    category: "施工動畫",
+    description: "彰化和美跨河橋梁新建工程的沉箱假水牆施工與拆除動畫紀錄。內容待補。",
+    tags: ["Revit", "施工動畫", "彰化和美"],
+    media: [
+      { src: "/images/BIM/假水牆PVC動畫.mp4", caption: "沉箱假水牆施工動畫" },
+      { src: "/images/BIM/假水牆拆除動畫.mp4", caption: "沉箱假水牆拆除動畫" },
+    ],
+    galleries: [
+      {
+        title: "隔音牆建置模擬",
+        autoPlayMs: 3600,
+        slides: [
+          {
+            src: "/images/BIM/changhua-hemei/20260526_V3_51 - 照片.jpg",
+            alt: "彰化和美跨河橋梁新建工程隔音牆建置模擬 01",
+            caption: "隔音牆建置模擬 01",
+          },
+          {
+            src: "/images/BIM/changhua-hemei/20260526_V3_57 - 照片.jpg",
+            alt: "彰化和美跨河橋梁新建工程隔音牆建置模擬 02",
+            caption: "隔音牆建置模擬 02",
+          },
+          {
+            src: "/images/BIM/changhua-hemei/20260526_V3_58 - 照片.jpg",
+            alt: "彰化和美跨河橋梁新建工程隔音牆建置模擬 03",
+            caption: "隔音牆建置模擬 03",
+          },
+        ],
+      },
+      {
+        title: "自行車欄杆建置模擬",
+        autoPlayMs: 3600,
+        slides: [
+          {
+            src: "/images/BIM/changhua-hemei/20260803_69 - 照片.jpg",
+            alt: "彰化和美跨河橋梁新建工程自行車欄杆建置模擬 01",
+            caption: "自行車欄杆建置模擬 01",
+          },
+          {
+            src: "/images/BIM/changhua-hemei/20260803_70 - 照片.jpg",
+            alt: "彰化和美跨河橋梁新建工程自行車欄杆建置模擬 02",
+            caption: "自行車欄杆建置模擬 02",
+          },
+          {
+            src: "/images/BIM/changhua-hemei/自行車模型.PNG",
+            alt: "彰化和美跨河橋梁新建工程自行車欄杆模型",
+            caption: "自行車欄杆模型",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    index: "04",
     title: "Dynamo 與 AI 工作流程",
     type: "automation",
     category: "自動化 · AI",
     description: "用 Dynamo 與 AI 工具優化工作流程的紀錄。內容待補。",
     tags: ["Dynamo", "AI"],
-    image: "",
-  },
-  {
-    index: "04",
-    title: "重機騎乘與保養紀錄",
-    type: "motorcycle",
-    category: "重機 · 生活",
-    description: "騎乘、路線與保養的紀錄。內容待補。",
-    tags: ["Daytona 660", "紀錄"],
     image: "",
   },
   {

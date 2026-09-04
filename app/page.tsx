@@ -3,11 +3,10 @@ import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { AboutMe } from "@/components/sections/AboutMe";
 import { MyJourney } from "@/components/sections/MyJourney";
-import { PersonalityOutlook } from "@/components/sections/PersonalityOutlook";
 import { LifeInterests } from "@/components/sections/LifeInterests";
 import { MySetup } from "@/components/sections/MySetup";
 import { WhatIDo } from "@/components/sections/WhatIDo";
-import { SelectedWorks } from "@/components/sections/SelectedWorks";
+import { SelectedWorks, StoryArchives } from "@/components/sections/SelectedWorks";
 import { Contact } from "@/components/sections/Contact";
 import { Guestbook } from "@/components/sections/Guestbook";
 import { approvedGuestbookEntries } from "@/data/guestbook";
@@ -23,16 +22,15 @@ export default function Home() {
         <AboutMe />
         {/* 3. My Journey 我的經歷 */}
         <MyJourney />
-        {/* 4. Personality & Outlook 個性與展望 */}
-        <PersonalityOutlook />
+        {/* 4. Records 工作紀錄 */}
+        <WhatIDo />
+        <SelectedWorks />
         {/* 5. Life & Interests 生活與興趣 */}
         <LifeInterests />
+        {/* 圖鑑整理放在車庫與 600RR 內容之後 */}
+        <StoryArchives />
         {/* 6. My Setup 我的電腦 */}
         <MySetup />
-        {/* 7. What I Do 目前在做的事 */}
-        <WhatIDo />
-        {/* 8. Selected Works & Stories 作品與紀錄 */}
-        <SelectedWorks />
         <Guestbook entries={approvedGuestbookEntries} />
         {/* 10. Contact 聯絡方式 */}
         <Contact />

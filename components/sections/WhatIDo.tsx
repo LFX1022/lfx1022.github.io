@@ -5,12 +5,12 @@ import { whatIDo } from "@/data/what-i-do";
 
 export function WhatIDo() {
   return (
-    <section id="work" className="scroll-mt-28 border-t border-ink-600/60 py-24 sm:py-32">
+    <section id="records" className="scroll-mt-28 border-t border-ink-600/60 py-24 sm:py-32">
       <div className="container-x">
         <SectionHeading
-          eyebrow="07 / What I Do"
-          title="目前在做的事"
-          description="工作的部分，分成三塊簡單講。"
+          eyebrow="03 / Records"
+          title="工作紀錄"
+          description="經歷之後，這裡整理我實際參與、建置與模擬過的工作紀錄。"
         />
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
