@@ -2,6 +2,7 @@ import Image from "next/image";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
 import { Icon } from "@/components/Icon";
+import { LazyVideo } from "@/components/LazyVideo";
 import { RecordArchivePreview } from "@/components/RecordArchivePreview";
 import { StoryImageCarousel } from "@/components/StoryImageCarousel";
 import { stories } from "@/data/stories";
@@ -162,19 +163,7 @@ function MediaGrid({ items, title }: { items: StoryMedia[]; title: string }) {
 function MediaItem({ item, title }: { item: StoryMedia; title: string }) {
   const { src } = item;
   if (/\.(mp4|webm|mov)$/i.test(src)) {
-    return (
-      <video
-        className="h-full w-full object-cover"
-        src={src}
-        poster={item.poster}
-        aria-label={title}
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="metadata"
-      />
-    );
+    return <LazyVideo item={item} title={title} />;
   }
   const fitClass = item.fit === "contain" ? "object-contain p-3" : "object-cover";
   return (
