@@ -74,7 +74,7 @@ export const profile: Profile = {
     {
       label: "03 / 工作與 BIM",
       content:
-        "BIM 是我工作的核心工具之一。我透過 Revit、Dynamo 與工程資訊整理，把圖說、模型和問題之間的關係說清楚。專業是生活的一部分，但不會成為定義我的唯一標籤。",
+        "BIM（Building Information Modeling，建築資訊模型）是我工作的核心工具之一。我透過 Revit、Dynamo 與工程資訊整理，把圖說、模型和問題之間的關係說清楚。專業是生活的一部分，但不會成為定義我的唯一標籤。",
       placeholder: false,
     },
     {
