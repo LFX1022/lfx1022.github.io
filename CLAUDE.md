@@ -1,5 +1,10 @@
 # Memory
 
+## Session Start Routine
+At the start of every new work session on this project, before starting any requested task:
+1. Run `git fetch origin` then check sync status (`git status`, and compare `main` vs `origin/main` with `git log --oneline main..origin/main` / `origin/main..main`). Report whether local is ahead/behind/in sync, and whether the worktree is clean.
+2. Read the most recent entry in "LFX.com Work Notes" below and summarize it for the user before proceeding.
+
 ## LFX.com Work Notes
 - 2026-08-14: Checked GitHub sync. Local `main` was behind `origin/main` by 4 commits; fast-forwarded to `d423fd1`.
 - Verified `HEAD == origin/main` after update and worktree was clean.
