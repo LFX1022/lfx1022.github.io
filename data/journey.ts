@@ -216,11 +216,11 @@ export const journey: JourneyItem[] = [
         ],
         images: [
           {
-            alt: "白色 Honda CBR150R 圖片待補",
-            placeholder: "那時候最想擁有的，是一台白色 CBR150R。",
-            width: 1440,
-            height: 763,
-            caption: "白色 CBR150R｜授權圖片待補",
+            src: "/images/CYUT/CBR150R.webp",
+            alt: "白色 Honda CBR150R",
+            width: 800,
+            height: 623,
+            caption: "白色 CBR150R｜那時候最想擁有的一台車",
           },
           {
             src: "/images/CYUT/IMG_2129.jpg",
@@ -235,7 +235,7 @@ export const journey: JourneyItem[] = [
         heading: "BIM｜那個方向終於有了名字",
         paragraphs: [
           "大二的電腦繪圖學期成績獲得滿分，班導因此和我談到研究所，也第一次向我介紹 BIM。",
-          "直到那一刻，高中時「建築與電腦結合」的想法，終於有了一個具體的名稱。",
+          "直到那一刻，高中時「建築與電腦結合」的想法，終於有了一個具體的名稱——BIM（Building Information Modeling，建築資訊模型）。",
         ],
       },
     ],
