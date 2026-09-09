@@ -95,7 +95,7 @@ export function AboutMe() {
                 </span>
               </h2>
 
-              <div className="mt-8 max-w-xl space-y-2 text-base leading-8 text-steel-300 sm:text-lg">
+              <div className="prose-hover-gold mt-8 max-w-xl space-y-2 text-base leading-8 text-steel-300 sm:text-lg">
                 {aboutSection.intro.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
@@ -250,7 +250,7 @@ export function AboutMe() {
                     <h3 className="font-mono text-xs uppercase leading-6 tracking-label text-merlot-300">
                       {field.label}
                     </h3>
-                    <p className="text-base leading-8 text-steel-300 sm:text-lg">
+                    <p className="prose-hover-gold text-base leading-8 text-steel-300 sm:text-lg">
                       {field.content}
                     </p>
                   </section>

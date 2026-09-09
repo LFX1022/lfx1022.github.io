@@ -89,7 +89,7 @@ export function LifeInterests() {
                   <h3 className="text-gold-glow mt-4 text-xl font-semibold leading-relaxed sm:text-2xl">
                     {memory.title}
                   </h3>
-                  <p className="mt-3 max-w-lg text-sm leading-7 text-steel-300/90">
+                  <p className="prose-hover-gold mt-3 max-w-lg text-sm leading-7 text-steel-300/90">
                     {memory.description}
                   </p>
                 </div>

@@ -47,11 +47,11 @@ export function Hero() {
           </h1>
 
           {/* 說明（較大） + 補充（較小） */}
-          <p className="mt-8 max-w-2xl text-lg leading-relaxed text-steel-300">
+          <p className="prose-hover-gold mt-8 max-w-2xl text-lg leading-relaxed text-steel-300">
             {profile.heroSub[0]}
           </p>
           {profile.heroSub[1] ? (
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-steel-400">
+            <p className="prose-hover-gold mt-4 max-w-2xl text-base leading-relaxed text-steel-400">
               {profile.heroSub[1]}
             </p>
           ) : null}

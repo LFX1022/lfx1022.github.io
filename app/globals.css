@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  /* 內文滑過金光：游標經過的段落微微轉暖金，克制、不搶戲，僅作為閱讀位置的柔和提示 */
+  .prose-hover-gold,
+  .prose-hover-gold p {
+    transition: color 420ms ease, text-shadow 420ms ease;
+  }
+
+  .prose-hover-gold:hover,
+  .prose-hover-gold p:hover {
+    color: #f0cf8f;
+    text-shadow:
+      0 0 1px rgba(255, 244, 222, 0.4),
+      0 0 16px rgba(240, 207, 143, 0.35);
+  }
+}
+
 @layer base {
   :root {
     color-scheme: light;

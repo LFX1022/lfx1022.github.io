@@ -391,7 +391,7 @@ export function MyJourney() {
                           {section.heading}
                         </h3>
 
-                        <div className="mt-5 space-y-4 text-base leading-8 text-steel-300 sm:text-lg sm:leading-9">
+                        <div className="prose-hover-gold mt-5 space-y-4 text-base leading-8 text-steel-300 sm:text-lg sm:leading-9">
                           {section.paragraphs.map((paragraph) => (
                             <p key={paragraph}>{paragraph}</p>
                           ))}
