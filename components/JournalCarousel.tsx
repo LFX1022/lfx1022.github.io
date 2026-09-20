@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import NextImage from "next/image";
 import { Icon } from "@/components/Icon";
+import { LazyVideo } from "@/components/LazyVideo";
 
 export interface JournalItem {
   src: string;
@@ -22,13 +23,36 @@ export function JournalCarousel({ items }: { items: JournalItem[] }) {
   const [index, setIndex] = useState(0);
   const count = items.length;
   const active = items[index];
+  const rootRef = useRef<HTMLDivElement>(null);
+  // 捲到附近才預抓相鄰兩張，否則三本手帖一開頁就先下載 1MB 多的照片
+  const [inView, setInView] = useState(false);
 
   const go = (delta: number) => {
     setIndex((prev) => (prev + delta + count) % count);
   };
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    const el = rootRef.current;
+    if (!el) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setInView(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setInView(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "600px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !inView) return;
 
     [-1, 0, 1].forEach((delta) => {
       const item = items[(index + delta + count) % count];
@@ -38,12 +62,12 @@ export function JournalCarousel({ items }: { items: JournalItem[] }) {
       image.decoding = "async";
       image.src = item.src;
     });
-  }, [count, index, items]);
+  }, [count, index, inView, items]);
 
   if (!active) return null;
 
   return (
-    <div>
+    <div ref={rootRef}>
       <div
         className="relative h-[62vh] max-h-[560px] min-h-[380px] w-full select-none overflow-hidden"
         style={{ perspective: "1400px" }}
@@ -78,22 +102,12 @@ export function JournalCarousel({ items }: { items: JournalItem[] }) {
               aria-hidden={!isActive}
             >
               {isVideo(item.src) ? (
-                <video
-                  className="absolute inset-0 h-full w-full object-contain"
-                  src={item.src}
-                  aria-label={item.caption}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
-                />
+                <LazyVideo item={{ src: item.src, fit: "contain" }} title={item.caption} />
               ) : (
                 <NextImage
                   src={item.src}
                   alt={item.caption}
                   fill
-                  priority={isActive}
                   sizes="(min-width: 640px) 24rem, 90vw"
                   unoptimized
                   className="object-cover"

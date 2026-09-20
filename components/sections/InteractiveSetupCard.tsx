@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { ChevronDown, MousePointer2 } from "lucide-react";
+import { LazyVideo } from "@/components/LazyVideo";
 import type { Setup, SetupMemory } from "@/types";
 
 type Connector = {
@@ -165,7 +166,6 @@ export function InteractiveSetupCard({ setup }: { setup: Setup }) {
                   src={setup.image}
                   alt={`${setup.name} 主機核心`}
                   fill
-                  priority
                   sizes="360px"
                   className={`object-cover object-center transition-transform duration-700 ${activeMemory ? "scale-[1.04]" : "scale-100"}`}
                 />
@@ -218,7 +218,7 @@ export function InteractiveSetupCard({ setup }: { setup: Setup }) {
       <div className="lg:hidden">
         <div className="relative mx-auto aspect-[3/4] w-full max-w-[340px] overflow-hidden rounded-2xl border border-merlot-300/55 bg-ink-950 shadow-2xl">
             {setup.image && (
-              <Image src={setup.image} alt={`${setup.name} 主機核心`} fill priority sizes="340px" className="object-cover object-center" />
+              <Image src={setup.image} alt={`${setup.name} 主機核心`} fill sizes="340px" className="object-cover object-center" />
             )}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-coal-950/65 via-transparent to-white/5" aria-hidden />
             {activeHotspot && <Hotspot x={activeHotspot.x} y={activeHotspot.y} width={activeHotspot.width} height={activeHotspot.height} polygon={activeHotspot.polygon} label={activeHotspot.label} />}
@@ -283,10 +283,7 @@ export function InteractiveSetupCard({ setup }: { setup: Setup }) {
           </div>
           <figure className="mx-auto grid max-w-4xl overflow-hidden rounded-2xl border border-ink-600/80 bg-ink-900/55 shadow-2xl shadow-coal-950/30 md:grid-cols-[minmax(260px,340px)_minmax(0,1fr)]">
             <div className="relative aspect-[9/16] overflow-hidden bg-ink-950">
-              <video autoPlay loop muted playsInline preload="metadata" poster={setup.finale.poster} aria-label={setup.finale.title} className="absolute inset-0 h-full w-full object-cover">
-                <source src={setup.finale.video} type="video/mp4" />
-                你的瀏覽器目前不支援影片播放。
-              </video>
+              <LazyVideo item={{ src: setup.finale.video, poster: setup.finale.poster }} title={setup.finale.title} />
             </div>
             <figcaption className="flex flex-col justify-center border-t border-ink-600/70 p-7 md:border-l md:border-t-0 lg:p-12">
               <p className="font-mono text-[10px] uppercase tracking-label text-merlot-300">Final Sequence</p>

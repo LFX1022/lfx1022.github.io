@@ -103,6 +103,8 @@ export function DreamGarageGallery({
             alt={slide.alt}
             width={slide.width}
             height={slide.height}
+            loading="lazy"
+            decoding="async"
             draggable={false}
             className={`absolute inset-0 h-full w-full transition-opacity duration-500 ${
               slide.fit === "contain" ? "object-contain" : "object-cover"

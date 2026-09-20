@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { ChevronDown, MonitorSmartphone } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
+import { LazyVideo } from "@/components/LazyVideo";
 import { Reveal } from "@/components/Reveal";
 import { computerJournal, setups } from "@/data/setups";
 import type { Setup } from "@/types";
@@ -118,7 +119,6 @@ function SetupCard({ setup }: { setup: Setup }) {
                 src={setup.image}
                 alt={`${setup.name}－${setup.role}`}
                 fill
-                priority={setup.role === "台中主力機"}
                 sizes="(min-width: 1024px) 340px, (min-width: 768px) 300px, 100vw"
                 className="object-cover object-center"
               />
@@ -329,19 +329,7 @@ function SetupCard({ setup }: { setup: Setup }) {
               <figure className="overflow-hidden rounded-sm border border-ink-600/80 bg-ink-900/55">
                 <div className="grid md:grid-cols-[minmax(300px,360px)_minmax(0,1fr)]">
                   <div className="relative aspect-[9/16] w-full overflow-hidden">
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      preload="metadata"
-                      poster={setup.finale.poster}
-                      aria-label={setup.finale.title}
-                      className="absolute inset-0 h-full w-full object-cover"
-                    >
-                      <source src={setup.finale.video} type="video/mp4" />
-                      你的瀏覽器不支援影片播放。
-                    </video>
+                    <LazyVideo item={{ src: setup.finale.video, poster: setup.finale.poster }} title={setup.finale.title} />
                   </div>
 
                   <figcaption className="flex flex-col justify-center border-t border-ink-600/70 p-6 sm:p-8 md:border-l md:border-t-0 lg:p-12">
