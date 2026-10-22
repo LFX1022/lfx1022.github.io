@@ -17,8 +17,10 @@ import {
   gsxr150Gallery,
   merlotJournal,
   poolGallery,
+  poolJournal,
   r3Gallery,
   r3Journal,
+  r3Modifications,
   tofuJournal,
 } from "@/data/motorcycles";
 
@@ -149,6 +151,25 @@ export function LifeInterests() {
           <Carousel slides={poolGallery} />
         </Reveal>
 
+        <section
+          id="pool-journal"
+          aria-labelledby="pool-journal-title"
+          className="container-x mt-16 scroll-mt-28"
+        >
+          <Reveal>
+            <p className="eyebrow">
+              <span className="h-px w-6 bg-merlot-500" aria-hidden />
+              {poolJournal.eyebrow}
+            </p>
+            <h3 id="pool-journal-title" className="garage-model-name mt-4">
+              {poolJournal.title}
+            </h3>
+            <div className="mt-8">
+              <JournalCarousel items={poolJournal.items} />
+            </div>
+          </Reveal>
+        </section>
+
         <div className="container-x mt-20">
           <Reveal>
             <div className="flex flex-wrap items-end justify-between gap-2">
@@ -192,6 +213,24 @@ export function LifeInterests() {
             <JournalCarousel items={r3Journal} />
           </Reveal>
         </div>
+
+        <section
+          id="r3-modifications"
+          aria-labelledby="r3-modifications-title"
+          className="container-x mt-12 scroll-mt-28"
+        >
+          <Reveal>
+            <h4
+              id="r3-modifications-title"
+              className="text-gold-glow text-xl font-semibold text-steel-100 sm:text-2xl"
+            >
+              {r3Modifications.title}
+            </h4>
+            <div className="mt-6">
+              <JournalCarousel items={r3Modifications.videos} />
+            </div>
+          </Reveal>
+        </section>
 
         <div className="container-x mt-24 border-t border-ink-600/60 pt-14">
           <Reveal>

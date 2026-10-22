@@ -49,6 +49,12 @@ export const merlotJournal = [
     aspect: "3 / 4",
   },
   {
+    src: "/images/motorcycles/daytona660/IMG_3388.jpg",
+    caption: "直接把車停進媽媽的花店。一開始還覺得停不進去，結果還是老媽讓我停進來的。",
+    date: "2025/10/06",
+    aspect: "4 / 3",
+  },
+  {
     src: "/images/motorcycles/daytona660/IMG_3612.JPG",
     caption: "西子灣追焦，從上往下拍蠻特別的",
     date: "2025/12/06",
@@ -61,15 +67,57 @@ export const merlotJournal = [
     aspect: "3 / 2",
   },
   {
+    src: "/images/motorcycles/daytona660/IMG_4129.JPG",
+    caption: "跟高雄車友們到日嚐漫漫小聚，老闆也是騎 RRR 的帥哥。",
+    date: "2026/04/03",
+    aspect: "3 / 4",
+  },
+  {
     src: "/images/motorcycles/daytona660/IMG_4290.JPG",
     caption: "Merlot 跟 V2 夢想車合照，V2 真的很帥",
     date: "2026/05/01",
     aspect: "4 / 3",
   },
   {
+    src: "/images/motorcycles/daytona660/IMG_4451.JPG",
+    caption: "參加台中凱旋檳榔團車聚，地點在望景咖啡。",
+    date: "2026/06/06",
+    aspect: "3 / 4",
+  },
+  {
+    src: "/images/motorcycles/daytona660/IMG_4452.JPG",
+    caption: "望景咖啡・台中凱旋檳榔團車隊合影。",
+    date: "2026/06/06",
+    aspect: "4 / 3",
+  },
+  {
+    src: "/images/motorcycles/daytona660/IMG_4606.JPG",
+    caption: "直接停進公司的停車格，心裡很怕被老闆娘抓到。",
+    date: "2026/07/01",
+    aspect: "3 / 4",
+  },
+  {
     src: "/images/motorcycles/daytona660/IMG_4628.JPG",
     caption: "跟兩位叔叔出發東港",
     date: "2026/07/04",
+    aspect: "3 / 4",
+  },
+  {
+    src: "/images/motorcycles/daytona660/IMG_4979.JPG",
+    caption: "換牌前的 Merlot・原本的車牌是 LGP-7157，後來換成 1066。",
+    date: "2026/08/23",
+    aspect: "3 / 4",
+  },
+  {
+    src: "/images/motorcycles/daytona660/IMG_5083.JPG",
+    caption: "換大牌・原本想選 1022，可惜已經被選走，最後選了 1066。",
+    date: "2026/09/04",
+    aspect: "3 / 4",
+  },
+  {
+    src: "/images/motorcycles/daytona660/IMG_5084.JPG",
+    caption: "1066 上車，Merlot 換上新的大牌。",
+    date: "2026/09/04",
     aspect: "3 / 4",
   },
   {
@@ -98,8 +146,14 @@ export const tofuJournal = [
   },
   {
     src: "/images/motorcycles/gsxr150/IMG_9576.jpg",
-    caption: "騎著 RyuGa 到台中牽小豆腐回家，底迪幫忙騎回屏科",
-    date: "2024/05/30",
+    caption: "準備從台中騎回屏東，弟弟陪我一起。後來他覺得 R3 比較好騎，就換他騎 R3、我騎小豆腐，哈哈哈。",
+    date: "2024/05/31",
+    aspect: "3 / 4",
+  },
+  {
+    src: "/images/motorcycles/gsxr150/IMG_9648.jpg",
+    caption: "小豆腐終於換上此生最愛的車牌 NXX-1022。",
+    date: "2024/06/12",
     aspect: "3 / 4",
   },
   {
@@ -158,6 +212,94 @@ export const gsxr150Gallery = [
 // RyuGa の生活手帖：YZF-R3 的影像日誌（改裝、騎乘、道別…）
 export const r3Journal = [
   {
+    src: "/images/motorcycles/R3/IMG_6770.jpg",
+    caption: "第一次參加車聚",
+    date: "2023/05/26",
+    aspect: "3 / 4",
+  },
+  {
+    src: "/images/motorcycles/R3/IMG_7077.JPG",
+    caption: "跟著 RyuGa 一起畢業。",
+    date: "2023/06/20",
+    aspect: "4 / 3",
+  },
+  {
+    src: "/images/motorcycles/R3/IMG_8538.mp4",
+    poster: "/images/motorcycles/R3/IMG_8538-poster.jpg",
+    caption: "大家一起到鹿耳門天后宮拜月老。",
+    date: "2024/01/28",
+    aspect: "16 / 9",
+    controls: true,
+  },
+  {
+    src: "/images/motorcycles/R3/IMG_8568.jpg",
+    caption: "跟鄰居一起上阿里山",
+    date: "2024/02/03",
+    aspect: "3 / 4",
+  },
+  {
+    src: "/images/motorcycles/R3/IMG_8578.jpg",
+    caption: "拍完這張就被趕走了",
+    date: "2024/02/03",
+    aspect: "4 / 3",
+  },
+  {
+    src: "/images/motorcycles/R3/IMG_9597.jpg",
+    caption: "朋友都會把車丟給我保養，不知道的還以為我開車行，哈哈哈。",
+    date: "2024/06/06",
+    aspect: "4 / 3",
+  },
+  {
+    src: "/images/motorcycles/R3/IMG_9712.jpg",
+    caption: "這時候的 RyuGa 最帥",
+    date: "2024/06/24",
+    aspect: "3 / 4",
+  },
+  {
+    src: "/images/motorcycles/R3/IMG_9776.jpg",
+    caption: "在家自己換機油",
+    date: "2024/07/07",
+    aspect: "3 / 4",
+  },
+  {
+    src: "/images/motorcycles/R3/IMG_0226.jpg",
+    caption: "開始每年都要驗車。原廠是鹵素燈，換成 LED 車頭就驗不過，真的是爛法規。",
+    date: "2024/08/22",
+    aspect: "3 / 4",
+  },
+  {
+    src: "/images/motorcycles/R3/IMG_0328.mp4",
+    poster: "/images/motorcycles/R3/IMG_0328-poster.jpg",
+    caption: "開始發不動了",
+    date: "2024/09/07",
+    aspect: "9 / 16",
+    controls: true,
+  },
+  {
+    src: "/images/motorcycles/R3/IMG_0421.jpg",
+    caption: "在屏科全家，邊吃早餐邊欣賞自己的車，哈哈哈。",
+    date: "2024/09/27",
+    aspect: "3 / 4",
+  },
+  {
+    src: "/images/motorcycles/R3/IMG_0441.jpg",
+    caption: "跟朋友們一起去駁二逛逛。由左至右分別是大台的、RyuGa 和啾啾丸。",
+    date: "2024/09/28",
+    aspect: "3 / 4",
+  },
+  {
+    src: "/images/motorcycles/R3/IMG_0484.jpg",
+    caption: "在夢時代地下停車場，整流器壞了。",
+    date: "2024/10/05",
+    aspect: "3 / 4",
+  },
+  {
+    src: "/images/motorcycles/R3/IMG_0643.jpg",
+    caption: "洗乾淨的 RyuGa",
+    date: "2024/10/25",
+    aspect: "3 / 4",
+  },
+  {
     src: "/images/motorcycles/R3/IMG_1469.JPG",
     caption:
       "跟 R3 道別。謝謝你這兩年順順利利、健健康康地帶我去好多地方；改裝你的時候很開心，也像上了一堂沒有學分但很硬派的機械課，讓我學到很多。最後兩年的大學時光，因為有你，過得很充實。",
@@ -165,6 +307,49 @@ export const r3Journal = [
     aspect: "3 / 4",
   },
 ];
+
+export const r3Modifications = {
+  title: "改裝影片",
+  videos: [
+    {
+      src: "/images/motorcycles/R3/20240110-mototron-rearsets.mp4",
+      poster: "/images/motorcycles/R3/20240110-mototron-rearsets-poster.jpg",
+      caption: "換上 MOTOTRON 後移腳踏，物美價廉。",
+      date: "2024/01/10",
+      aspect: "9 / 16",
+      controls: true,
+    },
+  ],
+};
+
+export const poolJournal = {
+  eyebrow: "小Pool車 · Life Journal",
+  title: "小Pool車 の生活手帖",
+  items: [
+    {
+      src: "/images/motorcycles/POOL/IMG_5737.jpg",
+      caption: "跨年去墾丁玩，把車借給朋友騎，結果他遇到三寶。",
+      date: "2023/01/01",
+      aspect: "4 / 3",
+    },
+    {
+      src: "/images/motorcycles/POOL/IMG_6281.mp4",
+      poster: "/images/motorcycles/POOL/IMG_6281-poster.jpg",
+      caption: "小Pool車讓我更熟悉檔車，也讓弟弟學會了騎車。",
+      date: "2023/04/02",
+      aspect: "9 / 16",
+      controls: true,
+    },
+    {
+      src: "/images/motorcycles/POOL/IMG_6457.mp4",
+      poster: "/images/motorcycles/POOL/IMG_6457-poster.jpg",
+      caption: "把人生中第一台陪伴我的車，交給下一位車主了。",
+      date: "2023/04/28",
+      aspect: "9 / 16",
+      controls: true,
+    },
+  ],
+};
 
 export const poolGallery = [
   { src: "/images/motorcycles/POOL/52011010559_bd241c7221_h.jpg", alt: "Suzuki GSX-R150 小Pool車 — 道路動態前側", width: 1378, height: 919 },

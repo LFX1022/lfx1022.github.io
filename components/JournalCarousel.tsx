@@ -9,6 +9,9 @@ export interface JournalItem {
   src: string;
   caption: string;
   date?: string;
+  poster?: string;
+  /** 可開啟聲音；切到相鄰預覽時改顯示封面，停止影片播放。 */
+  controls?: boolean;
   /** 顯示比例，例如 "3 / 4"（照片）、"9 / 16"（直式影片） */
   aspect: string;
 }
@@ -79,6 +82,7 @@ export function JournalCarousel({ items }: { items: JournalItem[] }) {
           if (Math.abs(offset) > 1) return null;
 
           const isActive = offset === 0;
+          const imageSrc = isVideo(item.src) ? item.poster : item.src;
           const dir = offset < 0 ? -1 : 1;
           const sideShift = "clamp(220px, 28vw, 355px)";
           const sideX = dir < 0 ? `calc(-50% - ${sideShift})` : `calc(-50% + ${sideShift})`;
@@ -101,11 +105,15 @@ export function JournalCarousel({ items }: { items: JournalItem[] }) {
               }}
               aria-hidden={!isActive}
             >
-              {isVideo(item.src) ? (
-                <LazyVideo item={{ src: item.src, fit: "contain" }} title={item.caption} />
-              ) : (
+              {isVideo(item.src) && (!item.controls || isActive) ? (
+                <LazyVideo
+                  item={{ src: item.src, poster: item.poster, fit: "contain" }}
+                  title={item.caption}
+                  controls={item.controls}
+                />
+              ) : imageSrc ? (
                 <NextImage
-                  src={item.src}
+                  src={imageSrc}
                   alt={item.caption}
                   fill
                   sizes="(min-width: 640px) 24rem, 90vw"
@@ -113,7 +121,7 @@ export function JournalCarousel({ items }: { items: JournalItem[] }) {
                   className="object-cover"
                   draggable={false}
                 />
-              )}
+              ) : null}
               {!isActive ? <div className="absolute inset-0 bg-ink-950/55" aria-hidden /> : null}
             </div>
           );

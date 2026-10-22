@@ -4,7 +4,15 @@ import { useEffect, useRef, useState } from "react";
 import type { StoryMedia } from "@/types";
 
 /** 影片捲到視窗附近才掛載 src，避免一開頁就同時下載所有 story 的影片 */
-export function LazyVideo({ item, title }: { item: StoryMedia; title: string }) {
+export function LazyVideo({
+  item,
+  title,
+  controls = false,
+}: {
+  item: StoryMedia;
+  title: string;
+  controls?: boolean;
+}) {
   const { src, poster, fit } = item;
   const fitClass = fit === "contain" ? "object-contain" : "object-cover";
   const ref = useRef<HTMLDivElement>(null);
@@ -38,6 +46,7 @@ export function LazyVideo({ item, title }: { item: StoryMedia; title: string }) 
           src={src}
           poster={poster}
           aria-label={title}
+          controls={controls}
           autoPlay
           loop
           muted

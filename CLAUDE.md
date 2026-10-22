@@ -1,5 +1,11 @@
 # Memory
 
+## Preview and Production Workflow
+
+- Latest user instruction (2026-10-23): implement and verify all requested changes in the local preview first. Accumulate the changes without committing, pushing, or deploying each item. Only after the user explicitly says the whole batch is ready to release (「全部改好，可以進版」), run `npm.cmd run build`, commit the relevant batch, push to `origin/main`, and verify the GitHub Pages deployment at `https://lfx1022.github.io/`.
+- Follow the full workflow in `AGENTS.md` under「預覽與正式站更新流程」. Keep unrelated work and private/local context files out of commits; never force push.
+- This replaces the earlier authorization to automatically publish after each completed change. It does not authorize unsolicited website/content changes.
+
 ## Session Start Routine
 At the start of every new work session on this project, before starting any requested task:
 1. Run `git fetch origin` then check sync status (`git status`, and compare `main` vs `origin/main` with `git log --oneline main..origin/main` / `origin/main..main`). Report whether local is ahead/behind/in sync, and whether the worktree is clean.

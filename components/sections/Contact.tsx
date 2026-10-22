@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { Icon } from "@/components/Icon";
-import { socialLinks } from "@/data/social";
+import { contactCopy, socialLinks } from "@/data/social";
 
 /**
  * Contact 做成深炭灰「量體」色塊（呼應照片裡的電視櫃 / 深門片），
@@ -26,7 +26,7 @@ export function Contact() {
                 聯絡方式
               </h2>
               <p className="mt-4 text-base leading-relaxed text-chalk-300">
-                想聊工作、重機、科技，或任何合作，都歡迎找我。
+                {contactCopy.description}
               </p>
             </Reveal>
 

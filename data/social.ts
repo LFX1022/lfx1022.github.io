@@ -6,6 +6,10 @@ import type { SocialLink } from "@/types";
 // 已設定的會變成可點擊超連結（http 連結會開新分頁，mailto 會開郵件）。
 // ============================================================
 
+export const contactCopy = {
+  description: "想聊重機、BIM、電腦或 AI 應用，或洽談任何合作，都歡迎找我。",
+};
+
 export const socialLinks: SocialLink[] = [
   {
     label: "Email",
