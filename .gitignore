@@ -45,3 +45,6 @@ LFX_PERSONAL_CONTEXT.md
 LFX_PRIVATE_CONTEXT.md
 LFX_SESSION_LOG.md
 source-media/
+
+# 車輛素材來源與較大版本，只保留在本機
+/records/motorcycles/*/originals/
