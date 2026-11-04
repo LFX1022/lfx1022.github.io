@@ -7,9 +7,11 @@
 - This replaces the earlier authorization to automatically publish after each completed change. It does not authorize unsolicited website/content changes.
 
 ## Session Start Routine
-At the start of every new work session on this project, before starting any requested task:
-1. Run `git fetch origin` then check sync status (`git status`, and compare `main` vs `origin/main` with `git log --oneline main..origin/main` / `origin/main..main`). Report whether local is ahead/behind/in sync, and whether the worktree is clean.
-2. Read the most recent entry in "LFX.com Work Notes" below and summarize it for the user before proceeding.
+When the user says「開工」, treat it as the explicit trigger to start a work session on this project:
+1. Run `git fetch origin` then check sync status (`git status`, and compare `main` vs `origin/main` with `git log --oneline main..origin/main` / `origin/main..main`). Report whether local is ahead/behind/diverged/in sync, and whether the worktree is clean. Check only; do not pull, commit, push, or overwrite local changes unless separately authorized.
+2. Confirm the LFX preview server is running; start it with `npm.cmd run dev` if needed.
+3. Verify that `http://localhost:3000/` serves the LFX site, then open it in the default browser. Do not use `http://127.0.0.1:3000/`, because TenderDocTransfer may occupy that exact address.
+4. Read the most recent entry in "LFX.com Work Notes" below and summarize it for the user before proceeding.
 
 ## LFX.com Work Notes
 - 2026-08-14: Checked GitHub sync. Local `main` was behind `origin/main` by 4 commits; fast-forwarded to `d423fd1`.

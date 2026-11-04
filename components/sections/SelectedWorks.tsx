@@ -91,9 +91,6 @@ function StoryCard({ story }: { story: Story }) {
             <PlaceholderVisual story={story} />
           </div>
         )}
-        <span className="absolute left-4 top-4 rounded-sm bg-ink-950/70 px-2.5 py-1 font-mono text-[10px] uppercase tracking-label text-merlot-300 backdrop-blur-sm">
-          {story.category}
-        </span>
       </div>
 
       <div className="flex flex-1 flex-col justify-center p-6 md:p-8">

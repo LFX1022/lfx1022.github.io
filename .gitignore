@@ -48,3 +48,6 @@ source-media/
 
 # 車輛素材來源與較大版本，只保留在本機
 /records/motorcycles/*/originals/
+
+# BIM 影片原始檔，只保留在本機；網站使用 public/images/BIM/ 下的壓縮版
+/records/bim/*/originals/

@@ -93,6 +93,41 @@ export const stories: Story[] = [
   },
   {
     index: "04",
+    title: "烏橋及農路橋改建工程",
+    type: "engineering",
+    category: "施工動畫",
+    description: "烏橋及農路橋改建工程的鋼構桁架推進工法施工動畫紀錄。",
+    tags: ["BIM", "施工動畫", "鋼構桁架推進工法"],
+    media: [
+      {
+        src: "/images/BIM/wuqiao/2026-10-12-steel-truss-launching.mp4",
+        poster: "/images/BIM/wuqiao/2026-10-12-steel-truss-launching-poster.jpg",
+        caption: "2026/10/12｜鋼構桁架推進工法",
+      },
+    ],
+  },
+  {
+    index: "05",
+    title: "X002X 桃園機場第三跑道第一階段工程",
+    type: "engineering",
+    category: "施工動畫",
+    description: "X002X 桃園機場第三跑道第一階段工程的燈光橋 B 與 D1 吊裝模擬紀錄。",
+    tags: ["BIM", "施工動畫", "燈光橋吊裝"],
+    media: [
+      {
+        src: "/images/BIM/taoyuan-airport-r3-x002x/2026-06-05-lighting-bridge-b-lifting-v3.mp4",
+        poster: "/images/BIM/taoyuan-airport-r3-x002x/2026-06-05-lighting-bridge-b-lifting-v3-poster.jpg",
+        caption: "2026/06/05｜燈光橋 B 吊裝模擬",
+      },
+      {
+        src: "/images/BIM/taoyuan-airport-r3-x002x/2026-06-12-lighting-bridge-d1-lifting-v2.mp4",
+        poster: "/images/BIM/taoyuan-airport-r3-x002x/2026-06-12-lighting-bridge-d1-lifting-v2-poster.jpg",
+        caption: "2026/06/12｜燈光橋 D1 吊裝模擬",
+      },
+    ],
+  },
+  {
+    index: "06",
     title: "Dynamo 與 AI 工作流程",
     type: "automation",
     category: "自動化 · AI",
@@ -101,7 +136,7 @@ export const stories: Story[] = [
     image: "",
   },
   {
-    index: "05",
+    index: "07",
     title: "電腦設備與內容創作",
     type: "hardware",
     category: "硬體 · 創作",
@@ -110,7 +145,7 @@ export const stories: Story[] = [
     image: "",
   },
   {
-    index: "06",
+    index: "08",
     title: "Triumph Daytona 仿賽年代圖鑑",
     type: "archive",
     category: "興趣圖鑑 · Triumph",
@@ -129,7 +164,7 @@ export const stories: Story[] = [
     },
   },
   {
-    index: "07",
+    index: "09",
     title: "Ducati 仿賽與道路跑車圖鑑",
     type: "archive",
     category: "興趣圖鑑 · Ducati",
@@ -148,7 +183,7 @@ export const stories: Story[] = [
     },
   },
   {
-    index: "08",
+    index: "10",
     title: "Ultraman 整合圖鑑",
     type: "archive",
     category: "興趣圖鑑 · Ultraman",
