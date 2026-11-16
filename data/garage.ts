@@ -3,7 +3,7 @@ import type { OwnershipDateRange } from "@/lib/ownership";
 export const garageOwnership = {
   archiveRange: {
     start: "2021/05/12",
-    end: "2024/12/21",
+    end: "2026/11/15",
   },
   pool: {
     start: "2021/05/12",
@@ -18,5 +18,6 @@ export const garageOwnership = {
   },
   merlot: {
     start: "2025/01/10",
+    end: "2026/11/15",
   },
 } satisfies Record<string, OwnershipDateRange>;

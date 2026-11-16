@@ -121,6 +121,25 @@ export const merlotJournal = [
     aspect: "3 / 4",
   },
   {
+    src: "/images/motorcycles/daytona660/IMG_5782-portrait.jpg",
+    caption: "最後一次在車庫洗車，洗完後自己幫自己拍照。這天還下著雨。",
+    date: "2026/11/14",
+    aspect: "3 / 4",
+  },
+  {
+    src: "/images/motorcycles/daytona660/IMG_5787-landscape.jpg",
+    caption: "最後一次待在車庫。",
+    date: "2026/11/15",
+    aspect: "4 / 3",
+  },
+  {
+    src: "/images/motorcycles/daytona660/IMG_5767-farewell.jpg",
+    caption:
+      "謝謝 Merlot 這近兩年的陪伴，我從沒後悔選擇你。大家都說歐洲車有脾氣，你卻是我擁有過最省心的車；能文能武，有聲浪，也有顏值。雖然沒帶你去很多地方，但你一定最熟悉台中與高雄之間的路。希望下一位車主也會像我一樣，好好照顧你。",
+    date: "2026/11/15",
+    aspect: "3 / 4",
+  },
+  {
     src: "/images/motorcycles/daytona660/625B6996-9EBB-4B5B-B1F0-5DA943C41D01.jpg",
     caption: "很喜歡的一張 AI 風格圖，真的很帥",
     aspect: "9 / 16",

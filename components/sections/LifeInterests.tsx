@@ -120,18 +120,19 @@ export function LifeInterests() {
 
         <div className="container-x mt-14">
           <Reveal>
-            <div className="flex flex-wrap items-end justify-between gap-3">
-              <p className="eyebrow">
-                <span className="h-px w-6 bg-merlot-500" aria-hidden />
-                歷代車庫 · Garage Archive
-              </p>
+            <div className="garage-section-heading">
+              <span className="garage-section-heading-en" aria-hidden>
+                Garage Archive
+              </span>
+              <h3 className="garage-section-heading-zh">歷代車庫</h3>
+              <span className="garage-section-heading-rule" aria-hidden />
               <GarageOwnership
                 record={garageOwnership.archiveRange}
                 showDays={false}
-                className="font-mono text-[10px] text-steel-500/70"
+                className="garage-section-heading-period"
               />
             </div>
-            <div className="mt-4 flex flex-wrap items-end justify-between gap-2">
+            <div className="mt-8 flex flex-wrap items-end justify-between gap-2">
               <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
                 <h3 className="garage-model-name">
                   2018 Suzuki GSX-R150
@@ -232,62 +233,6 @@ export function LifeInterests() {
           </Reveal>
         </section>
 
-        <div className="container-x mt-24 border-t border-ink-600/60 pt-14">
-          <Reveal>
-            <div className="flex flex-wrap items-end justify-between gap-3">
-              <p className="eyebrow">
-                <span className="h-px w-6 bg-merlot-500" aria-hidden />
-                現役車庫 · Current Garage
-              </p>
-              <GarageOwnership
-                record={garageOwnership.tofu}
-                showDays={false}
-                className="font-mono text-[10px] text-steel-500/70"
-              />
-            </div>
-            <div className="mt-4 flex flex-wrap items-end justify-between gap-2">
-              <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                <h3 className="garage-model-name">
-                  2020 Suzuki GSX-R150
-                </h3>
-                <GarageOwnership
-                  record={garageOwnership.tofu}
-                  className="font-mono text-[11px] text-steel-500/65"
-                />
-              </div>
-              <p className="garage-vehicle-name">
-                小豆腐
-              </p>
-            </div>
-          </Reveal>
-        </div>
-        <Reveal className="mt-6">
-          <Carousel slides={gsxr150Gallery} />
-        </Reveal>
-
-        {/* 小豆腐 生活手帖 大標 */}
-        <div className="container-x mt-16">
-          <Reveal>
-            <p className="eyebrow">
-              <span className="h-px w-6 bg-merlot-500" aria-hidden />
-              小豆腐 · Life Journal
-            </p>
-            <h3 className="garage-model-name mt-4">
-              小豆腐 の生活手帖
-            </h3>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-steel-400">
-              日常とカスタムの記録。
-            </p>
-          </Reveal>
-        </div>
-
-        {/* 小豆腐 の生活手帖：換頁瀏覽 */}
-        <div className="container-x mt-8">
-          <Reveal>
-            <JournalCarousel items={tofuJournal} />
-          </Reveal>
-        </div>
-
         <div className="container-x mt-20">
           <Reveal>
             <div className="flex flex-wrap items-end justify-between gap-2">
@@ -373,6 +318,63 @@ export function LifeInterests() {
         <div className="container-x mt-8">
           <Reveal>
             <JournalCarousel items={merlotJournal} />
+          </Reveal>
+        </div>
+
+        <div className="container-x mt-24 border-t border-ink-600/60 pt-14">
+          <Reveal>
+            <div className="garage-section-heading">
+              <span className="garage-section-heading-en" aria-hidden>
+                Current Garage
+              </span>
+              <h3 className="garage-section-heading-zh">現役車庫</h3>
+              <span className="garage-section-heading-rule" aria-hidden />
+              <GarageOwnership
+                record={garageOwnership.tofu}
+                showDays={false}
+                className="garage-section-heading-period"
+              />
+            </div>
+            <div className="mt-8 flex flex-wrap items-end justify-between gap-2">
+              <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                <h3 className="garage-model-name">
+                  2020 Suzuki GSX-R150
+                </h3>
+                <GarageOwnership
+                  record={garageOwnership.tofu}
+                  className="font-mono text-[11px] text-steel-500/65"
+                />
+              </div>
+              <p className="garage-vehicle-name">
+                小豆腐
+              </p>
+            </div>
+          </Reveal>
+        </div>
+        <Reveal className="mt-6">
+          <Carousel slides={gsxr150Gallery} />
+        </Reveal>
+
+        {/* 小豆腐 生活手帖 大標 */}
+        <div className="container-x mt-16">
+          <Reveal>
+            <p className="eyebrow">
+              <span className="h-px w-6 bg-merlot-500" aria-hidden />
+              小豆腐 · Life Journal
+            </p>
+            <h3 className="garage-model-name mt-4">
+              小豆腐 の生活手帖
+            </h3>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-steel-400">
+              日常とカスタムの記録。
+            </p>
+          </Reveal>
+        </div>
+
+        {/* 小豆腐 の生活手帖：換頁瀏覽 */}
+        <div className="container-x mt-8">
+          <Reveal>
+            <JournalCarousel items={tofuJournal} />
           </Reveal>
         </div>
 

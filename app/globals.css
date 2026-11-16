@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Allura";
+  src: url("/fonts/Allura-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 @layer utilities {
   /* 內文滑過金光：游標經過的段落微微轉暖金，克制、不搶戲，僅作為閱讀位置的柔和提示 */
   .prose-hover-gold,
@@ -106,6 +114,46 @@
 
   .garage-vehicle-name {
     @apply font-mono text-sm tracking-label sm:text-base;
+  }
+
+  /* 車庫分類標題：中文主標疊上低透明度英文襯字，直接保留微水泥背景 */
+  .garage-section-heading {
+    @apply relative isolate flex min-h-36 flex-col items-center justify-center overflow-hidden text-center sm:min-h-44;
+  }
+
+  .garage-section-heading-en {
+    @apply pointer-events-none absolute left-1/2 top-1/2 -z-10 whitespace-nowrap;
+    color: rgba(226, 212, 188, 0.11);
+    font-family: "Allura", "Segoe Script", cursive;
+    font-size: clamp(4rem, 10vw, 8.25rem);
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 0.85;
+    transform: translate(-50%, -54%) rotate(-4deg);
+    text-shadow: 0 0 32px rgba(217, 184, 123, 0.08);
+  }
+
+  .garage-section-heading-zh {
+    @apply relative z-10 font-semibold;
+    color: #f0e9de;
+    font-size: clamp(2.25rem, 5.2vw, 4.4rem);
+    letter-spacing: 0.16em;
+    line-height: 1;
+    padding-left: 0.16em;
+    text-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.35),
+      0 0 18px rgba(217, 184, 123, 0.2),
+      0 8px 28px rgba(26, 24, 21, 0.28);
+  }
+
+  .garage-section-heading-rule {
+    @apply relative z-10 mt-5 h-px w-16;
+    background: linear-gradient(90deg, transparent, rgba(217, 184, 123, 0.8), transparent);
+  }
+
+  .garage-section-heading-period {
+    @apply relative z-10 mt-3 font-mono text-[10px] tracking-label text-steel-400/70 sm:text-[11px];
   }
 
   /* 內容容器 */

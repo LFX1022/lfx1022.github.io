@@ -87,15 +87,17 @@ export function JournalCarousel({ items }: { items: JournalItem[] }) {
           const sideShift = "clamp(220px, 28vw, 355px)";
           const sideX = dir < 0 ? `calc(-50% - ${sideShift})` : `calc(-50% + ${sideShift})`;
           const transform = isActive
-            ? "translate3d(-50%, -50%, 90px) scale(1) rotateY(0deg)"
+            ? "translate(-50%, -50%)"
             : `translate3d(${sideX}, -50%, -170px) scale(0.78) rotateY(${-dir * 30}deg)`;
 
           return (
             <div
               key={`${item.src}-${i}`}
               onClick={() => !isActive && setIndex(i)}
-              className={`absolute left-1/2 top-1/2 h-[92%] overflow-hidden rounded-lg border border-ink-600 bg-ink-950 shadow-2xl transition-[transform,opacity] duration-[700ms] ease-[cubic-bezier(0.22,1,0.36,1)] [backface-visibility:hidden] [transform-style:preserve-3d] [will-change:transform,opacity] ${
-                isActive ? "" : "cursor-pointer"
+              className={`absolute left-1/2 top-1/2 h-[92%] overflow-hidden rounded-lg border border-ink-600 bg-ink-950 shadow-2xl transition-[transform,opacity] duration-[700ms] ease-[cubic-bezier(0.22,1,0.36,1)] [backface-visibility:hidden] ${
+                isActive
+                  ? ""
+                  : "cursor-pointer [transform-style:preserve-3d] [will-change:transform,opacity]"
               }`}
               style={{
                 aspectRatio: item.aspect,
