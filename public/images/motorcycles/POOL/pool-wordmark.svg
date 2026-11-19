@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="374" height="98" viewBox="0 0 374 98">
+  <title>小Pool車</title>
+  <defs>
+    <linearGradient id="paint" x2=".25" y2="1">
+      <stop stop-color="#e26058"/>
+      <stop offset=".13" stop-color="#bd393a"/>
+      <stop offset=".62" stop-color="#a82d33"/>
+      <stop offset="1" stop-color="#88262c"/>
+    </linearGradient>
+    <pattern id="wear" width="59" height="37" patternUnits="userSpaceOnUse">
+      <path fill="#e0b1a0" opacity=".8" d="m6 4 4-.7-1.6 1.6-2.6.3z M39 19l2.4-.4-.9 2-1.5-.6z M18 30l6-1.1-4.4 1.8z"/>
+      <path fill="#452728" opacity=".8" d="m27 7 2-.5-1 2-1.4-.3z M48 26l4-1.1-2 1.9-2.6.4z M7 16l1.7-.4-1 1.7z"/>
+      <path stroke="#f6b9ac" stroke-width=".5" opacity=".55" d="m1 24 5-1m25-9 2-2m19-9 3-.8"/>
+    </pattern>
+    <path id="o" fill-rule="evenodd" d="M0 34 8 26h27l8 7v40l-8 8H8l-8-7zm15 5v28h13V39z"/>
+    <g id="letters" fill-rule="evenodd" stroke-linejoin="bevel">
+      <!-- 小 -->
+      <path d="M36 8h16v66L42 85H23l6-13h7z M17 28l14 4-9 28-9 11H4l6-16z M59 33l13-6 14 37-14 4-9-24z"/>
+      <!-- Pool -->
+      <path d="M94 11h43l11 10v34l-10 10h-26v16H94zm18 15v23h18V26z"/>
+      <use xlink:href="#o" x="154"/>
+      <use xlink:href="#o" x="203"/>
+      <path d="M253 11h17v54l5 4v12h-14l-8-7z"/>
+      <!-- 車 -->
+      <path d="M315 6h15v7h31v10h-31v5h28v35h-28v5h33v11h-33v8h-15v-8h-32V68h32v-5h-27V28h27v-5h-31V13h31zm-13 31v5h13v-5zm28 0v5h14v-5zm-28 12v5h13v-5zm28 0v5h14v-5z"/>
+    </g>
+  </defs>
+  <use xlink:href="#letters" transform="translate(2 3)" fill="#231b1c" stroke="#211b1c" stroke-width="4" opacity=".78"/>
+  <use xlink:href="#letters" fill="url(#paint)" stroke="#271b1d" stroke-width="4"/>
+  <use xlink:href="#letters" fill="url(#wear)" stroke="#d09282" stroke-width="1.15"/>
+</svg>

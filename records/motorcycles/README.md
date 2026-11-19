@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | 小Pool車 | `public/images/motorcycles/POOL/` | `records/motorcycles/POOL/originals/` |
 | RyuGa／R3 | `public/images/motorcycles/R3/` | `records/motorcycles/R3/originals/` |
-| 小豆腐 | `public/images/motorcycles/gsxr150/` | `records/motorcycles/gsxr150/originals/` |
+| 豆腐 | `public/images/motorcycles/gsxr150/` | `records/motorcycles/gsxr150/originals/` |
 | Merlot／Daytona 660 | `public/images/motorcycles/daytona660/` | 有來源檔時依相同車輛分類保存 |
 
 `originals/` 保存原始 MOV、較大照片與既有來源備份，已由 `.gitignore` 排除，供本機留存。網站透過 `public/` 載入素材。

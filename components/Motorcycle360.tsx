@@ -22,6 +22,7 @@ interface Motorcycle360Props {
   imageScale?: number;
   imageOffsetY?: string;
   focusCrop?: boolean;
+  frameClipPath?: string;
 }
 
 export function Motorcycle360({
@@ -33,6 +34,7 @@ export function Motorcycle360({
   imageScale = crop ? 1.13 : 1,
   imageOffsetY = crop ? "-2%" : "0%",
   focusCrop = false,
+  frameClipPath,
 }: Motorcycle360Props) {
   const [frame, setFrame] = useState(0);
   const [displayFrame, setDisplayFrame] = useState(0);
@@ -205,7 +207,7 @@ export function Motorcycle360({
   }, [demoReady, inView, frameCount, moveFrame]);
 
   const progress = frameCount > 1 ? (frame / (frameCount - 1)) * 100 : 0;
-  const showHint = ready && !hasInteracted;
+  const showHint = ready && !hasInteracted && !focusCrop;
 
   const onPointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
     if (!ready) return;
@@ -307,7 +309,7 @@ export function Motorcycle360({
         <div
           className={
             focusCrop
-              ? "absolute left-1/2 top-1/2 h-[64%] w-[68%] -translate-x-1/2 -translate-y-1/2 overflow-hidden bg-white"
+              ? "motorcycle-frame-fade absolute left-1/2 top-1/2 h-[64%] w-[68%] -translate-x-1/2 -translate-y-1/2 overflow-hidden bg-white"
               : "absolute inset-0 overflow-hidden"
           }
         >
@@ -335,6 +337,7 @@ export function Motorcycle360({
                 style={{
                   imageRendering: "auto",
                   objectPosition: "center center",
+                  clipPath: frameClipPath,
                   transform: `translate3d(0, ${imageOffsetY}, 0) scale(${imageScale})`,
                   transformOrigin: "center center",
                   willChange: "opacity",

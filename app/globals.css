@@ -94,9 +94,9 @@
       0 0 42px rgba(217, 184, 123, 0.22);
   }
 
-  /* 車庫車名：玫瑰金字面搭配克制的暖白光暈 */
-  .garage-model-name,
-  .garage-vehicle-name {
+  /* 車款與手帖標題共用玫瑰金字面 */
+  .garage-model-name {
+    @apply text-3xl font-semibold tracking-tight sm:text-4xl;
     color: #e0ad99;
     background-image: linear-gradient(110deg, #f2d5c8 0%, #d99b83 48%, #f0c8b6 100%);
     background-clip: text;
@@ -108,12 +108,105 @@
       0 0 28px rgba(224, 173, 153, 0.18);
   }
 
-  .garage-model-name {
-    @apply text-3xl font-semibold tracking-tight sm:text-4xl;
+  .motorcycle-frame-fade {
+    /* Keep every angle and its ground shadow inside the opaque center. */
+    --frame-edge-mask:
+      linear-gradient(to right, transparent, #000 22%, #000 88%, transparent),
+      linear-gradient(to bottom, transparent, #000 32%, #000 89%, transparent);
+    -webkit-mask-image: var(--frame-edge-mask);
+    -webkit-mask-composite: source-in;
+    mask-image: var(--frame-edge-mask);
+    mask-composite: intersect;
   }
 
   .garage-vehicle-name {
-    @apply font-mono text-sm tracking-label sm:text-base;
+    position: relative;
+    width: fit-content;
+    max-width: 100%;
+    margin-block-start: 0.35rem;
+    font-size: clamp(2rem, 4.4vw, 3.5rem);
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+
+  .garage-name-pool,
+  .garage-name-ryuga {
+    display: block;
+    width: clamp(10rem, 20vw, 17rem);
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 1px 1px rgb(23 20 21 / 32%))
+      drop-shadow(1px 3px 4px rgb(30 26 25 / 30%));
+  }
+
+  .ryuga-mist {
+    isolation: isolate;
+  }
+
+  .ryuga-mist::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: -12% -.35rem -10%;
+    pointer-events: none;
+    background: url("/images/texture/motto-smoke-transparent.png") center / cover no-repeat;
+    mask-image: radial-gradient(ellipse at center, black 45%, transparent 75%);
+    opacity: .58;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .ryuga-mist::before {
+      animation: ryuga-mist-drift 7s ease-in-out infinite alternate;
+    }
+  }
+
+  @keyframes ryuga-mist-drift {
+    from { transform: translate(-3%, 4%); }
+    to { transform: translate(3%, -5%); }
+  }
+
+  .garage-name-merlot {
+    padding-inline: .08em;
+    color: #922741;
+    font-family: "Allura", "Segoe Script", cursive;
+    font-size: clamp(3rem, 6.4vw, 5rem);
+    line-height: 1;
+    -webkit-text-stroke: .022em #ffd8d7;
+    paint-order: stroke fill;
+    text-shadow:
+      0 0 .055em #ffafc1,
+      0 0 .16em rgb(248 133 161 / 58%),
+      0 .045em .22em rgb(106 30 54 / 65%);
+  }
+
+  /* 車燈的斜向反光，亮點集中在筆畫交會處。 */
+  .garage-name-merlot::before,
+  .garage-name-merlot::after {
+    content: "";
+    position: absolute;
+    left: 42%;
+    top: 47%;
+    width: 62%;
+    transform: translateY(-50%) rotate(12deg);
+    pointer-events: none;
+  }
+
+  .garage-name-merlot::before {
+    height: .16em;
+    background: radial-gradient(ellipse, #fff3df 0%, rgb(255 199 187 / 58%) 12%, transparent 66%);
+    filter: blur(.022em);
+  }
+
+  .garage-name-merlot::after {
+    height: max(1px, .023em);
+    background: linear-gradient(90deg, transparent, rgb(255 207 187 / 32%) 27%, #fff8eb 50%, rgb(255 213 189 / 55%) 61%, transparent);
+  }
+
+  .garage-name-tofu {
+    display: block;
+    width: clamp(7rem, 12vw, 10rem);
+    max-width: 100%;
+    height: auto;
   }
 
   /* 車庫分類標題：中文主標疊上低透明度英文襯字，直接保留微水泥背景 */

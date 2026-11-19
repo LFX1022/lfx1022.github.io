@@ -155,7 +155,14 @@ export const daytonaGallery = [
   { src: "/images/motorcycles/daytona660/66008094.jpeg", alt: "Triumph Daytona 660 — 四代目火影", width: 1080, height: 1616 },
 ];
 
-// 小豆腐 の生活手帖：GSX-R150 的影像日誌（照片、日常…）
+export const tofuWordmark = {
+  src: "/images/motorcycles/gsxr150/tofu-wordmark.svg",
+  alt: "豆腐",
+  width: 204,
+  height: 118,
+};
+
+// 豆腐 の生活手帖：GSX-R150 的影像日誌（照片、日常…）
 export const tofuJournal = [
   {
     src: "/images/motorcycles/gsxr150/IMG_9573.jpg",
@@ -165,13 +172,13 @@ export const tofuJournal = [
   },
   {
     src: "/images/motorcycles/gsxr150/IMG_9576.jpg",
-    caption: "準備從台中騎回屏東，弟弟陪我一起。後來他覺得 R3 比較好騎，就換他騎 R3、我騎小豆腐，哈哈哈。",
+    caption: "準備從台中騎回屏東，弟弟陪我一起。後來他覺得 R3 比較好騎，就換他騎 R3、我騎豆腐，哈哈哈。",
     date: "2024/05/31",
     aspect: "3 / 4",
   },
   {
     src: "/images/motorcycles/gsxr150/IMG_9648.jpg",
-    caption: "小豆腐終於換上此生最愛的車牌 NXX-1022。",
+    caption: "豆腐終於換上此生最愛的車牌 NXX-1022。",
     date: "2024/06/12",
     aspect: "3 / 4",
   },
@@ -381,6 +388,13 @@ export const r3Modifications = {
   ],
 };
 
+export const poolWordmark = {
+  src: "/images/motorcycles/POOL/pool-wordmark.svg",
+  alt: "小Pool車",
+  width: 374,
+  height: 98,
+};
+
 export const poolJournal = {
   eyebrow: "小Pool車 · Life Journal",
   title: "小Pool車 の生活手帖",
@@ -538,6 +552,13 @@ export const poolGallery = [
   { src: "/images/motorcycles/POOL/LINE_ALBUM_20221224_221225_6.jpg", alt: "Suzuki GSX-R150 小Pool車 — 道路騎乘背影", width: 613, height: 919 },
 ];
 
+export const r3Wordmark = {
+  src: "/images/motorcycles/R3/ryuga-wordmark.svg",
+  alt: "RyuGa",
+  width: 350,
+  height: 128,
+};
+
 export const r3Gallery = [
   {
     src: "/images/motorcycles/R3/IMG_8606.jpg",
@@ -658,7 +679,7 @@ export const dreamGarage = [
     gallery: undefined,
   },
   {
-    model: "2020–2024 Ducati Panigale V2",
+    model: "Ducati Panigale V2",
     frames: undefined,
     imageAlt: undefined,
     viewerBackground: undefined,

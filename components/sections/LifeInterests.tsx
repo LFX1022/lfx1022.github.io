@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Reveal } from "@/components/Reveal";
 import { Icon } from "@/components/Icon";
@@ -18,10 +19,13 @@ import {
   merlotJournal,
   poolGallery,
   poolJournal,
+  poolWordmark,
   r3Gallery,
+  r3Wordmark,
   r3Journal,
   r3Modifications,
   tofuJournal,
+  tofuWordmark,
 } from "@/data/motorcycles";
 
 export function LifeInterests() {
@@ -143,7 +147,7 @@ export function LifeInterests() {
                 />
               </div>
               <p className="garage-vehicle-name">
-                小Pool車
+                <Image {...poolWordmark} className="garage-name-pool" />
               </p>
             </div>
           </Reveal>
@@ -183,8 +187,8 @@ export function LifeInterests() {
                   className="font-mono text-[11px] text-steel-500/65"
                 />
               </div>
-              <p className="garage-vehicle-name">
-                RyuGa
+              <p className="garage-vehicle-name ryuga-mist">
+                <Image {...r3Wordmark} className="garage-name-ryuga" />
               </p>
             </div>
           </Reveal>
@@ -245,7 +249,7 @@ export function LifeInterests() {
                   className="font-mono text-[11px] text-steel-500/65"
                 />
               </div>
-              <p className="garage-vehicle-name">
+              <p className="garage-vehicle-name garage-name-merlot">
                 Merlot
               </p>
             </div>
@@ -278,6 +282,7 @@ export function LifeInterests() {
               alt="Triumph Daytona 660 實拍 360 度展示"
               crop
               focusCrop
+              frameClipPath="inset(36% 18% 22% 25%)"
               imageScale={1.55}
               imageOffsetY="-2%"
             />
@@ -346,7 +351,7 @@ export function LifeInterests() {
                 />
               </div>
               <p className="garage-vehicle-name">
-                小豆腐
+                <Image {...tofuWordmark} className="garage-name-tofu" />
               </p>
             </div>
           </Reveal>
@@ -355,15 +360,15 @@ export function LifeInterests() {
           <Carousel slides={gsxr150Gallery} />
         </Reveal>
 
-        {/* 小豆腐 生活手帖 大標 */}
+        {/* 豆腐 生活手帖 大標 */}
         <div className="container-x mt-16">
           <Reveal>
             <p className="eyebrow">
               <span className="h-px w-6 bg-merlot-500" aria-hidden />
-              小豆腐 · Life Journal
+              {tofuWordmark.alt} · Life Journal
             </p>
             <h3 className="garage-model-name mt-4">
-              小豆腐 の生活手帖
+              {tofuWordmark.alt} の生活手帖
             </h3>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-steel-400">
               日常とカスタムの記録。
@@ -371,7 +376,7 @@ export function LifeInterests() {
           </Reveal>
         </div>
 
-        {/* 小豆腐 の生活手帖：換頁瀏覽 */}
+        {/* 豆腐 の生活手帖：換頁瀏覽 */}
         <div className="container-x mt-8">
           <Reveal>
             <JournalCarousel items={tofuJournal} />
@@ -389,9 +394,9 @@ export function LifeInterests() {
           <div className="mt-8 grid gap-8 lg:grid-cols-2">
             {dreamGarage.map((motorcycle, index) => (
               <Reveal key={motorcycle.model} delay={index * 80}>
-                <article>
+                <article className="flex h-full flex-col gap-6">
                   <h3 className="garage-model-name">{motorcycle.model}</h3>
-                  <div className="mt-6">
+                  <div className="mt-auto">
                     {motorcycle.frames && motorcycle.imageAlt ? (
                       <Motorcycle360
                         frames={motorcycle.frames}
